@@ -1,0 +1,83 @@
+import { Link } from 'react-router-dom'
+import Hero from '../../components/Hero'
+
+const posts = [
+  {
+    title: 'Why It Pays to Find the Right Carpenter for Work in Portishead',
+    slug: '/blog/carpenter-in-portishead',
+    img: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80',
+    excerpt: 'Choosing the right carpenter can be the difference between a home improvement that truly transforms your space and one that disappoints.',
+  },
+  {
+    title: 'Fitted Wardrobes in Portishead — Transform Your Bedroom Storage',
+    slug: '/blog/fitted-wardrobes-in-portishead',
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+    excerpt: 'A well-designed fitted wardrobe transforms how your bedroom feels and functions. Discover our bespoke design and install service.',
+  },
+  {
+    title: 'House Renovations in Portishead — Making Your Home Work Harder for You',
+    slug: '/blog/house-renovations-in-portishead',
+    img: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80',
+    excerpt: 'A well-executed renovation can completely transform how you live. See what\'s involved and how we can help.',
+  },
+  {
+    title: 'Kitchen Installation in Portishead — Creating the Heart of Your Home',
+    slug: '/blog/kitchen-installation-in-portishead',
+    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80',
+    excerpt: 'A well-designed kitchen installation transforms daily life. Find out why a local Portishead carpenter is the best choice.',
+  },
+  {
+    title: 'Wood Flooring Installation in Portishead — Warmth, Character & Lasting Value',
+    slug: '/blog/wood-flooring-installation-in-portishead',
+    img: 'https://images.unsplash.com/photo-1586105251261-72a756497a11?w=600&q=80',
+    excerpt: 'Wood flooring adds warmth, character and real value to any property. Learn about solid timber and laminate options.',
+  },
+]
+
+export default function BlogIndex() {
+  return (
+    <>
+      <Hero
+        h1="Blog"
+        intro="Ideas, insights and inspiration for your home improvement projects in Portishead and beyond."
+        imageSrc="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80"
+        imageAlt="Walk-in wardrobe blog hero"
+      />
+
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-gray-600 leading-relaxed mb-4 max-w-3xl">
+            At Total Carpentry Services we take pride in high-quality home improvements that bring any vision to life — whether you're upgrading a kitchen, laying new flooring, refreshing a tired interior or solving a bedroom storage headache.
+          </p>
+          <p className="text-gray-600 leading-relaxed mb-12 max-w-3xl">
+            In this series of posts we explore the benefits of our services and share ideas to help you create the home you want. If you're in or around Portishead, <Link to="/contact" className="text-[#B07A3C] hover:underline">get in touch</Link> and let's get started.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                to={post.slug}
+                className="group bg-white border border-[#E5E5E5] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <div className="overflow-hidden h-48">
+                  <img
+                    src={post.img}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-5">
+                  <h2 className="font-bold text-[#1E2A24] text-base mb-2 group-hover:text-[#B07A3C] transition-colors leading-snug">
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-500 text-sm leading-relaxed">{post.excerpt}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
