@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tcarpentry",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["/Users/farisaziz/Library/Mobile Documents/com~apple~CloudDocs/Portishead Websites/tcarpentry/start.sh"],
+      "port": 5173
+    }
+  ]
+}

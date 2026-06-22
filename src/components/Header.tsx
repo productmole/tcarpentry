@@ -28,14 +28,8 @@ export default function Header() {
     <header className="bg-[#1E2A24] sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <div className="text-white font-bold text-xl font-['Poppins'] tracking-wide">
-            <span className="text-[#B07A3C]">T</span>C
-          </div>
-          <div className="text-white text-xs leading-tight hidden sm:block">
-            <div className="font-semibold text-sm">Total Carpentry</div>
-            <div className="text-white/60 text-xs">Services</div>
-          </div>
+        <Link to="/" className="flex items-center shrink-0">
+          <img src="/tc-logo-light.svg" alt="Total Carpentry Services" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}

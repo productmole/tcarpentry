@@ -25,9 +25,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand */}
         <div>
-          <div className="text-white font-bold text-lg font-['Poppins'] mb-3">
-            <span className="text-[#B07A3C]">Total</span> Carpentry Services
-          </div>
+          <img src="/tc-logo-light.svg" alt="Total Carpentry Services" className="h-10 w-auto mb-3" />
           <p className="text-white/60 text-sm leading-relaxed mb-4">
             Established 2014. Trusted local carpentry across Portishead &amp; North Somerset.
           </p>
