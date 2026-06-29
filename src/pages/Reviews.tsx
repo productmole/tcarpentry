@@ -53,35 +53,35 @@ export default function Reviews() {
 
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold text-[#1E2A24] mb-4">What Our Clients Have to Say</h2>
-          <p className="text-gray-600 leading-relaxed">
+          <h2 className="text-3xl font-bold text-white mb-4">What Our Clients Have to Say</h2>
+          <p className="text-[#d1d5db] leading-relaxed">
             At Total Carpentry Services, reviews are how we measure success, and they reflect the trust local homeowners place in us. The same themes come up again and again: attention to detail, friendly service, and turning ideas into reality.
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-white border border-[#E5E5E5] rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div key={i} className="bg-[#111827] border border-[#2d3748] rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex mb-3">
                 {[...Array(t.stars)].map((_, j) => (
-                  <Star key={j} size={16} className="text-[#B07A3C] fill-[#B07A3C]" />
+                  <Star key={j} size={16} className="text-[#dead1f] fill-[#dead1f]" />
                 ))}
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">"{t.text}"</p>
-              <div className="text-[#1E2A24] font-semibold text-sm">{t.name}</div>
+              <p className="text-[#d1d5db] text-sm leading-relaxed mb-4">"{t.text}"</p>
+              <div className="text-white font-semibold text-sm">{t.name}</div>
               <div className="text-gray-400 text-xs">{t.location}</div>
             </div>
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto text-center mt-12 p-6 bg-[#F5F5F3] rounded-xl">
-          <p className="text-gray-600 text-sm">
+        <div className="max-w-2xl mx-auto text-center mt-12 p-6 bg-[#111827] rounded-xl">
+          <p className="text-[#d1d5db] text-sm">
             We're proud to be highly rated on Google. To see all our reviews or leave your own,{' '}
             <a
               href="https://www.google.com/search?q=Total+Carpentry+Services+Portishead"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#B07A3C] hover:underline font-medium"
+              className="text-[#dead1f] hover:underline font-medium"
             >
               find us on Google
             </a>.

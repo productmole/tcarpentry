@@ -21,7 +21,7 @@ function InstagramIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1E2A24] text-white/80 text-sm">
+    <footer className="bg-[#03071a] text-white/80 text-sm">
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand */}
         <div>
@@ -34,7 +34,7 @@ export default function Footer() {
               href="https://www.facebook.com/totalcarpentry"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#B07A3C] transition-colors"
+              className="hover:text-[#dead1f] transition-colors"
               aria-label="Facebook"
             >
               <FacebookIcon />
@@ -43,7 +43,7 @@ export default function Footer() {
               href="https://www.instagram.com/totalcarpentryportishead/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#B07A3C] transition-colors"
+              className="hover:text-[#dead1f] transition-colors"
               aria-label="Instagram"
             >
               <InstagramIcon />
@@ -65,7 +65,7 @@ export default function Footer() {
               ['Contact Us', '/contact'],
             ].map(([label, to]) => (
               <li key={to}>
-                <Link to={to} className="hover:text-[#B07A3C] transition-colors">
+                <Link to={to} className="hover:text-[#dead1f] transition-colors">
                   {label}
                 </Link>
               </li>
@@ -78,12 +78,12 @@ export default function Footer() {
           <div className="text-white font-semibold mb-3">Contact</div>
           <ul className="space-y-2">
             <li>
-              <a href="tel:01275844094" className="flex items-center gap-2 hover:text-[#B07A3C] transition-colors">
+              <a href="tel:01275844094" className="flex items-center gap-2 hover:text-[#dead1f] transition-colors">
                 <Phone size={14} />01275 844094
               </a>
             </li>
             <li>
-              <a href="tel:07834772046" className="flex items-center gap-2 hover:text-[#B07A3C] transition-colors">
+              <a href="tel:07834772046" className="flex items-center gap-2 hover:text-[#dead1f] transition-colors">
                 <Phone size={14} />07834 772046
               </a>
             </li>

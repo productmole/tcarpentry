@@ -39,7 +39,7 @@ export default function ContactForm({ formId = 'YOUR_FORMSPREE_ID' }: Props) {
             name="name"
             type="text"
             required
-            className="w-full border border-[#E5E5E5] rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#B07A3C]"
+            className="w-full bg-[#111827] border border-[#2d3748] text-white placeholder-gray-500 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#dead1f]"
           />
         </div>
         <div>
@@ -49,7 +49,7 @@ export default function ContactForm({ formId = 'YOUR_FORMSPREE_ID' }: Props) {
             name="email"
             type="email"
             required
-            className="w-full border border-[#E5E5E5] rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#B07A3C]"
+            className="w-full bg-[#111827] border border-[#2d3748] text-white placeholder-gray-500 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#dead1f]"
           />
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function ContactForm({ formId = 'YOUR_FORMSPREE_ID' }: Props) {
           id="phone"
           name="phone"
           type="tel"
-          className="w-full border border-[#E5E5E5] rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#B07A3C]"
+          className="w-full bg-[#111827] border border-[#2d3748] text-white placeholder-gray-500 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#dead1f]"
         />
       </div>
       <div>
@@ -69,13 +69,13 @@ export default function ContactForm({ formId = 'YOUR_FORMSPREE_ID' }: Props) {
           name="message"
           required
           rows={5}
-          className="w-full border border-[#E5E5E5] rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#B07A3C] resize-y"
+          className="w-full bg-[#111827] border border-[#2d3748] text-white placeholder-gray-500 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#dead1f] resize-y"
         />
       </div>
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="bg-[#B07A3C] hover:bg-[#8a5e2a] disabled:opacity-60 text-white font-semibold px-8 py-3 rounded transition-colors w-full sm:w-auto"
+        className="bg-[#dead1f] hover:bg-[#bd931a] disabled:opacity-60 text-white font-semibold px-8 py-3 rounded transition-colors w-full sm:w-auto"
       >
         {status === 'sending' ? 'Sending…' : 'Send Message'}
       </button>

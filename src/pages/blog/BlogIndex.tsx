@@ -46,11 +46,11 @@ export default function BlogIndex() {
 
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <p className="text-gray-600 leading-relaxed mb-4 max-w-3xl">
+          <p className="text-[#d1d5db] leading-relaxed mb-4 max-w-3xl">
             At Total Carpentry Services we take pride in high-quality home improvements that bring any vision to life — whether you're upgrading a kitchen, laying new flooring, refreshing a tired interior or solving a bedroom storage headache.
           </p>
-          <p className="text-gray-600 leading-relaxed mb-12 max-w-3xl">
-            In this series of posts we explore the benefits of our services and share ideas to help you create the home you want. If you're in or around Portishead, <Link to="/contact" className="text-[#B07A3C] hover:underline">get in touch</Link> and let's get started.
+          <p className="text-[#d1d5db] leading-relaxed mb-12 max-w-3xl">
+            In this series of posts we explore the benefits of our services and share ideas to help you create the home you want. If you're in or around Portishead, <Link to="/contact" className="text-[#dead1f] hover:underline">get in touch</Link> and let's get started.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -58,7 +58,7 @@ export default function BlogIndex() {
               <Link
                 key={post.slug}
                 to={post.slug}
-                className="group bg-white border border-[#E5E5E5] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+                className="group bg-[#111827] border border-[#2d3748] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
               >
                 <div className="overflow-hidden h-48">
                   <img
@@ -68,7 +68,7 @@ export default function BlogIndex() {
                   />
                 </div>
                 <div className="p-5">
-                  <h2 className="font-bold text-[#1E2A24] text-base mb-2 group-hover:text-[#B07A3C] transition-colors leading-snug">
+                  <h2 className="font-bold text-white text-base mb-2 group-hover:text-[#dead1f] transition-colors leading-snug">
                     {post.title}
                   </h2>
                   <p className="text-gray-500 text-sm leading-relaxed">{post.excerpt}</p>

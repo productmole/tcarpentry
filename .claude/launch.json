@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "tcarpentry",
-      "runtimeExecutable": "bash",
-      "runtimeArgs": ["/Users/farisaziz/Library/Mobile Documents/com~apple~CloudDocs/Portishead Websites/tcarpentry/start.sh"],
+      "runtimeExecutable": "/opt/homebrew/bin/npm",
+      "runtimeArgs": ["--prefix", "/Users/farisaziz/tcarpentry-dev", "run", "dev"],
       "port": 5173
     }
   ]

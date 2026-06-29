@@ -40,18 +40,18 @@ export default function ServiceTemplate({
       <Hero h1={heroH1} intro={heroIntro} imageSrc={heroImg} imageAlt={heroImgAlt} />
 
       {sections.map((section, i) => (
-        <section key={i} className={`py-16 px-4 ${i % 2 === 1 ? 'bg-[#F5F5F3]' : 'bg-white'}`}>
+        <section key={i} className={`py-16 px-4 ${i % 2 === 1 ? 'bg-[#111827]' : 'bg-[#03071a]'}`}>
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className={section.imgRight ? 'order-1' : 'order-1 md:order-2'}>
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1E2A24] mb-4">{section.heading}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{section.heading}</h2>
               {section.paragraphs.map((p, j) => (
-                <p key={j} className="text-gray-600 leading-relaxed mb-4">{p}</p>
+                <p key={j} className="text-[#d1d5db] leading-relaxed mb-4">{p}</p>
               ))}
               {section.bullets && (
-                <ul className="space-y-2 text-sm text-gray-700 mt-4">
+                <ul className="space-y-2 text-sm text-[#d1d5db] mt-4">
                   {section.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#B07A3C] mt-2 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#dead1f] mt-2 shrink-0" />
                       {b}
                     </li>
                   ))}

@@ -20,12 +20,12 @@ function InstagramIcon() {
 
 export default function UtilityBar() {
   return (
-    <div className="bg-[#1E2A24] text-white text-sm py-2">
+    <div className="bg-[#03071a] text-white text-sm py-2">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-4">
           <a
             href="https://wa.me/447834772046"
-            className="flex items-center gap-1.5 hover:text-[#B07A3C] transition-colors"
+            className="flex items-center gap-1.5 hover:text-[#dead1f] transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -34,7 +34,7 @@ export default function UtilityBar() {
           </a>
           <a
             href="tel:07834772046"
-            className="flex items-center gap-1.5 hover:text-[#B07A3C] transition-colors"
+            className="flex items-center gap-1.5 hover:text-[#dead1f] transition-colors"
           >
             <Phone size={15} />
             <span>07834 772046</span>
@@ -43,7 +43,7 @@ export default function UtilityBar() {
         <div className="flex items-center gap-3">
           <a
             href="https://www.facebook.com/totalcarpentry"
-            className="hover:text-[#B07A3C] transition-colors"
+            className="hover:text-[#dead1f] transition-colors"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -52,7 +52,7 @@ export default function UtilityBar() {
           </a>
           <a
             href="https://www.instagram.com/totalcarpentryportishead/"
-            className="hover:text-[#B07A3C] transition-colors"
+            className="hover:text-[#dead1f] transition-colors"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"

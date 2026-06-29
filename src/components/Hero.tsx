@@ -24,7 +24,7 @@ export default function Hero({
       className="relative w-full min-h-[420px] md:min-h-[520px] flex items-center justify-center text-white"
       style={{
         backgroundImage: imageSrc ? `url(${imageSrc})` : undefined,
-        backgroundColor: !imageSrc ? '#1E2A24' : undefined,
+        backgroundColor: !imageSrc ? '#03071a' : undefined,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -47,7 +47,7 @@ export default function Hero({
             {primaryCTA && (
               <Link
                 to={primaryCTA.to}
-                className="bg-[#B07A3C] hover:bg-[#8a5e2a] text-white font-semibold px-8 py-3 rounded transition-colors"
+                className="bg-[#dead1f] hover:bg-[#bd931a] text-white font-semibold px-8 py-3 rounded transition-colors"
               >
                 {primaryCTA.label}
               </Link>
@@ -55,7 +55,7 @@ export default function Hero({
             {secondaryCTA && (
               <Link
                 to={secondaryCTA.to}
-                className="border-2 border-white text-white hover:bg-white hover:text-[#1E2A24] font-semibold px-8 py-3 rounded transition-colors"
+                className="border-2 border-white text-white hover:bg-[#111827] hover:text-white font-semibold px-8 py-3 rounded transition-colors"
               >
                 {secondaryCTA.label}
               </Link>

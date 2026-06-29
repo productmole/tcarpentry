@@ -17,35 +17,35 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Contact details */}
           <div>
-            <h2 className="text-3xl font-bold text-[#1E2A24] mb-4">Reach Out to Discuss Your Next Project</h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <h2 className="text-3xl font-bold text-white mb-4">Reach Out to Discuss Your Next Project</h2>
+            <p className="text-[#d1d5db] leading-relaxed mb-6">
               We specialise in renovations, fitted wardrobes, kitchens, wood flooring and smart solutions for awkward spaces — and we've built a name for being reliable, creative and easy to work with. Every project starts with a chat about your ideas, then we make them work in a practical, stylish way.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-[#d1d5db] leading-relaxed mb-8">
               Choose us and you get a team that cares about the big picture and the small details alike.
             </p>
 
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone size={18} className="text-[#B07A3C] shrink-0 mt-0.5" />
+                <Phone size={18} className="text-[#dead1f] shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-semibold text-[#1E2A24] text-sm mb-1">Phone</div>
-                  <a href="tel:01275844094" className="block text-gray-600 hover:text-[#B07A3C]">01275 844094</a>
-                  <a href="tel:07834772046" className="block text-gray-600 hover:text-[#B07A3C]">07834 772046</a>
+                  <div className="font-semibold text-white text-sm mb-1">Phone</div>
+                  <a href="tel:01275844094" className="block text-[#d1d5db] hover:text-[#dead1f]">01275 844094</a>
+                  <a href="tel:07834772046" className="block text-[#d1d5db] hover:text-[#dead1f]">07834 772046</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail size={18} className="text-[#B07A3C] shrink-0 mt-0.5" />
+                <Mail size={18} className="text-[#dead1f] shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-semibold text-[#1E2A24] text-sm mb-1">Email</div>
-                  <span className="text-gray-600 text-sm italic">Email address to be confirmed — please call or use the form</span>
+                  <div className="font-semibold text-white text-sm mb-1">Email</div>
+                  <span className="text-[#d1d5db] text-sm italic">Email address to be confirmed — please call or use the form</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-[#B07A3C] shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-[#dead1f] shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-semibold text-[#1E2A24] text-sm mb-1">Address</div>
-                  <address className="not-italic text-gray-600 text-sm">
+                  <div className="font-semibold text-white text-sm mb-1">Address</div>
+                  <address className="not-italic text-[#d1d5db] text-sm">
                     3 Bunting Ln<br />
                     Portishead<br />
                     Bristol, BS20 7PZ
@@ -57,7 +57,7 @@ export default function Contact() {
 
           {/* Form */}
           <div>
-            <h3 className="text-xl font-bold text-[#1E2A24] mb-6">Send Us a Message</h3>
+            <h3 className="text-xl font-bold text-white mb-6">Send Us a Message</h3>
             <ContactForm />
           </div>
         </div>

@@ -2,9 +2,9 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #1E2A24;
-  --color-accent: #B07A3C;
-  --color-accent-dark: #8a5e2a;
+  --color-primary: #03071a;
+  --color-accent: #dead1f;
+  --color-accent-dark: #bd931a;
 }
 
 * {
@@ -14,8 +14,8 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: #222;
-  background: #fff;
+  color: #ffffff;
+  background: #03071a;
   -webkit-font-smoothing: antialiased;
 }
 

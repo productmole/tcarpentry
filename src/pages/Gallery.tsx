@@ -62,19 +62,19 @@ export default function Gallery() {
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1E2A24] mb-4">Past Projects</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-3xl font-bold text-white mb-4">Past Projects</h2>
+            <p className="text-[#d1d5db] max-w-2xl mx-auto leading-relaxed">
               From bespoke wardrobes to full renovations, extensions, kitchens and flooring, each project reflects our carpenters' craft and our commitment to a great result.
             </p>
           </div>
 
-          <h3 className="text-xl font-bold text-[#1E2A24] mb-4">Kitchen &amp; General Carpentry</h3>
+          <h3 className="text-xl font-bold text-white mb-4">Kitchen &amp; General Carpentry</h3>
           <PhotoGrid photos={kitchenPhotos} onOpen={setLightbox} />
 
-          <h3 className="text-xl font-bold text-[#1E2A24] mt-12 mb-4">Staircases &amp; Custom Joinery</h3>
+          <h3 className="text-xl font-bold text-white mt-12 mb-4">Staircases &amp; Custom Joinery</h3>
           <PhotoGrid photos={staircasePhotos} onOpen={setLightbox} />
 
-          <h3 className="text-xl font-bold text-[#1E2A24] mt-12 mb-4">Extension &amp; Framing Work</h3>
+          <h3 className="text-xl font-bold text-white mt-12 mb-4">Extension &amp; Framing Work</h3>
           <PhotoGrid photos={extensionPhotos} onOpen={setLightbox} />
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function Gallery() {
         >
           <button
             onClick={() => setLightbox(null)}
-            className="absolute top-4 right-4 text-white hover:text-[#B07A3C]"
+            className="absolute top-4 right-4 text-white hover:text-[#dead1f]"
             aria-label="Close"
           >
             <X size={32} />

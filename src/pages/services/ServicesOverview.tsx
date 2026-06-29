@@ -31,21 +31,21 @@ export default function ServicesOverview() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-3xl font-bold text-[#1E2A24] mb-4">Total by Name, Total by Nature</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">Total by Name, Total by Nature</h2>
+            <p className="text-[#d1d5db] leading-relaxed mb-4">
               We're here to help you invest in your home and make it truly your own. Every service below comes with a <strong>1-year workmanship guarantee</strong> and a strong record of happy clients across Portishead and the surrounding area.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <p className="text-[#d1d5db] leading-relaxed mb-6">
               Whether that's reworking your interior or building storage made to measure, always tailored to your property and your vision.
             </p>
             <div className="grid grid-cols-2 gap-2">
               {capabilities.map((c) => (
-                <div key={c} className="flex items-center gap-2 text-sm text-gray-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B07A3C] shrink-0" />
+                <div key={c} className="flex items-center gap-2 text-sm text-[#d1d5db]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#dead1f] shrink-0" />
                   {serviceLinks.find(s => s.label.toLowerCase().includes(c.toLowerCase())) ? (
                     <Link
                       to={serviceLinks.find(s => s.label.toLowerCase().includes(c.toLowerCase()))!.to}
-                      className="hover:text-[#B07A3C] underline underline-offset-2"
+                      className="hover:text-[#dead1f] underline underline-offset-2"
                     >
                       {c}
                     </Link>
@@ -61,15 +61,15 @@ export default function ServicesOverview() {
               <Link
                 key={s.to}
                 to={s.to}
-                className="flex items-center justify-between bg-[#F5F5F3] hover:bg-[#1E2A24] hover:text-white text-[#1E2A24] rounded-lg px-5 py-4 transition-colors group border border-[#E5E5E5]"
+                className="flex items-center justify-between bg-[#111827] hover:bg-[#03071a] hover:text-white text-white rounded-lg px-5 py-4 transition-colors group border border-[#2d3748]"
               >
                 <span className="font-semibold">{s.label}</span>
-                <span className="text-[#B07A3C] group-hover:text-white transition-colors">→</span>
+                <span className="text-[#dead1f] group-hover:text-white transition-colors">→</span>
               </Link>
             ))}
             <Link
               to="/blog"
-              className="block text-center text-sm text-[#B07A3C] hover:underline mt-4"
+              className="block text-center text-sm text-[#dead1f] hover:underline mt-4"
             >
               Read our blog for ideas and inspiration →
             </Link>
@@ -78,15 +78,15 @@ export default function ServicesOverview() {
       </section>
 
       {/* Contact line */}
-      <section className="bg-[#F5F5F3] py-8 px-4 text-center text-sm text-gray-600">
+      <section className="bg-[#111827] py-8 px-4 text-center text-sm text-[#d1d5db]">
         For professional carpentry across Portishead and beyond, call your local carpenter on{' '}
-        <a href="tel:01275844094" className="font-semibold text-[#1E2A24] hover:text-[#B07A3C]">01275 844094</a>{' '}
+        <a href="tel:01275844094" className="font-semibold text-white hover:text-[#dead1f]">01275 844094</a>{' '}
         or{' '}
-        <a href="tel:07834772046" className="font-semibold text-[#1E2A24] hover:text-[#B07A3C]">07834 772046</a>.
+        <a href="tel:07834772046" className="font-semibold text-white hover:text-[#dead1f]">07834 772046</a>.
         Want to know more? Browse our dedicated pages on{' '}
         {serviceLinks.map((s, i) => (
           <span key={s.to}>
-            <Link to={s.to} className="hover:text-[#B07A3C] underline">{s.label}</Link>
+            <Link to={s.to} className="hover:text-[#dead1f] underline">{s.label}</Link>
             {i < serviceLinks.length - 1 ? ', ' : '.'}
           </span>
         ))}
