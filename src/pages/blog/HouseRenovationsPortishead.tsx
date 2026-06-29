@@ -4,11 +4,11 @@ export default function HouseRenovationsPortishead() {
   return (
     <BlogTemplate
       h1="House Renovations in Portishead Making Your Home Work Harder for You"
-      heroImg="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1600&q=80"
-      heroImgAlt="House renovation in Portishead"
+      heroImg="/gallery/IMG_0862.jpg"
+      heroImgAlt="House renovation in Portishead by Total Carpentry Services"
       intro="Whether you're opening up a ground floor, refreshing tired finishes or adding bespoke storage throughout, a well-executed renovation can completely transform how you live. Total Carpentry Services delivers thoughtful house renovations across Portishead and North Somerset."
-      secondaryImg="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
-      secondaryImgAlt="Renovation carpentry work"
+      secondaryImg="/gallery/IMG_0864.jpg"
+      secondaryImgAlt="Renovation carpentry work by Total Carpentry Services"
       sections={[
         {
           heading: 'What Does a House Renovation Involve?',

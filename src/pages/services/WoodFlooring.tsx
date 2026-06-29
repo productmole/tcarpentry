@@ -5,8 +5,8 @@ export default function WoodFlooring() {
     <ServiceTemplate
       heroH1="Wood Flooring Installation in Portishead"
       heroIntro="Wood flooring is more than a surface it sets the character of a room. At Total Carpentry Services we fit solid timber and laminate floors with care and precision for a result that's both hard-wearing and elegant. Serving Portishead and the surrounding area, we create spaces where practicality meets timeless design."
-      heroImg="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=1600&q=80"
-      heroImgAlt="Wood flooring installation"
+      heroImg="/gallery/IMG_0736.jpg"
+      heroImgAlt="Wood flooring installation by Total Carpentry Services"
       sections={[
         {
           heading: 'Expertly Installing Attractive, Long-lasting Wood Floors',
@@ -20,7 +20,7 @@ export default function WoodFlooring() {
             'Installation expert fitting with close attention to pattern and finish',
             'Aftercare and Maintenance Advice guidance on keeping your floor in perfect condition',
           ],
-          imgSrc: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=800&q=80',
+          imgSrc: '/gallery/IMG_0797.jpg',
           imgAlt: 'Wood floor installation process',
           imgRight: false,
         },
@@ -32,8 +32,8 @@ export default function WoodFlooring() {
             'Hypoallergenic Properties easier to keep dust and allergen-free than carpet',
             'Durability and Longevity properly maintained, solid timber floors can last for generations',
           ],
-          imgSrc: 'https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=800&q=80',
-          imgAlt: 'Solid timber floor',
+          imgSrc: '/gallery/IMG_0798.jpg',
+          imgAlt: 'Solid timber floor by Total Carpentry Services',
           imgRight: true,
         },
         {
@@ -44,8 +44,8 @@ export default function WoodFlooring() {
             'Durability scratch and stain resistant; ideal for busy households',
             'Versatility in Design wide range of styles, colours and plank widths',
           ],
-          imgSrc: 'https://images.unsplash.com/photo-1615971677499-5467cbab01d0?w=800&q=80',
-          imgAlt: 'Laminate floor installation',
+          imgSrc: '/gallery/IMG_0799.jpg',
+          imgAlt: 'Laminate floor installation by Total Carpentry Services',
           imgRight: false,
         },
       ]}

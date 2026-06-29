@@ -5,8 +5,8 @@ export default function HouseRenovations() {
     <ServiceTemplate
       heroH1="House Renovations in Portishead"
       heroIntro="A well-planned renovation can completely reshape how you live. Total Carpentry Services delivers considered upgrades that improve comfort, function and style from structural changes to the finest finishing details always working to your vision while adding lasting value to your Portishead home."
-      heroImg="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1600&q=80"
-      heroImgAlt="House renovation in progress"
+      heroImg="/gallery/IMG_0862.jpg"
+      heroImgAlt="House renovation by Total Carpentry Services"
       sections={[
         {
           heading: 'Reimagining Homes Through Thoughtful Home Renovation',
@@ -14,8 +14,8 @@ export default function HouseRenovations() {
             'Home renovations are one of our specialities. From new kitchens to bespoke wardrobes, we focus on creating the right interior for your home. As a trusted local carpenter we\'re set on getting the result you want making spaces more usable and more comfortable.',
             'We\'re also experienced flooring fitters, and beautiful wood floors top many local renovation wish lists, bringing warmth and character to any room.',
           ],
-          imgSrc: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',
-          imgAlt: 'Renovation work in progress',
+          imgSrc: '/gallery/IMG_0863.jpg',
+          imgAlt: 'Renovation work by Total Carpentry Services',
           imgRight: false,
         },
         {
@@ -30,8 +30,8 @@ export default function HouseRenovations() {
             'Partition / stud walls',
             'Kitchen cabinetry',
           ],
-          imgSrc: 'https://images.unsplash.com/photo-1565538810643-b5bdb0cc31b1?w=800&q=80',
-          imgAlt: 'Renovation carpentry details',
+          imgSrc: '/gallery/IMG_0864.jpg',
+          imgAlt: 'Renovation carpentry details by Total Carpentry Services',
           imgRight: true,
         },
         {
@@ -43,8 +43,8 @@ export default function HouseRenovations() {
             'Door replacements & new door frames',
             'Loft hatch installation',
           ],
-          imgSrc: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
-          imgAlt: 'Open plan living space',
+          imgSrc: '/gallery/IMG_0865.jpg',
+          imgAlt: 'Structural alteration work by Total Carpentry Services',
           imgRight: false,
         },
       ]}

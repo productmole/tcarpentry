@@ -5,31 +5,31 @@ const posts = [
   {
     title: 'Why It Pays to Find the Right Carpenter for Work in Portishead',
     slug: '/blog/carpenter-in-portishead',
-    img: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80',
+    img: '/gallery/IMG_0851.jpg',
     excerpt: 'Choosing the right carpenter can be the difference between a home improvement that truly transforms your space and one that disappoints.',
   },
   {
     title: 'Fitted Wardrobes in Portishead Transform Your Bedroom Storage',
     slug: '/blog/fitted-wardrobes-in-portishead',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+    img: '/gallery/IMG_0518.jpg',
     excerpt: 'A well-designed fitted wardrobe transforms how your bedroom feels and functions. Discover our bespoke design and install service.',
   },
   {
     title: 'House Renovations in Portishead Making Your Home Work Harder for You',
     slug: '/blog/house-renovations-in-portishead',
-    img: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80',
+    img: '/gallery/IMG_0862.jpg',
     excerpt: 'A well-executed renovation can completely transform how you live. See what\'s involved and how we can help.',
   },
   {
     title: 'Kitchen Installation in Portishead Creating the Heart of Your Home',
     slug: '/blog/kitchen-installation-in-portishead',
-    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80',
+    img: '/gallery/IMG_0320.jpg',
     excerpt: 'A well-designed kitchen installation transforms daily life. Find out why a local Portishead carpenter is the best choice.',
   },
   {
     title: 'Wood Flooring Installation in Portishead Warmth, Character & Lasting Value',
     slug: '/blog/wood-flooring-installation-in-portishead',
-    img: 'https://images.unsplash.com/photo-1586105251261-72a756497a11?w=600&q=80',
+    img: '/gallery/IMG_0736.jpg',
     excerpt: 'Wood flooring adds warmth, character and real value to any property. Learn about solid timber and laminate options.',
   },
 ]
@@ -40,8 +40,8 @@ export default function BlogIndex() {
       <Hero
         h1="Blog"
         intro="Ideas, insights and inspiration for your home improvement projects in Portishead and beyond."
-        imageSrc="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80"
-        imageAlt="Walk-in wardrobe blog hero"
+        imageSrc="/gallery/IMG_0528.jpg"
+        imageAlt="Carpentry projects blog by Total Carpentry Services"
       />
 
       <section className="py-16 px-4">

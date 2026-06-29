@@ -19,6 +19,7 @@ interface HeroProps {
   imageSrc?: string
   imageAlt?: string
   overlay?: number
+  stockBg?: boolean
 }
 
 export default function Hero({
@@ -29,6 +30,7 @@ export default function Hero({
   imageSrc,
   imageAlt = '',
   overlay = 0.72,
+  stockBg = false,
 }: HeroProps) {
   // Home page uses the full two-column layout; other pages use a simpler centred banner
   const isHome = imageSrc === undefined
@@ -49,6 +51,13 @@ export default function Hero({
       >
         {imageSrc && (
           <div className="absolute inset-0" style={{ background: `rgba(0,0,0,${overlay})` }} />
+        )}
+        {stockBg && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+            <span className="bg-black/80 text-white text-xs font-medium px-3 py-1.5 rounded border border-white/20 backdrop-blur-sm whitespace-nowrap">
+              Placeholder — replace with real photo
+            </span>
+          </div>
         )}
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center py-16">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">{h1}</h1>
@@ -88,6 +97,13 @@ export default function Hero({
     >
       {/* Dark overlay */}
       <div className="absolute inset-0" style={{ background: `rgba(3,7,26,${overlay})` }} />
+      {stockBg && (
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+          <span className="bg-black/80 text-white text-xs font-medium px-3 py-1.5 rounded border border-white/20 backdrop-blur-sm whitespace-nowrap">
+            Placeholder — replace with real photo
+          </span>
+        </div>
+      )}
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left text + CTAs */}

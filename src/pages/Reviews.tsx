@@ -8,8 +8,8 @@ export default function Reviews() {
       <Hero
         h1="Reviews"
         intro="We love hearing from the people we work for their words tell our story better than we can."
-        imageSrc="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80"
-        imageAlt="Beautiful kitchen we installed"
+        imageSrc="/gallery/IMG_0597.jpg"
+        imageAlt="Carpentry work by Total Carpentry Services"
       />
 
       <section className="py-16 px-4">

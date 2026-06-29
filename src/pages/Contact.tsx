@@ -9,8 +9,8 @@ export default function Contact() {
       <Hero
         h1="Contact Us"
         intro="Thinking about improving your home? Whether it's bespoke fitted wardrobes, a full renovation or a brand-new kitchen, getting in touch couldn't be simpler."
-        imageSrc="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
-        imageAlt="Portishead marina"
+        imageSrc="/gallery/IMG_0699.jpg"
+        imageAlt="Carpentry work by Total Carpentry Services"
       />
 
       <section className="py-16 px-4">

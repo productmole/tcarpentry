@@ -4,11 +4,11 @@ export default function KitchenInstallationPortishead() {
   return (
     <BlogTemplate
       h1="Kitchen Installation in Portishead Creating the Heart of Your Home"
-      heroImg="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80"
-      heroImgAlt="Kitchen installation in Portishead"
+      heroImg="/gallery/IMG_0320.jpg"
+      heroImgAlt="Kitchen installation in Portishead by Total Carpentry Services"
       intro="The kitchen is the most-used room in most homes, and a well-designed installation can transform daily life. Total Carpentry Services provides expert kitchen installations for homeowners across Portishead, Clevedon, Nailsea and the wider North Somerset area."
-      secondaryImg="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80"
-      secondaryImgAlt="Fitted kitchen detail"
+      secondaryImg="/gallery/IMG_0322.jpg"
+      secondaryImgAlt="Fitted kitchen detail by Total Carpentry Services"
       sections={[
         {
           heading: 'Why Hire a Local Portishead Carpenter for Your Kitchen?',

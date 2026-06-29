@@ -5,8 +5,8 @@ export default function FittedWardrobes() {
     <ServiceTemplate
       heroH1="Fitted Wardrobes in Portishead"
       heroIntro="Fitted wardrobes turn awkward, wasted corners into stylish, hard-working storage. Total Carpentry Services designs and builds bespoke wardrobes across Portishead, tailoring every detail to your room and your décor from sleek sliding doors to generous walk-ins for durable, elegant storage that makes the most of your space."
-      heroImg="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80"
-      heroImgAlt="Fitted wardrobe with sliding doors"
+      heroImg="/gallery/IMG_0518.jpg"
+      heroImgAlt="Fitted wardrobe by Total Carpentry Services"
       sections={[
         {
           heading: 'Practical & Elegant Storage Solutions',
@@ -14,8 +14,8 @@ export default function FittedWardrobes() {
             'Our fitted wardrobes are built to slot seamlessly into a specific space, rather than stand alone. Because they\'re made to your room\'s dimensions and style, they look cohesive and tidy and they handle tricky spots like sloping ceilings and loft alcoves beautifully.',
             'We offer a complete design-and-install service for handmade wardrobes at a fraction of the price of the big national firms, and we\'ll remove and dispose of your old units too.',
           ],
-          imgSrc: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-          imgAlt: 'Fitted wardrobe interior',
+          imgSrc: '/gallery/IMG_0520.jpg',
+          imgAlt: 'Fitted wardrobe interior by Total Carpentry Services',
           imgRight: false,
         },
         {
@@ -28,8 +28,8 @@ export default function FittedWardrobes() {
             'Corner makes clever use of corner spaces that standard furniture ignores',
             'Mirrored adds light and the illusion of space; particularly popular in smaller rooms',
           ],
-          imgSrc: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80',
-          imgAlt: 'Walk-in wardrobe design',
+          imgSrc: '/gallery/IMG_0521.jpg',
+          imgAlt: 'Walk-in wardrobe design by Total Carpentry Services',
           imgRight: true,
         },
         {
@@ -43,8 +43,8 @@ export default function FittedWardrobes() {
             'Custom Features lighting, mirrors, pull-out drawers, shoe racks and more',
             'Reduced Clutter everything in its place for a calm, tidy bedroom',
           ],
-          imgSrc: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
-          imgAlt: 'Wardrobe interior details',
+          imgSrc: '/gallery/IMG_0526.jpg',
+          imgAlt: 'Wardrobe interior details by Total Carpentry Services',
           imgRight: false,
         },
       ]}

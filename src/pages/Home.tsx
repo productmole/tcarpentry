@@ -19,6 +19,7 @@ export default function Home() {
         intro="House Renovations & Bespoke Carpentry by Total Carpentry Services"
         primaryCTA={{ label: 'Contact Us', to: '/contact' }}
         secondaryCTA={{ label: 'Our Services', to: '/services' }}
+        stockBg
       />
 
       {/* Welcome / What we do */}
@@ -68,8 +69,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-lg">
             <img
-              src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
-              alt="Residential carpentry work"
+              src="/gallery/IMG_0601.jpg"
+              alt="Carpentry work by Total Carpentry Services"
               className="w-full h-80 object-cover"
             />
           </div>
