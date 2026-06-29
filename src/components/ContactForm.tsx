@@ -80,7 +80,7 @@ export default function ContactForm({ formId = 'YOUR_FORMSPREE_ID' }: Props) {
         {status === 'sending' ? 'Sending…' : 'Send Message'}
       </button>
       {status === 'success' && (
-        <p className="text-green-700 font-medium">Thank you — we'll be in touch shortly!</p>
+        <p className="text-green-700 font-medium">Thank you we'll be in touch shortly!</p>
       )}
       {status === 'error' && (
         <p className="text-red-600">Something went wrong. Please call us on 07834 772046.</p>

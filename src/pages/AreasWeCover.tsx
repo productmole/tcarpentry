@@ -25,7 +25,7 @@ export default function AreasWeCover() {
             A Time Served Carpenter Serving Portishead &amp; All Surrounding North Somerset Locations
           </h2>
           <p className="text-[#d1d5db] text-center leading-relaxed mb-10">
-            From kitchens and flooring to bespoke storage and full renovations, we're proud to serve homes right across North Somerset — local, reliable, and tailored to your property.
+            From kitchens and flooring to bespoke storage and full renovations, we're proud to serve homes right across North Somerset local, reliable, and tailored to your property.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-12">

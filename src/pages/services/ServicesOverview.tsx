@@ -24,7 +24,7 @@ export default function ServicesOverview() {
         h1="Our Services"
         intro="Give your home a lift with Total Carpentry Services. As a trusted local carpenter serving Portishead and nearby towns, we bring precise, reliable workmanship to renovations, installations and bespoke designs."
         imageSrc="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80"
-        imageAlt="Modern kitchen — services overview"
+        imageAlt="Modern kitchen services overview"
       />
 
       {/* Total by Name section */}

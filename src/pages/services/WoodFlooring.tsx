@@ -4,7 +4,7 @@ export default function WoodFlooring() {
   return (
     <ServiceTemplate
       heroH1="Wood Flooring Installation in Portishead"
-      heroIntro="Wood flooring is more than a surface — it sets the character of a room. At Total Carpentry Services we fit solid timber and laminate floors with care and precision for a result that's both hard-wearing and elegant. Serving Portishead and the surrounding area, we create spaces where practicality meets timeless design."
+      heroIntro="Wood flooring is more than a surface it sets the character of a room. At Total Carpentry Services we fit solid timber and laminate floors with care and precision for a result that's both hard-wearing and elegant. Serving Portishead and the surrounding area, we create spaces where practicality meets timeless design."
       heroImg="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=1600&q=80"
       heroImgAlt="Wood flooring installation"
       sections={[
@@ -14,11 +14,11 @@ export default function WoodFlooring() {
             'Before we begin, your Total carpenter arranges a thorough consultation so we know exactly what you want and that you\'ll be completely happy with the finished floor. Our full service covers all the key steps from measurement through to aftercare advice.',
           ],
           bullets: [
-            'Full Measurement Service — precise surveying to minimise waste and cost',
-            'Consultation and Selection — help choosing the right species, grade and finish',
-            'Subfloor Preparation — levelling and moisture-proofing for a lasting result',
-            'Installation — expert fitting with close attention to pattern and finish',
-            'Aftercare and Maintenance Advice — guidance on keeping your floor in perfect condition',
+            'Full Measurement Service precise surveying to minimise waste and cost',
+            'Consultation and Selection help choosing the right species, grade and finish',
+            'Subfloor Preparation levelling and moisture-proofing for a lasting result',
+            'Installation expert fitting with close attention to pattern and finish',
+            'Aftercare and Maintenance Advice guidance on keeping your floor in perfect condition',
           ],
           imgSrc: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=800&q=80',
           imgAlt: 'Wood floor installation process',
@@ -28,9 +28,9 @@ export default function WoodFlooring() {
           heading: 'Solid Timber Floors',
           paragraphs: ['Solid timber flooring is a premium, long-lasting choice that adds natural beauty and character to any room. It can be sanded and refinished multiple times over its lifetime.'],
           bullets: [
-            'Aesthetic Appeal — natural grain, warmth, and timeless good looks',
-            'Hypoallergenic Properties — easier to keep dust and allergen-free than carpet',
-            'Durability and Longevity — properly maintained, solid timber floors can last for generations',
+            'Aesthetic Appeal natural grain, warmth, and timeless good looks',
+            'Hypoallergenic Properties easier to keep dust and allergen-free than carpet',
+            'Durability and Longevity properly maintained, solid timber floors can last for generations',
           ],
           imgSrc: 'https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=800&q=80',
           imgAlt: 'Solid timber floor',
@@ -40,9 +40,9 @@ export default function WoodFlooring() {
           heading: 'Laminate Floors',
           paragraphs: ['Laminate offers the look of real wood at a more accessible price point. Modern laminate is highly realistic and far more resilient than older generations of the product.'],
           bullets: [
-            'Cost-Effectiveness — beautiful results at a fraction of the price of solid timber',
-            'Durability — scratch and stain resistant; ideal for busy households',
-            'Versatility in Design — wide range of styles, colours and plank widths',
+            'Cost-Effectiveness beautiful results at a fraction of the price of solid timber',
+            'Durability scratch and stain resistant; ideal for busy households',
+            'Versatility in Design wide range of styles, colours and plank widths',
           ],
           imgSrc: 'https://images.unsplash.com/photo-1615971677499-5467cbab01d0?w=800&q=80',
           imgAlt: 'Laminate floor installation',

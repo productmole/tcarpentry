@@ -9,25 +9,25 @@ const posts = [
     excerpt: 'Choosing the right carpenter can be the difference between a home improvement that truly transforms your space and one that disappoints.',
   },
   {
-    title: 'Fitted Wardrobes in Portishead — Transform Your Bedroom Storage',
+    title: 'Fitted Wardrobes in Portishead Transform Your Bedroom Storage',
     slug: '/blog/fitted-wardrobes-in-portishead',
     img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
     excerpt: 'A well-designed fitted wardrobe transforms how your bedroom feels and functions. Discover our bespoke design and install service.',
   },
   {
-    title: 'House Renovations in Portishead — Making Your Home Work Harder for You',
+    title: 'House Renovations in Portishead Making Your Home Work Harder for You',
     slug: '/blog/house-renovations-in-portishead',
     img: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80',
     excerpt: 'A well-executed renovation can completely transform how you live. See what\'s involved and how we can help.',
   },
   {
-    title: 'Kitchen Installation in Portishead — Creating the Heart of Your Home',
+    title: 'Kitchen Installation in Portishead Creating the Heart of Your Home',
     slug: '/blog/kitchen-installation-in-portishead',
     img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80',
     excerpt: 'A well-designed kitchen installation transforms daily life. Find out why a local Portishead carpenter is the best choice.',
   },
   {
-    title: 'Wood Flooring Installation in Portishead — Warmth, Character & Lasting Value',
+    title: 'Wood Flooring Installation in Portishead Warmth, Character & Lasting Value',
     slug: '/blog/wood-flooring-installation-in-portishead',
     img: 'https://images.unsplash.com/photo-1586105251261-72a756497a11?w=600&q=80',
     excerpt: 'Wood flooring adds warmth, character and real value to any property. Learn about solid timber and laminate options.',
@@ -47,7 +47,7 @@ export default function BlogIndex() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <p className="text-[#d1d5db] leading-relaxed mb-4 max-w-3xl">
-            At Total Carpentry Services we take pride in high-quality home improvements that bring any vision to life — whether you're upgrading a kitchen, laying new flooring, refreshing a tired interior or solving a bedroom storage headache.
+            At Total Carpentry Services we take pride in high-quality home improvements that bring any vision to life whether you're upgrading a kitchen, laying new flooring, refreshing a tired interior or solving a bedroom storage headache.
           </p>
           <p className="text-[#d1d5db] leading-relaxed mb-12 max-w-3xl">
             In this series of posts we explore the benefits of our services and share ideas to help you create the home you want. If you're in or around Portishead, <Link to="/contact" className="text-[#dead1f] hover:underline">get in touch</Link> and let's get started.

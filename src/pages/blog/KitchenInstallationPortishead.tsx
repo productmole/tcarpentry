@@ -3,7 +3,7 @@ import BlogTemplate from './BlogTemplate'
 export default function KitchenInstallationPortishead() {
   return (
     <BlogTemplate
-      h1="Kitchen Installation in Portishead — Creating the Heart of Your Home"
+      h1="Kitchen Installation in Portishead Creating the Heart of Your Home"
       heroImg="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80"
       heroImgAlt="Kitchen installation in Portishead"
       intro="The kitchen is the most-used room in most homes, and a well-designed installation can transform daily life. Total Carpentry Services provides expert kitchen installations for homeowners across Portishead, Clevedon, Nailsea and the wider North Somerset area."
@@ -13,7 +13,7 @@ export default function KitchenInstallationPortishead() {
         {
           heading: 'Why Hire a Local Portishead Carpenter for Your Kitchen?',
           paragraphs: [
-            'A national kitchen company might promise a slick showroom experience, but a skilled local carpenter delivers something far more personal — attention to detail, a genuine interest in your project, and the flexibility to solve problems as they arise.',
+            'A national kitchen company might promise a slick showroom experience, but a skilled local carpenter delivers something far more personal attention to detail, a genuine interest in your project, and the flexibility to solve problems as they arise.',
           ],
           bullets: [
             'Free estimates and consultations',
@@ -26,7 +26,7 @@ export default function KitchenInstallationPortishead() {
         {
           heading: 'Fitted Kitchens and Bespoke Kitchens',
           paragraphs: [
-            'We install both fitted kitchens (using quality, standard-sized units arranged to suit your space) and fully bespoke kitchens built to your exact measurements and specifications. Most clients find that a well-specified fitted kitchen, expertly installed, is hard to distinguish from bespoke — at a much lower cost.',
+            'We install both fitted kitchens (using quality, standard-sized units arranged to suit your space) and fully bespoke kitchens built to your exact measurements and specifications. Most clients find that a well-specified fitted kitchen, expertly installed, is hard to distinguish from bespoke at a much lower cost.',
             'We\'re happy to work with kitchen units you\'ve already purchased, or we can advise on quality suppliers who work well with our installation methods.',
           ],
         },

@@ -20,12 +20,12 @@ export default function CarpenterPortishead() {
           heading: 'How We Can Help',
           paragraphs: ['Our team brings the following advantages to every project:'],
           bullets: [
-            'Expert Craftsmanship — precision-built results that look superb and last for years',
-            'Customised Solutions — every job is tailored to your home, your taste and your budget',
-            'Increased Property Value — well-finished carpentry work consistently adds value at resale',
-            'Efficiency and Timeliness — we plan carefully and stick to agreed timescales',
-            'Safety Considerations — all structural work is carried out safely and to building regulations',
-            'A Wide Range of Services — from skirting boards to full kitchen and wardrobe installations',
+            'Expert Craftsmanship precision-built results that look superb and last for years',
+            'Customised Solutions every job is tailored to your home, your taste and your budget',
+            'Increased Property Value well-finished carpentry work consistently adds value at resale',
+            'Efficiency and Timeliness we plan carefully and stick to agreed timescales',
+            'Safety Considerations all structural work is carried out safely and to building regulations',
+            'A Wide Range of Services from skirting boards to full kitchen and wardrobe installations',
           ],
         },
         {

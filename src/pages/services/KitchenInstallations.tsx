@@ -4,14 +4,14 @@ export default function KitchenInstallations() {
   return (
     <ServiceTemplate
       heroH1="Kitchen Installations in Portishead"
-      heroIntro="A thoughtfully designed kitchen changes daily life for the better. As your local Portishead carpenter, Total Carpentry Services builds tailored installations that pair smart layouts with fine craftsmanship — clever storage, seamless finishes, and a precise result that suits your home and how you live."
+      heroIntro="A thoughtfully designed kitchen changes daily life for the better. As your local Portishead carpenter, Total Carpentry Services builds tailored installations that pair smart layouts with fine craftsmanship clever storage, seamless finishes, and a precise result that suits your home and how you live."
       heroImg="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80"
       heroImgAlt="Modern fitted kitchen installation"
       sections={[
         {
           heading: 'Stunning Spaces for All Property Styles',
           paragraphs: [
-            'When it comes to the heart of the home, a skilled carpenter makes all the difference. Whether you picture a modern fitted kitchen or a traditional bespoke layout built around your needs, we can make it happen — and we\'re happy to share examples of local projects, plus the flooring and wider renovations we\'ve completed alongside them.',
+            'When it comes to the heart of the home, a skilled carpenter makes all the difference. Whether you picture a modern fitted kitchen or a traditional bespoke layout built around your needs, we can make it happen and we\'re happy to share examples of local projects, plus the flooring and wider renovations we\'ve completed alongside them.',
           ],
           imgSrc: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
           imgAlt: 'Fitted kitchen',
@@ -21,11 +21,11 @@ export default function KitchenInstallations() {
           heading: 'Kitchen Designs & Layouts',
           paragraphs: ['We work with a range of kitchen layouts to suit every home and cooking style. During your free consultation we\'ll help you find the best configuration for your space.'],
           bullets: [
-            'Galley — efficient and streamlined, ideal for narrower kitchens',
-            'L-Shaped — versatile and sociable, works well in open-plan spaces',
-            'U-Shaped — maximum worktop and storage, perfect for keen cooks',
-            'Peninsula — a practical compromise between island and standard layouts',
-            'Island — the statement centrepiece; ideal for larger open-plan kitchens',
+            'Galley efficient and streamlined, ideal for narrower kitchens',
+            'L-Shaped versatile and sociable, works well in open-plan spaces',
+            'U-Shaped maximum worktop and storage, perfect for keen cooks',
+            'Peninsula a practical compromise between island and standard layouts',
+            'Island the statement centrepiece; ideal for larger open-plan kitchens',
           ],
           imgSrc: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80',
           imgAlt: 'Kitchen layout options',
@@ -35,10 +35,10 @@ export default function KitchenInstallations() {
           heading: 'Kitchen Doors',
           paragraphs: ['The door style sets the whole tone of a kitchen. We offer a wide range of door designs to suit traditional, contemporary or transitional schemes.'],
           bullets: [
-            'Shaker — a timeless choice; clean lines that suit both modern and classic kitchens',
-            'Vinyl-Wrapped — budget-friendly, available in hundreds of colours and effects',
-            'In-Frame — a premium, furniture-grade look for a truly bespoke feel',
-            'Glass-Front — adds light and visual interest; ideal for display units',
+            'Shaker a timeless choice; clean lines that suit both modern and classic kitchens',
+            'Vinyl-Wrapped budget-friendly, available in hundreds of colours and effects',
+            'In-Frame a premium, furniture-grade look for a truly bespoke feel',
+            'Glass-Front adds light and visual interest; ideal for display units',
           ],
           imgSrc: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80',
           imgAlt: 'Kitchen door styles',
@@ -47,7 +47,7 @@ export default function KitchenInstallations() {
         {
           heading: 'Fitted Kitchen Installation vs Bespoke Kitchens',
           paragraphs: [
-            'A fitted kitchen uses a combination of standard-sized units arranged to suit your space — a cost-effective approach with a wide range of styles and finishes. A bespoke kitchen is built entirely to measure, offering unlimited design freedom at a higher price point.',
+            'A fitted kitchen uses a combination of standard-sized units arranged to suit your space a cost-effective approach with a wide range of styles and finishes. A bespoke kitchen is built entirely to measure, offering unlimited design freedom at a higher price point.',
             'We offer both options and will help you find the right balance of budget, style and practicality. Many of our clients find that a well-specified fitted kitchen, installed by an expert, is indistinguishable from bespoke at a fraction of the cost.',
           ],
           imgSrc: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',

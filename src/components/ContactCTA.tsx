@@ -8,7 +8,7 @@ interface Props {
 
 export default function ContactCTA({
   heading = 'Get in Touch With Our Friendly Team',
-  subtext = 'Ready to transform your home? Call us for a free estimate or send us a message — we\'d love to hear from you.',
+  subtext = 'Ready to transform your home? Call us for a free estimate or send us a message we\'d love to hear from you.',
 }: Props) {
   return (
     <section className="bg-[#03071a] text-white py-16 px-4">

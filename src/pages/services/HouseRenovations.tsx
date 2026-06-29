@@ -4,14 +4,14 @@ export default function HouseRenovations() {
   return (
     <ServiceTemplate
       heroH1="House Renovations in Portishead"
-      heroIntro="A well-planned renovation can completely reshape how you live. Total Carpentry Services delivers considered upgrades that improve comfort, function and style — from structural changes to the finest finishing details — always working to your vision while adding lasting value to your Portishead home."
+      heroIntro="A well-planned renovation can completely reshape how you live. Total Carpentry Services delivers considered upgrades that improve comfort, function and style from structural changes to the finest finishing details always working to your vision while adding lasting value to your Portishead home."
       heroImg="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1600&q=80"
       heroImgAlt="House renovation in progress"
       sections={[
         {
           heading: 'Reimagining Homes Through Thoughtful Home Renovation',
           paragraphs: [
-            'Home renovations are one of our specialities. From new kitchens to bespoke wardrobes, we focus on creating the right interior for your home. As a trusted local carpenter we\'re set on getting the result you want — making spaces more usable and more comfortable.',
+            'Home renovations are one of our specialities. From new kitchens to bespoke wardrobes, we focus on creating the right interior for your home. As a trusted local carpenter we\'re set on getting the result you want making spaces more usable and more comfortable.',
             'We\'re also experienced flooring fitters, and beautiful wood floors top many local renovation wish lists, bringing warmth and character to any room.',
           ],
           imgSrc: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',
@@ -52,7 +52,7 @@ export default function HouseRenovations() {
       faqs={[
         {
           q: 'What\'s the difference between a renovation and an alteration?',
-          a: 'A renovation typically refreshes or improves an existing space — new flooring, updated joinery, fresh skirting boards and so on. An alteration changes the structure or layout, such as removing a partition wall to create an open-plan space. We handle both.',
+          a: 'A renovation typically refreshes or improves an existing space new flooring, updated joinery, fresh skirting boards and so on. An alteration changes the structure or layout, such as removing a partition wall to create an open-plan space. We handle both.',
         },
         {
           q: 'Do you manage structural work safely?',

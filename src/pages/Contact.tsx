@@ -19,7 +19,7 @@ export default function Contact() {
           <div>
             <h2 className="text-3xl font-bold text-white mb-4">Reach Out to Discuss Your Next Project</h2>
             <p className="text-[#d1d5db] leading-relaxed mb-6">
-              We specialise in renovations, fitted wardrobes, kitchens, wood flooring and smart solutions for awkward spaces — and we've built a name for being reliable, creative and easy to work with. Every project starts with a chat about your ideas, then we make them work in a practical, stylish way.
+              We specialise in renovations, fitted wardrobes, kitchens, wood flooring and smart solutions for awkward spaces and we've built a name for being reliable, creative and easy to work with. Every project starts with a chat about your ideas, then we make them work in a practical, stylish way.
             </p>
             <p className="text-[#d1d5db] leading-relaxed mb-8">
               Choose us and you get a team that cares about the big picture and the small details alike.
@@ -38,7 +38,7 @@ export default function Contact() {
                 <Mail size={18} className="text-[#dead1f] shrink-0 mt-0.5" />
                 <div>
                   <div className="font-semibold text-white text-sm mb-1">Email</div>
-                  <span className="text-[#d1d5db] text-sm italic">Email address to be confirmed — please call or use the form</span>
+                  <span className="text-[#d1d5db] text-sm italic">Email address to be confirmed please call or use the form</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">

@@ -1,14 +1,7 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import ContactForm from '../components/ContactForm'
-import { Star } from 'lucide-react'
-
-const services = [
-  { label: 'Kitchen Installations', to: '/services/kitchen-installations', emoji: '🍳' },
-  { label: 'Fitted Wardrobes', to: '/services/fitted-wardrobes', emoji: '🚪' },
-  { label: 'House Renovations', to: '/services/house-renovations', emoji: '🏠' },
-  { label: 'Wood Flooring', to: '/services/wood-flooring-installations', emoji: '🪵' },
-]
+import GoogleReviews from '../components/GoogleReviews'
 
 const capabilities = [
   '1st & 2nd Fix Carpentry', 'Alcoves', 'Bathroom Upgrades', 'Bespoke Fitted Wardrobes',
@@ -22,31 +15,11 @@ export default function Home() {
     <>
       {/* Hero */}
       <Hero
-        h1="Your Local Carpenter in Portishead & Beyond"
-        intro="Home renovations and bespoke carpentry, handcrafted by Total Carpentry Services."
+        h1="Carpenter in Portishead & the Surrounding Areas"
+        intro="House Renovations & Bespoke Carpentry by Total Carpentry Services"
         primaryCTA={{ label: 'Contact Us', to: '/contact' }}
         secondaryCTA={{ label: 'Our Services', to: '/services' }}
-        imageSrc="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1600&q=80"
-        imageAlt="Carpentry tools on a workbench"
       />
-
-      {/* Service quick-links */}
-      <section className="bg-[#111827] py-12 px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {services.map((s) => (
-            <Link
-              key={s.to}
-              to={s.to}
-              className="bg-[#1e2538] rounded-lg p-6 text-center shadow-sm hover:shadow-md hover:border-[#dead1f] border border-[#2d3748] transition-all group"
-            >
-              <div className="text-3xl mb-2">{s.emoji}</div>
-              <div className="font-semibold text-white text-sm group-hover:text-[#dead1f] transition-colors">
-                {s.label}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       {/* Welcome / What we do */}
       <section className="py-16 px-4">
@@ -57,7 +30,7 @@ export default function Home() {
               Welcome to Total Carpentry Services
             </h2>
             <p className="text-[#d1d5db] leading-relaxed mb-6">
-              Founded in 2014, Total Carpentry Services has spent more than a decade transforming and refurbishing homes across Portishead and the wider area. We believe a home should lift your spirits as well as work hard for you — balancing comfort, beauty and everyday practicality. Our qualified, experienced team has built its reputation on going the extra mile to deliver home improvements done properly.
+              Founded in 2014, Total Carpentry Services has spent more than a decade transforming and refurbishing homes across Portishead and the wider area. We believe a home should lift your spirits as well as work hard for you balancing comfort, beauty and everyday practicality. Our qualified, experienced team has built its reputation on going the extra mile to deliver home improvements done properly.
             </p>
             <p className="text-[#d1d5db] leading-relaxed mb-6">
               For dependable, skilled and imaginative carpentry in North Somerset, talk to us. We specialise in new kitchen installations, value-adding home renovations and a wide choice of laminate and wood flooring, and we design and build fitted wardrobes to suit any bedroom and any taste.
@@ -155,10 +128,10 @@ export default function Home() {
             <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2">The Complete Experience</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">New Kitchen Installations</h2>
             <p className="text-[#d1d5db] leading-relaxed mb-4">
-              A new kitchen does more than look good — it transforms how a space works. Our cabinetry and clever storage maximise every inch and cut the clutter, while considered lighting and bespoke touches make the room feel genuinely welcoming. Energy-efficient appliances and thoughtful material choices help too.
+              A new kitchen does more than look good it transforms how a space works. Our cabinetry and clever storage maximise every inch and cut the clutter, while considered lighting and bespoke touches make the room feel genuinely welcoming. Energy-efficient appliances and thoughtful material choices help too.
             </p>
             <p className="text-[#d1d5db] leading-relaxed mb-6">
-              A stylish, modern kitchen can also add real value to your Portishead home. We turn tired kitchens into the heart of the house — practical, beautiful, and finished with that all-important wow factor.
+              A stylish, modern kitchen can also add real value to your Portishead home. We turn tired kitchens into the heart of the house practical, beautiful, and finished with that all-important wow factor.
             </p>
             <Link
               to="/services/kitchen-installations"
@@ -191,7 +164,7 @@ export default function Home() {
             <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2">Portfolio</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Visit Our Gallery</h2>
             <p className="text-[#d1d5db] leading-relaxed mb-6">
-              Take a look through our gallery to see recent projects near you and the way our designs bring a home together. We're also happy to point you to finished work locally — many clients are proud to show off their new wardrobes, kitchens, flooring and renovations.
+              Take a look through our gallery to see recent projects near you and the way our designs bring a home together. We're also happy to point you to finished work locally many clients are proud to show off their new wardrobes, kitchens, flooring and renovations.
             </p>
             <Link
               to="/gallery"
@@ -203,25 +176,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reviews teaser */}
-      <section className="py-16 px-4 bg-[#111827]">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2">Social Proof</p>
-          <h2 className="text-3xl font-bold text-white mb-4">Our Latest Reviews</h2>
-          <div className="flex justify-center mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={24} className="text-[#dead1f] fill-[#dead1f]" />
-            ))}
-          </div>
-          <p className="text-[#d1d5db] mb-6">Highly rated by homeowners across Portishead and North Somerset.</p>
-          <Link
-            to="/reviews"
-            className="inline-block bg-[#dead1f] hover:bg-[#bd931a] text-white font-semibold px-6 py-2.5 rounded transition-colors text-sm"
-          >
-            Read Our Reviews
-          </Link>
-        </div>
-      </section>
+      {/* Reviews */}
+      <GoogleReviews />
 
       {/* Final CTA + contact form */}
       <section className="py-16 px-4 bg-[#03071a]">
