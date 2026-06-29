@@ -55,8 +55,8 @@ export default function Home() {
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg">
             <img
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
-              alt="Modern dark fitted kitchen"
+              src="/gallery/IMG_0320.jpg"
+              alt="Kitchen installation by Total Carpentry Services"
               className="w-full h-80 object-cover"
             />
           </div>
@@ -100,9 +100,9 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-white mb-8 text-center">What We Can Do for You</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { label: 'Fitted Wardrobes', to: '/services/fitted-wardrobes', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80' },
-              { label: 'House Renovations', to: '/services/house-renovations', img: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80' },
-              { label: 'Wood Flooring', to: '/services/wood-flooring-installations', img: 'https://images.unsplash.com/photo-1586105251261-72a756497a11?w=600&q=80' },
+              { label: 'Fitted Wardrobes', to: '/services/fitted-wardrobes', img: '/gallery/IMG_0518.jpg' },
+              { label: 'House Renovations', to: '/services/house-renovations', img: '/gallery/IMG_0862.jpg' },
+              { label: 'Wood Flooring', to: '/services/wood-flooring-installations', img: '/gallery/IMG_0736.jpg' },
             ].map((card) => (
               <Link
                 key={card.to}
@@ -146,8 +146,8 @@ export default function Home() {
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg">
             <img
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
-              alt="Modern kitchen installation"
+              src="/gallery/IMG_0321.jpg"
+              alt="Kitchen installation by Total Carpentry Services"
               className="w-full h-80 object-cover"
             />
           </div>
@@ -159,8 +159,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="rounded-xl overflow-hidden shadow-lg">
             <img
-              src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?w=800&q=80"
-              alt="Recent carpentry project"
+              src="/gallery/IMG_0663.jpg"
+              alt="Recent carpentry project by Total Carpentry Services"
               className="w-full h-80 object-cover"
             />
           </div>

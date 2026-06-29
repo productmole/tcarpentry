@@ -31,7 +31,7 @@ export default function Hero({
   overlay = 0.72,
 }: HeroProps) {
   // Home page uses the full two-column layout; other pages use a simpler centred banner
-  const isHome = imageSrc === undefined || imageSrc?.includes('unsplash')
+  const isHome = imageSrc === undefined
 
   if (!isHome) {
     // Simple banner for interior pages

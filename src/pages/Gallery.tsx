@@ -1,62 +1,63 @@
 import { useState } from 'react'
 import Hero from '../components/Hero'
 import ContactCTA from '../components/ContactCTA'
-import { X } from 'lucide-react'
-
-const kitchenPhotos = [
-  { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80', alt: 'Modern dark fitted kitchen' },
-  { src: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80', alt: 'White shaker kitchen' },
-  { src: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80', alt: 'Kitchen installation detail' },
-  { src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80', alt: 'Open kitchen with island' },
-]
-
-const staircasePhotos = [
-  { src: 'https://images.unsplash.com/photo-1565538810643-b5bdb0cc31b1?w=800&q=80', alt: 'Staircase refurbishment' },
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80', alt: 'Custom joinery work' },
-  { src: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80', alt: 'Fitted wardrobe build' },
-]
-
-const extensionPhotos = [
-  { src: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80', alt: 'Extension framing work' },
-  { src: 'https://images.unsplash.com/photo-1593696140826-c58b021acf8b?w=800&q=80', alt: 'Carpentry in progress' },
-  { src: 'https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800&q=80', alt: 'Wood flooring installation' },
-]
+import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface Photo {
   src: string
   alt: string
 }
 
-function PhotoGrid({ photos, onOpen }: { photos: Photo[]; onOpen: (p: Photo) => void }) {
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-      {photos.map((p, i) => (
-        <button
-          key={i}
-          onClick={() => onOpen(p)}
-          className="overflow-hidden rounded-lg aspect-square group cursor-zoom-in"
-        >
-          <img
-            src={p.src}
-            alt={p.alt}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </button>
-      ))}
-    </div>
-  )
-}
+const allPhotos: Photo[] = [
+  { src: '/gallery/IMG_0320.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0321.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0322.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0508.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0510.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0518.jpg', alt: 'Fitted wardrobe' },
+  { src: '/gallery/IMG_0520.jpg', alt: 'Fitted wardrobe' },
+  { src: '/gallery/IMG_0521.jpg', alt: 'Fitted wardrobe' },
+  { src: '/gallery/IMG_0526.jpg', alt: 'Fitted wardrobe' },
+  { src: '/gallery/IMG_0527.jpg', alt: 'Fitted wardrobe' },
+  { src: '/gallery/IMG_0528.jpg', alt: 'Fitted wardrobe' },
+  { src: '/gallery/IMG_0597.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0600.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0601.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0663.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0697.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0698.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0699.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0736.jpg', alt: 'Wood flooring installation' },
+  { src: '/gallery/IMG_0797.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0798.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0799.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0851.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0852.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0862.jpg', alt: 'House renovation' },
+  { src: '/gallery/IMG_0863.jpg', alt: 'House renovation' },
+  { src: '/gallery/IMG_0864.jpg', alt: 'House renovation' },
+  { src: '/gallery/IMG_0865.jpg', alt: 'House renovation' },
+  { src: '/gallery/IMG_0878.jpg', alt: 'Carpentry project' },
+  { src: '/gallery/IMG_0879.jpg', alt: 'Carpentry project' },
+]
 
 export default function Gallery() {
-  const [lightbox, setLightbox] = useState<Photo | null>(null)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+
+  function prev() {
+    setLightboxIndex((i) => (i === null ? 0 : (i - 1 + allPhotos.length) % allPhotos.length))
+  }
+  function next() {
+    setLightboxIndex((i) => (i === null ? 0 : (i + 1) % allPhotos.length))
+  }
 
   return (
     <>
       <Hero
         h1="Gallery"
         intro="Wondering what we can do? The gallery is the best place to see projects we've completed across Portishead and beyond."
-        imageSrc="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80"
-        imageAlt="White kitchen gallery hero"
+        imageSrc="/gallery/IMG_0320.jpg"
+        imageAlt="Kitchen installation by Total Carpentry Services"
       />
 
       <section className="py-16 px-4">
@@ -64,40 +65,63 @@ export default function Gallery() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">Past Projects</h2>
             <p className="text-[#d1d5db] max-w-2xl mx-auto leading-relaxed">
-              From bespoke wardrobes to full renovations, extensions, kitchens and flooring, each project reflects our carpenters' craft and our commitment to a great result.
+              From bespoke wardrobes to full renovations, kitchens and flooring, each project reflects our carpenters' craft and our commitment to a great result.
             </p>
           </div>
 
-          <h3 className="text-xl font-bold text-white mb-4">Kitchen &amp; General Carpentry</h3>
-          <PhotoGrid photos={kitchenPhotos} onOpen={setLightbox} />
-
-          <h3 className="text-xl font-bold text-white mt-12 mb-4">Staircases &amp; Custom Joinery</h3>
-          <PhotoGrid photos={staircasePhotos} onOpen={setLightbox} />
-
-          <h3 className="text-xl font-bold text-white mt-12 mb-4">Extension &amp; Framing Work</h3>
-          <PhotoGrid photos={extensionPhotos} onOpen={setLightbox} />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {allPhotos.map((p, i) => (
+              <button
+                key={i}
+                onClick={() => setLightboxIndex(i)}
+                className="overflow-hidden rounded-lg aspect-square group cursor-zoom-in"
+              >
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Lightbox */}
-      {lightbox && (
+      {lightboxIndex !== null && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={() => setLightbox(null)}
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          onClick={() => setLightboxIndex(null)}
         >
           <button
-            onClick={() => setLightbox(null)}
-            className="absolute top-4 right-4 text-white hover:text-[#dead1f]"
+            onClick={() => setLightboxIndex(null)}
+            className="absolute top-4 right-4 text-white hover:text-[#dead1f] z-10"
             aria-label="Close"
           >
             <X size={32} />
           </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); prev() }}
+            className="absolute left-4 text-white hover:text-[#dead1f] z-10 p-2"
+            aria-label="Previous"
+          >
+            <ChevronLeft size={40} />
+          </button>
           <img
-            src={lightbox.src}
-            alt={lightbox.alt}
+            src={allPhotos[lightboxIndex].src}
+            alt={allPhotos[lightboxIndex].alt}
             className="max-w-full max-h-[90vh] rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
+          <button
+            onClick={(e) => { e.stopPropagation(); next() }}
+            className="absolute right-4 text-white hover:text-[#dead1f] z-10 p-2"
+            aria-label="Next"
+          >
+            <ChevronRight size={40} />
+          </button>
+          <span className="absolute bottom-4 text-white/60 text-sm">
+            {lightboxIndex + 1} / {allPhotos.length}
+          </span>
         </div>
       )}
 
