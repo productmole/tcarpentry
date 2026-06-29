@@ -19,7 +19,6 @@ export default function Home() {
         intro="House Renovations & Bespoke Carpentry by Total Carpentry Services"
         primaryCTA={{ label: 'Contact Us', to: '/contact' }}
         secondaryCTA={{ label: 'Our Services', to: '/services' }}
-        stockBg
       />
 
       {/* Welcome / What we do */}

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import Hero from '../../components/Hero'
 import ContactCTA from '../../components/ContactCTA'
-import StockImage from '../../components/StockImage'
 import { Phone } from 'lucide-react'
 
 interface Section {
@@ -17,11 +16,10 @@ interface BlogPostProps {
   intro: string
   secondaryImg?: string
   secondaryImgAlt?: string
-  secondaryImgIsStock?: boolean
   sections: Section[]
 }
 
-export default function BlogTemplate({ h1, heroImg, heroImgAlt, intro, secondaryImg, secondaryImgAlt, secondaryImgIsStock, sections }: BlogPostProps) {
+export default function BlogTemplate({ h1, heroImg, heroImgAlt, intro, secondaryImg, secondaryImgAlt, sections }: BlogPostProps) {
   return (
     <>
       <Hero h1={h1} imageSrc={heroImg} imageAlt={heroImgAlt} />
@@ -32,11 +30,7 @@ export default function BlogTemplate({ h1, heroImg, heroImgAlt, intro, secondary
 
           {secondaryImg && (
             <div className="rounded-xl overflow-hidden shadow-lg mb-10">
-              {secondaryImgIsStock ? (
-                <StockImage src={secondaryImg} alt={secondaryImgAlt ?? ''} className="w-full h-72 object-cover" />
-              ) : (
-                <img src={secondaryImg} alt={secondaryImgAlt ?? ''} className="w-full h-72 object-cover" />
-              )}
+              <img src={secondaryImg} alt={secondaryImgAlt ?? ''} className="w-full h-72 object-cover" />
             </div>
           )}
 

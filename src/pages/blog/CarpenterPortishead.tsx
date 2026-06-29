@@ -7,9 +7,8 @@ export default function CarpenterPortishead() {
       heroImg="/gallery/IMG_0851.jpg"
       heroImgAlt="Carpentry work by Total Carpentry Services in Portishead"
       intro="Choosing the right carpenter can be the difference between a home improvement that truly transforms your space and one that disappoints. In and around Portishead, homeowners have come to rely on Total Carpentry Services for quality, reliability and workmanship that stands the test of time."
-      secondaryImg="https://images.unsplash.com/photo-1565538810643-b5bdb0cc31b1?w=800&q=80"
-      secondaryImgAlt="Quality carpentry detail"
-      secondaryImgIsStock
+      secondaryImg="/gallery/IMG_0852.jpg"
+      secondaryImgAlt="Carpentry detail by Total Carpentry Services"
       sections={[
         {
           heading: 'The Benefits of Hiring Experienced Carpenters',

@@ -1,7 +1,6 @@
 import Hero from '../../components/Hero'
 import FAQAccordion from '../../components/FAQAccordion'
 import ContactCTA from '../../components/ContactCTA'
-import StockImage from '../../components/StockImage'
 
 interface BodySection {
   heading: string
@@ -10,7 +9,6 @@ interface BodySection {
   imgSrc?: string
   imgAlt?: string
   imgRight?: boolean
-  imgIsStock?: boolean
 }
 
 interface FAQ {
@@ -62,11 +60,7 @@ export default function ServiceTemplate({
             </div>
             {section.imgSrc && (
               <div className={`rounded-xl overflow-hidden shadow-lg ${section.imgRight ? 'order-2' : 'order-2 md:order-1'}`}>
-                {section.imgIsStock ? (
-                  <StockImage src={section.imgSrc} alt={section.imgAlt ?? section.heading} className="w-full h-80 object-cover" />
-                ) : (
-                  <img src={section.imgSrc} alt={section.imgAlt ?? section.heading} className="w-full h-80 object-cover" />
-                )}
+                <img src={section.imgSrc} alt={section.imgAlt ?? section.heading} className="w-full h-80 object-cover" />
               </div>
             )}
           </div>
