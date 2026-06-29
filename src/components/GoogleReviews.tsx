@@ -1,7 +1,6 @@
 // TODO: replace hardcoded data with Google Places API call once API key and Place ID are confirmed with Dave.
 
 import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 // replace with Dave's Google Business Profile URL
 const GOOGLE_REVIEWS_URL = 'https://g.page/r/PLACEHOLDER/review'
