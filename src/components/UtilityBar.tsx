@@ -1,4 +1,4 @@
-import { Phone, MessageCircle } from 'lucide-react'
+import { Phone } from 'lucide-react'
 
 function FacebookIcon() {
   return (
@@ -23,15 +23,6 @@ export default function UtilityBar() {
     <div className="bg-[#03071a] text-white text-sm py-2">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-4">
-          <a
-            href="https://wa.me/447834772046"
-            className="flex items-center gap-1.5 hover:text-[#dead1f] transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MessageCircle size={15} />
-            <span>WhatsApp Us</span>
-          </a>
           <a
             href="tel:07834772046"
             className="flex items-center gap-1.5 hover:text-[#dead1f] transition-colors"
