@@ -35,11 +35,15 @@ export default function Home() {
             <p className="text-[#d1d5db] leading-relaxed mb-6">
               For dependable, skilled and imaginative carpentry in North Somerset, talk to us. We specialise in new kitchen installations, value-adding home renovations and a wide choice of laminate and wood flooring, and we design and build fitted wardrobes to suit any bedroom and any taste.
             </p>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {['City & Guilds', 'Howdens', 'Quick-Step'].map((b) => (
-                <span key={b} className="bg-[#111827] border border-[#2d3748] text-white text-xs font-medium px-3 py-1.5 rounded">
-                  {b}
-                </span>
+            <div className="flex flex-wrap items-center gap-8 mb-6">
+              {[
+                { src: '/City-and-Guilds.svg', alt: 'City & Guilds' },
+                { src: '/howdens.svg', alt: 'Howdens' },
+                { src: '/quick-step-light.svg', alt: 'Quick-Step' },
+              ].map(({ src, alt }) => (
+                <div key={alt} className="h-10 flex items-center">
+                  <img src={src} alt={alt} className="max-h-full w-auto object-contain" />
+                </div>
               ))}
             </div>
             <Link
