@@ -99,7 +99,7 @@ export default function Hero({
             <p className="text-lg md:text-xl text-white/80 mb-8 max-w-xl text-left">{intro}</p>
           )}
           {(primaryCTA || secondaryCTA) && (
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
+            <div className="flex flex-row flex-wrap gap-4 items-center">
               {primaryCTA && (
                 <Link
                   to={primaryCTA.to}
