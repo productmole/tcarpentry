@@ -68,9 +68,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/gallery/IMG_0601.jpg"
-              alt="Carpentry work by Total Carpentry Services"
-              className="w-full h-80 object-cover"
+              src="/gallery/IMG_0663.jpg"
+              alt="Bespoke wall panelling by Total Carpentry Services"
+              className="w-full h-80 object-cover object-[center_40%]"
             />
           </div>
           <div className="order-1 md:order-2">
@@ -100,9 +100,9 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-white mb-8 text-center">What We Can Do for You</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { label: 'Fitted Wardrobes', to: '/services/fitted-wardrobes', img: '/gallery/IMG_0851.jpg' },
-              { label: 'House Renovations', to: '/services/house-renovations', img: '/gallery/IMG_0862.jpg' },
-              { label: 'Wood Flooring', to: '/services/wood-flooring-installations', img: '/gallery/IMG_0697.jpg' },
+              { label: 'Fitted Wardrobes', to: '/services/fitted-wardrobes', img: '/gallery/IMG_0852.jpg', pos: 'center' },
+              { label: 'House Renovations', to: '/services/house-renovations', img: '/gallery/IMG_0862.jpg', pos: 'center' },
+              { label: 'Wood Flooring', to: '/services/wood-flooring-installations', img: '/gallery/IMG_0322.jpg', pos: '35% 100%' },
             ].map((card) => (
               <Link
                 key={card.to}
@@ -113,6 +113,7 @@ export default function Home() {
                   <img
                     src={card.img}
                     alt={card.label}
+                    style={{ objectPosition: card.pos }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -159,8 +160,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/gallery/IMG_0663.jpg"
-              alt="Recent carpentry project by Total Carpentry Services"
+              src="/gallery/IMG_0601.jpg"
+              alt="Bespoke storage bench by Total Carpentry Services"
               className="w-full h-80 object-cover"
             />
           </div>

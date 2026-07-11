@@ -2,8 +2,10 @@
 
 import { useRef, useState } from 'react'
 
-// replace with Dave's Google Business Profile URL
-const GOOGLE_REVIEWS_URL = 'https://g.page/r/PLACEHOLDER/review'
+// Clean, stable search that surfaces Dave's Google reviews panel.
+// For a direct "all reviews" deep link, swap in the Google Business Profile
+// share link / Place ID once Dave provides it.
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Total+Carpentry+Portishead+reviews'
 
 interface Review {
   name: string
