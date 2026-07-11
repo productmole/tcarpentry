@@ -4,10 +4,10 @@ export default function WoodFlooringPortishead() {
   return (
     <BlogTemplate
       h1="Wood Flooring Installation in Portishead Warmth, Character & Lasting Value"
-      heroImg="/gallery/IMG_0736.jpg"
+      heroImg="/gallery/IMG_0697.jpg"
       heroImgAlt="Wood flooring installation in Portishead by Total Carpentry Services"
       intro="Wood flooring is one of the most popular and enduring home improvements and for good reason. It adds warmth, character and real value to any property. Total Carpentry Services fits solid timber and laminate floors across Portishead and North Somerset."
-      secondaryImg="/gallery/IMG_0799.jpg"
+      secondaryImg="/gallery/IMG_0698.jpg"
       secondaryImgAlt="Wood flooring detail by Total Carpentry Services"
       sections={[
         {

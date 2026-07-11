@@ -4,10 +4,10 @@ export default function FittedWardrobesPortishead() {
   return (
     <BlogTemplate
       h1="Fitted Wardrobes in Portishead Transform Your Bedroom Storage"
-      heroImg="/gallery/IMG_0518.jpg"
+      heroImg="/gallery/IMG_0851.jpg"
       heroImgAlt="Fitted wardrobes by Total Carpentry Services in Portishead"
       intro="A well-designed fitted wardrobe doesn't just store your clothes it transforms how your bedroom feels and functions. Total Carpentry Services designs and installs bespoke fitted wardrobes for homeowners across Portishead and North Somerset."
-      secondaryImg="/gallery/IMG_0527.jpg"
+      secondaryImg="/gallery/IMG_0878.jpg"
       secondaryImgAlt="Fitted wardrobe interior by Total Carpentry Services"
       sections={[
         {

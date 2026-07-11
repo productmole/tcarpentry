@@ -11,7 +11,7 @@ const posts = [
   {
     title: 'Fitted Wardrobes in Portishead Transform Your Bedroom Storage',
     slug: '/blog/fitted-wardrobes-in-portishead',
-    img: '/gallery/IMG_0518.jpg',
+    img: '/gallery/IMG_0852.jpg',
     excerpt: 'A well-designed fitted wardrobe transforms how your bedroom feels and functions. Discover our bespoke design and install service.',
   },
   {
@@ -29,7 +29,7 @@ const posts = [
   {
     title: 'Wood Flooring Installation in Portishead Warmth, Character & Lasting Value',
     slug: '/blog/wood-flooring-installation-in-portishead',
-    img: '/gallery/IMG_0736.jpg',
+    img: '/gallery/IMG_0697.jpg',
     excerpt: 'Wood flooring adds warmth, character and real value to any property. Learn about solid timber and laminate options.',
   },
 ]

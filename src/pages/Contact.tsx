@@ -9,8 +9,8 @@ export default function Contact() {
       <Hero
         h1="Contact Us"
         intro="Thinking about improving your home? Whether it's bespoke fitted wardrobes, a full renovation or a brand-new kitchen, getting in touch couldn't be simpler."
-        imageSrc="/gallery/IMG_0699.jpg"
-        imageAlt="Carpentry work by Total Carpentry Services"
+        imageSrc="/gallery/IMG_0528.jpg"
+        imageAlt="Kitchen installation by Total Carpentry Services"
       />
 
       <section className="py-16 px-4">
@@ -38,7 +38,7 @@ export default function Contact() {
                 <Mail size={18} className="text-[#dead1f] shrink-0 mt-0.5" />
                 <div>
                   <div className="font-semibold text-white text-sm mb-1">Email</div>
-                  <span className="text-[#d1d5db] text-sm italic">Email address to be confirmed please call or use the form</span>
+                  <a href="mailto:info@tcarpentry.co.uk" className="text-[#d1d5db] text-sm hover:text-[#dead1f]">info@tcarpentry.co.uk</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">

@@ -4,10 +4,10 @@ import ContactForm from '../components/ContactForm'
 import GoogleReviews from '../components/GoogleReviews'
 
 const capabilities = [
-  '1st & 2nd Fix Carpentry', 'Alcoves', 'Bathroom Upgrades', 'Bespoke Fitted Wardrobes',
+  '1st & 2nd Fix Carpentry', 'Alcoves', 'Bespoke Fitted Wardrobes',
   'Carpentry & Joinery', 'Ceilings & Flooring', 'Kitchen Installations',
   'Laminate Flooring Installation', 'Loft Hatches', 'MDF Works', 'Refurbishments',
-  'House Renovations', 'Shelving', 'Skirting Boards', 'Structural Alterations', 'Wood Flooring Installation',
+  'House Renovations', 'Shelving', 'Skirting Boards', 'Wood Flooring Installation',
 ]
 
 export default function Home() {
@@ -100,9 +100,9 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-white mb-8 text-center">What We Can Do for You</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { label: 'Fitted Wardrobes', to: '/services/fitted-wardrobes', img: '/gallery/IMG_0518.jpg' },
+              { label: 'Fitted Wardrobes', to: '/services/fitted-wardrobes', img: '/gallery/IMG_0851.jpg' },
               { label: 'House Renovations', to: '/services/house-renovations', img: '/gallery/IMG_0862.jpg' },
-              { label: 'Wood Flooring', to: '/services/wood-flooring-installations', img: '/gallery/IMG_0736.jpg' },
+              { label: 'Wood Flooring', to: '/services/wood-flooring-installations', img: '/gallery/IMG_0697.jpg' },
             ].map((card) => (
               <Link
                 key={card.to}

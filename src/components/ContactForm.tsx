@@ -4,7 +4,7 @@ interface Props {
   formId?: string
 }
 
-export default function ContactForm({ formId = 'YOUR_FORMSPREE_ID' }: Props) {
+export default function ContactForm({ formId = 'xpqvaqrl' }: Props) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -29,8 +29,17 @@ export default function ContactForm({ formId = 'YOUR_FORMSPREE_ID' }: Props) {
     }
   }
 
+  if (status === 'success') {
+    return (
+      <div className="bg-[#111827] border border-[#2d3748] rounded-lg p-6 text-center">
+        <p className="text-[#dead1f] font-bold text-lg mb-1">Thanks, message sent</p>
+        <p className="text-[#d1d5db] text-sm">We'll be in touch shortly.</p>
+      </div>
+    )
+  }
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4" noValidate={false}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium mb-1" htmlFor="name">Name *</label>
@@ -79,9 +88,6 @@ export default function ContactForm({ formId = 'YOUR_FORMSPREE_ID' }: Props) {
       >
         {status === 'sending' ? 'Sending…' : 'Send Message'}
       </button>
-      {status === 'success' && (
-        <p className="text-green-700 font-medium">Thank you we'll be in touch shortly!</p>
-      )}
       {status === 'error' && (
         <p className="text-red-600">Something went wrong. Please call us on 07834 772046.</p>
       )}

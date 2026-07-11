@@ -5,7 +5,7 @@ export default function WoodFlooring() {
     <ServiceTemplate
       heroH1="Wood Flooring Installation in Portishead"
       heroIntro="Wood flooring is more than a surface it sets the character of a room. At Total Carpentry Services we fit solid timber and laminate floors with care and precision for a result that's both hard-wearing and elegant. Serving Portishead and the surrounding area, we create spaces where practicality meets timeless design."
-      heroImg="/gallery/IMG_0736.jpg"
+      heroImg="/gallery/IMG_0697.jpg"
       heroImgAlt="Wood flooring installation by Total Carpentry Services"
       sections={[
         {
@@ -20,7 +20,7 @@ export default function WoodFlooring() {
             'Installation expert fitting with close attention to pattern and finish',
             'Aftercare and Maintenance Advice guidance on keeping your floor in perfect condition',
           ],
-          imgSrc: '/gallery/IMG_0797.jpg',
+          imgSrc: '/gallery/IMG_0698.jpg',
           imgAlt: 'Wood floor installation process',
           imgRight: false,
         },
@@ -32,8 +32,8 @@ export default function WoodFlooring() {
             'Hypoallergenic Properties easier to keep dust and allergen-free than carpet',
             'Durability and Longevity properly maintained, solid timber floors can last for generations',
           ],
-          imgSrc: '/gallery/IMG_0798.jpg',
-          imgAlt: 'Solid timber floor by Total Carpentry Services',
+          imgSrc: '/gallery/IMG_0322.jpg',
+          imgAlt: 'Solid timber herringbone floor by Total Carpentry Services',
           imgRight: true,
         },
         {
@@ -44,7 +44,7 @@ export default function WoodFlooring() {
             'Durability scratch and stain resistant; ideal for busy households',
             'Versatility in Design wide range of styles, colours and plank widths',
           ],
-          imgSrc: '/gallery/IMG_0799.jpg',
+          imgSrc: '/gallery/IMG_0699.jpg',
           imgAlt: 'Laminate floor installation by Total Carpentry Services',
           imgRight: false,
         },
