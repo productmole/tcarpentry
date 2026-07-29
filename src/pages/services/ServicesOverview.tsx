@@ -4,7 +4,8 @@ import ContactCTA from '../../components/ContactCTA'
 
 const capabilities = [
   '1st & 2nd Fix Carpentry', 'Alcoves', 'Bathroom Upgrades', 'Bespoke Fitted Wardrobes',
-  'Carpentry & Joinery', 'Ceilings & Flooring', 'Fitted Wardrobes', 'Kitchen Installations',
+  'Carpentry & Joinery', 'Ceilings & Flooring', 'Fitted Wardrobes', 'Internal Door Installation',
+  'Kitchen Installations',
   'Laminate Flooring Installation', 'Loft Hatches', 'MDF Works', 'Refurbishments',
   'House Renovations', 'Retrofitting Work', 'Shelving', 'Skirting Boards',
   'Structural Alterations', 'Wood Flooring Installation',
