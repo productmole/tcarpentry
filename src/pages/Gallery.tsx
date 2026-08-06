@@ -88,21 +88,27 @@ export default function Gallery() {
 
       <section className="bg-paper">
         <div className="max-w-6xl mx-auto px-4 py-10 md:py-12">
-          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {photos.map((p, i) => (
               <li key={p.src}>
                 <button
                   onClick={() => setIndex(i)}
-                  className="block w-full overflow-hidden rounded-xl border border-line aspect-square group cursor-zoom-in"
+                  className="group card overflow-hidden w-full text-left cursor-zoom-in hover:border-ochre transition-colors"
                   aria-label={`Enlarge photo: ${p.alt}`}
                 >
-                  <img
-                    src={p.src}
-                    alt={p.alt}
-                    loading={i < 4 ? 'eager' : 'lazy'}
-                    width="512" height="512"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  <span className="block overflow-hidden aspect-[4/3]">
+                    <img
+                      src={p.src}
+                      alt={p.alt}
+                      loading={i < 3 ? 'eager' : 'lazy'}
+                      width="512" height="384"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </span>
+                  {/* Dark caption bar */}
+                  <span className="block px-4 py-3 border-t border-line text-sm text-ink-soft leading-snug group-hover:text-ink transition-colors">
+                    {p.alt}
+                  </span>
                 </button>
               </li>
             ))}
