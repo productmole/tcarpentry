@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Star, ShieldCheck, ArrowRight, PhoneCall, PencilRuler, Hammer } from 'lucide-react'
 import GoogleReviews from '../components/GoogleReviews'
 import ContactCTA from '../components/ContactCTA'
-import { SITE, SERVICES } from '../lib/site'
+import { SERVICES } from '../lib/site'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
 
 const accreditations = [
@@ -52,12 +52,11 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-4 pt-10 pb-14 md:pt-16 md:pb-20 grid lg:grid-cols-2 gap-x-12 gap-y-10 lg:items-center">
           {/* Copy + CTAs */}
           <div className="order-1">
-            <p className="kicker-ondark mb-4">Carpentry &amp; joinery · Portishead</p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.4rem] font-bold text-ink leading-[1.05] mb-5">
               Carpenter in Portishead and the Surrounding Areas
             </h1>
             <p className="text-lg text-ink-soft leading-relaxed max-w-xl mb-7">
-              Kitchens, fitted wardrobes, wood flooring and full home renovations — built by hand across North Somerset since {SITE.established}.
+              Total Carpentry — Portishead’s 5-star rated carpenters for kitchens, fitted wardrobes, wood flooring and full renovations.
             </p>
             <div id="hero-ctas" className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-7">
               <Link to="/contact" className="btn btn-primary">
