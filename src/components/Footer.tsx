@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Phone, MapPin, ArrowUp } from 'lucide-react'
+import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
+import { SITE } from '../lib/site'
 
 function FacebookIcon() {
   return (
@@ -8,7 +9,6 @@ function FacebookIcon() {
     </svg>
   )
 }
-
 function InstagramIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -19,97 +19,96 @@ function InstagramIcon() {
   )
 }
 
+const footerNav = [
+  ['Home', '/'],
+  ['Services', '/services'],
+  ['Gallery', '/gallery'],
+  ['Reviews', '/reviews'],
+  ['Areas We Cover', '/areas-we-cover'],
+  ['Blog', '/blog'],
+  ['Contact', '/contact'],
+]
+
 export default function Footer() {
   return (
-    <footer className="bg-[#03071a] text-white/80 text-sm">
-      <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Brand */}
-        <div>
-          <img src="/tc-logo-light.svg" alt="Total Carpentry Services" className="h-10 w-auto mb-3" />
-          <p className="text-white/60 text-sm leading-relaxed mb-4">
-            Established 2014. Trusted local carpentry across Portishead &amp; North Somerset.
+    <footer className="bg-forest text-ink/85">
+      {/* Three columns — brand left, quick links centre, contact right */}
+      <div className="max-w-6xl mx-auto px-4 pt-14 pb-10 grid gap-10 md:grid-cols-3">
+        {/* Col 1 — brand + blurb + social */}
+        <div className="max-w-sm">
+          <img src="/tc-logo-light.svg" alt="Total Carpentry" className="h-11 w-auto mb-4" width="220" height="76" />
+          <p className="text-ink/70 leading-relaxed mb-5">
+            Joinery and home improvements, made and fitted in Portishead since {SITE.established}.
           </p>
-          <div className="flex gap-3">
-            <a
-              href="https://www.facebook.com/totalcarpentry"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#dead1f] transition-colors"
-              aria-label="Facebook"
-            >
+          <div className="flex items-center gap-3">
+            <a href={SITE.facebook} target="_blank" rel="noopener noreferrer" aria-label="Total Carpentry on Facebook"
+               className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/15 hover:border-ochre hover:text-ochre transition-colors">
               <FacebookIcon />
             </a>
-            <a
-              href="https://www.instagram.com/totalcarpentryportishead/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#dead1f] transition-colors"
-              aria-label="Instagram"
-            >
+            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" aria-label="Total Carpentry on Instagram"
+               className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/15 hover:border-ochre hover:text-ochre transition-colors">
               <InstagramIcon />
             </a>
           </div>
         </div>
 
-        {/* Nav */}
-        <div>
-          <div className="text-white font-semibold mb-3">Quick Links</div>
-          <ul className="space-y-2">
-            {[
-              ['Home', '/'],
-              ['Our Services', '/services'],
-              ['Reviews', '/reviews'],
-              ['Gallery', '/gallery'],
-              ['Areas We Cover', '/areas-we-cover'],
-              ['Blog', '/blog'],
-              ['Contact Us', '/contact'],
-            ].map(([label, to]) => (
+        {/* Col 2 — quick links */}
+        <nav aria-label="Footer">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ochre mb-4">Quick links</h2>
+          <ul className="space-y-2 text-sm">
+            {footerNav.map(([label, to]) => (
               <li key={to}>
-                <Link to={to} className="hover:text-[#dead1f] transition-colors">
+                <Link to={to} className="inline-block py-1 text-ink/80 hover:text-ochre transition-colors">
                   {label}
                 </Link>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
-        {/* Contact */}
+        {/* Col 3 — contact details */}
         <div>
-          <div className="text-white font-semibold mb-3">Contact</div>
-          <ul className="space-y-2">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ochre mb-4">Get in touch</h2>
+          <ul className="space-y-3 text-sm">
             <li>
-              <a href="tel:01275844094" className="flex items-center gap-2 hover:text-[#dead1f] transition-colors">
-                <Phone size={14} />01275 844094
+              <a href={`tel:${SITE.phonePrimary.tel}`} className="inline-flex items-center gap-2 hover:text-ochre transition-colors">
+                <Phone size={15} aria-hidden="true" className="shrink-0" />{SITE.phonePrimary.display}
               </a>
             </li>
             <li>
-              <a href="tel:07834772046" className="flex items-center gap-2 hover:text-[#dead1f] transition-colors">
-                <Phone size={14} />07834 772046
+              <a href={`tel:${SITE.phoneSecondary.tel}`} className="inline-flex items-center gap-2 hover:text-ochre transition-colors">
+                <Phone size={15} aria-hidden="true" className="shrink-0" />{SITE.phoneSecondary.display}
               </a>
             </li>
-            <li className="flex items-start gap-2">
-              <MapPin size={14} className="shrink-0 mt-0.5" />
-              <span>3 Bunting Ln, Portishead, Bristol, BS20 7PZ</span>
+            <li>
+              <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-ochre transition-colors wrap-anywhere">
+                <Mail size={15} aria-hidden="true" className="shrink-0" />{SITE.email}
+              </a>
+            </li>
+            <li>
+              <address className="flex items-start gap-2 not-italic text-ink/80">
+                <MapPin size={15} aria-hidden="true" className="shrink-0 mt-0.5" />
+                <span>{SITE.address.street}, {SITE.address.town}, {SITE.address.city}, {SITE.address.postcode}</span>
+              </address>
             </li>
           </ul>
         </div>
       </div>
 
+      {/* Bottom bar — legal + back to top */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between text-white/40 text-xs">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-ink/55">
           <p>
-            This site is protected by reCAPTCHA and the Google{' '}
-            <a href="https://policies.google.com/privacy" className="underline hover:text-white/60" target="_blank" rel="noopener noreferrer">Privacy Policy</a>{' '}
-            and{' '}
-            <a href="https://policies.google.com/terms" className="underline hover:text-white/60" target="_blank" rel="noopener noreferrer">Terms of Service</a>{' '}
-            apply.
+            © {new Date().getFullYear()} Total Carpentry Services. This site uses reCAPTCHA; the Google{' '}
+            <a href="https://policies.google.com/privacy" className="underline hover:text-ink/80" target="_blank" rel="noopener noreferrer">Privacy Policy</a>{' '}and{' '}
+            <a href="https://policies.google.com/terms" className="underline hover:text-ink/80" target="_blank" rel="noopener noreferrer">Terms</a>{' '}apply.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-1 hover:text-white/80 transition-colors"
+            className="inline-flex items-center gap-1.5 py-1 hover:text-ink transition-colors self-start"
           >
-            <ArrowUp size={12} />
-            Back to Top
+            <ArrowUp size={14} aria-hidden="true" />
+            Back to top
           </button>
         </div>
       </div>
