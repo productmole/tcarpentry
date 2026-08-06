@@ -1,17 +1,46 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { SITE } from '../lib/site'
 
 interface Props {
   formId?: string
 }
 
+type Status = 'idle' | 'sending' | 'success' | 'error'
+type Errors = Partial<Record<'name' | 'email' | 'message', string>>
+
+const fieldClass =
+  'w-full rounded border bg-shell text-ink placeholder-ink-soft/60 px-3.5 py-2.5 text-[15px] ' +
+  'focus-visible:ring-2 focus-visible:ring-ochre focus-visible:border-ochre transition'
+
 export default function ContactForm({ formId = 'xpqvaqrl' }: Props) {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<Status>('idle')
+  const [errors, setErrors] = useState<Errors>({})
+  const formRef = useRef<HTMLFormElement>(null)
+
+  function validate(data: FormData): Errors {
+    const next: Errors = {}
+    const name = String(data.get('name') || '').trim()
+    const email = String(data.get('email') || '').trim()
+    const message = String(data.get('message') || '').trim()
+    if (!name) next.name = 'Please tell us your name.'
+    if (!email) next.email = 'We need an email address to reply.'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = 'That email address doesn’t look right.'
+    if (!message) next.message = 'Let us know what you’d like doing.'
+    return next
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus('sending')
     const form = e.currentTarget
     const data = new FormData(form)
+    const found = validate(data)
+    setErrors(found)
+    if (Object.keys(found).length > 0) {
+      const first = Object.keys(found)[0]
+      form.querySelector<HTMLElement>(`[name="${first}"]`)?.focus()
+      return
+    }
+    setStatus('sending')
     try {
       const res = await fetch(`https://formspree.io/f/${formId}`, {
         method: 'POST',
@@ -31,66 +60,76 @@ export default function ContactForm({ formId = 'xpqvaqrl' }: Props) {
 
   if (status === 'success') {
     return (
-      <div className="bg-[#111827] border border-[#2d3748] rounded-lg p-6 text-center">
-        <p className="text-[#dead1f] font-bold text-lg mb-1">Thanks, message sent</p>
-        <p className="text-[#d1d5db] text-sm">We'll be in touch shortly.</p>
+      <div className="card p-6" role="status">
+        <p className="font-display text-xl font-semibold text-ochre mb-1">Message on its way</p>
+        <p className="text-ink-soft">
+          Thanks — your details have reached us and we’ll come back to you within a working day. In a hurry?
+          Call {SITE.phonePrimary.display}.
+        </p>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" noValidate={false}>
+    <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="name">Name *</label>
+          <label htmlFor="name" className="block text-sm font-semibold mb-1.5">Your name</label>
           <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            className="w-full bg-[#111827] border border-[#2d3748] text-white placeholder-gray-500 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#dead1f]"
+            id="name" name="name" type="text" autoComplete="name" required
+            aria-required="true"
+            aria-invalid={errors.name ? 'true' : undefined}
+            aria-describedby={errors.name ? 'name-error' : undefined}
+            className={`${fieldClass} ${errors.name ? 'border-rust' : 'border-line'}`}
           />
+          {errors.name && <p id="name-error" role="alert" className="mt-1.5 text-sm text-rust">{errors.name}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="email">Email address *</label>
+          <label htmlFor="email" className="block text-sm font-semibold mb-1.5">Email address</label>
           <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            className="w-full bg-[#111827] border border-[#2d3748] text-white placeholder-gray-500 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#dead1f]"
+            id="email" name="email" type="email" autoComplete="email" inputMode="email" required
+            aria-required="true"
+            aria-invalid={errors.email ? 'true' : undefined}
+            aria-describedby={errors.email ? 'email-error' : undefined}
+            className={`${fieldClass} ${errors.email ? 'border-rust' : 'border-line'}`}
           />
+          {errors.email && <p id="email-error" role="alert" className="mt-1.5 text-sm text-rust">{errors.email}</p>}
         </div>
       </div>
+
       <div>
-        <label className="block text-sm font-medium mb-1" htmlFor="phone">Phone number</label>
+        <label htmlFor="phone" className="block text-sm font-semibold mb-1.5">
+          Phone number <span className="font-normal text-ink-soft">(optional)</span>
+        </label>
         <input
-          id="phone"
-          name="phone"
-          type="tel"
-          className="w-full bg-[#111827] border border-[#2d3748] text-white placeholder-gray-500 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#dead1f]"
+          id="phone" name="phone" type="tel" autoComplete="tel" inputMode="tel"
+          className={`${fieldClass} border-line`}
         />
       </div>
+
       <div>
-        <label className="block text-sm font-medium mb-1" htmlFor="message">Message *</label>
+        <label htmlFor="message" className="block text-sm font-semibold mb-1.5">What can we help with?</label>
         <textarea
-          id="message"
-          name="message"
-          required
-          rows={5}
-          className="w-full bg-[#111827] border border-[#2d3748] text-white placeholder-gray-500 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#dead1f] resize-y"
+          id="message" name="message" rows={5} required
+          aria-required="true"
+          aria-invalid={errors.message ? 'true' : undefined}
+          aria-describedby={errors.message ? 'message-error' : undefined}
+          className={`${fieldClass} resize-y ${errors.message ? 'border-rust' : 'border-line'}`}
         />
+        {errors.message && <p id="message-error" role="alert" className="mt-1.5 text-sm text-rust">{errors.message}</p>}
       </div>
-      <button
-        type="submit"
-        disabled={status === 'sending'}
-        className="bg-[#dead1f] hover:bg-[#bd931a] disabled:opacity-60 text-white font-semibold px-8 py-3 rounded transition-colors w-full sm:w-auto"
-      >
+
+      <button type="submit" disabled={status === 'sending'} className="btn btn-primary w-full sm:w-auto">
         {status === 'sending' ? 'Sending…' : 'Send Message'}
       </button>
-      {status === 'error' && (
-        <p className="text-red-600">Something went wrong. Please call us on 07834 772046.</p>
-      )}
+
+      <div aria-live="assertive">
+        {status === 'error' && (
+          <p role="alert" className="text-rust font-medium">
+            That didn’t send. Please try again, or call us on {SITE.phonePrimary.display}.
+          </p>
+        )}
+      </div>
     </form>
   )
 }
