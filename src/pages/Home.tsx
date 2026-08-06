@@ -1,213 +1,236 @@
 import { Link } from 'react-router-dom'
-import Hero from '../components/Hero'
-import ContactForm from '../components/ContactForm'
+import { Star, ShieldCheck, ArrowRight, PhoneCall, PencilRuler, Hammer } from 'lucide-react'
 import GoogleReviews from '../components/GoogleReviews'
+import ContactCTA from '../components/ContactCTA'
+import { SITE, SERVICES } from '../lib/site'
+import { useDocumentMeta } from '../lib/useDocumentMeta'
 
-const capabilities = [
-  '1st & 2nd Fix Carpentry', 'Alcoves', 'Bespoke Fitted Wardrobes',
-  'Carpentry & Joinery', 'Ceilings & Flooring', 'Kitchen Installations',
-  'Laminate Flooring Installation', 'Loft Hatches', 'MDF Works', 'Refurbishments',
-  'House Renovations', 'Shelving', 'Skirting Boards', 'Wood Flooring Installation',
+const accreditations = [
+  { src: '/img/accreditation-city-and-guilds.svg', alt: 'City & Guilds qualified' },
+  { src: '/img/partner-howdens.svg', alt: 'Howdens trade partner' },
+  { src: '/img/partner-quick-step.svg', alt: 'Quick-Step flooring installer' },
+]
+
+const mosaic = [
+  { src: '/img/kitchen-fit-portishead-02.jpg', alt: 'Fitted kitchen units and worktop in a Portishead home', span: true },
+  { src: '/img/fitted-wardrobe-02.jpg', alt: 'Fitted wardrobe with sliding doors' },
+  { src: '/img/wall-panelling-01.jpg', alt: 'Bespoke wall panelling in a hallway' },
+  { src: '/img/timber-floor-detail-01.jpg', alt: 'Solid timber floor showing its grain' },
+  { src: '/img/understairs-storage-01.jpg', alt: 'Bespoke understairs storage' },
+  { src: '/img/home-renovation-02.jpg', alt: 'Renovated room with new skirting and trim' },
+]
+
+const steps = [
+  { Icon: PhoneCall, title: 'Get in touch', body: 'Call, WhatsApp or send the form with a rough idea of the job. No detail is too small to start with.' },
+  { Icon: PencilRuler, title: 'We visit and quote', body: 'We come and measure up, talk through options, and give you a clear, fixed price — free, with no pressure.' },
+  { Icon: Hammer, title: 'We build and guarantee', body: 'We do the work tidily, keep you posted, and back it with a one-year workmanship guarantee.' },
 ]
 
 export default function Home() {
+  useDocumentMeta({
+    title: 'Total Carpentry — Joinery & Home Improvements in Portishead',
+    description:
+      'Family-run Portishead carpenters since 2014. Kitchens, fitted wardrobes, wood flooring and home renovations across North Somerset, under a one-year guarantee. Free quotes.',
+  })
+
   return (
     <>
-      {/* Hero */}
-      <Hero
-        h1="Carpenter in Portishead & the Surrounding Areas"
-        intro="House Renovations & Bespoke Carpentry by Total Carpentry Services"
-        primaryCTA={{ label: 'Contact Us', to: '/contact' }}
-        secondaryCTA={{ label: 'Our Services', to: '/services' }}
-      />
+      {/* HERO — dark navy with a dimmed project photo behind; copy + CTA pair
+          left, a 2x2 service icon-card grid right */}
+      <section className="relative overflow-hidden bg-paper">
+        {/* Background photo, held back by a heavy navy overlay so text stays legible */}
+        <img
+          src="/img/kitchen-fit-portishead-01.jpg"
+          alt="" aria-hidden="true" fetchPriority="high"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(180deg, rgba(3,7,26,0.86) 0%, rgba(3,7,26,0.93) 100%)' }}
+        />
 
-      {/* Welcome / What we do */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2">What We Do</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Welcome to Total Carpentry Services
-            </h2>
-            <p className="text-[#d1d5db] leading-relaxed mb-6">
-              Founded in 2014, Total Carpentry Services has spent more than a decade transforming and refurbishing homes across Portishead and the wider area. We believe a home should lift your spirits as well as work hard for you balancing comfort, beauty and everyday practicality. Our qualified, experienced team has built its reputation on going the extra mile to deliver home improvements done properly.
+        <div className="relative max-w-6xl mx-auto px-4 pt-10 pb-14 md:pt-16 md:pb-20 grid lg:grid-cols-2 gap-x-12 gap-y-10 lg:items-center">
+          {/* Copy + CTAs */}
+          <div className="order-1">
+            <p className="kicker-ondark mb-4">Carpentry &amp; joinery · Portishead</p>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.4rem] font-bold text-ink leading-[1.05] mb-5">
+              Carpenter in Portishead and the Surrounding Areas
+            </h1>
+            <p className="text-lg text-ink-soft leading-relaxed max-w-xl mb-7">
+              Kitchens, fitted wardrobes, wood flooring and full home renovations — built by hand across North Somerset since {SITE.established}.
             </p>
-            <p className="text-[#d1d5db] leading-relaxed mb-6">
-              For dependable, skilled and imaginative carpentry in North Somerset, talk to us. We specialise in new kitchen installations, value-adding home renovations and a wide choice of laminate and wood flooring, and we design and build fitted wardrobes to suit any bedroom and any taste.
-            </p>
-            <div className="flex flex-wrap items-center gap-8 mb-6">
-              {[
-                { src: '/City-and-Guilds.svg', alt: 'City & Guilds' },
-                { src: '/howdens.svg', alt: 'Howdens' },
-                { src: '/quick-step-light.svg', alt: 'Quick-Step' },
-              ].map(({ src, alt }) => (
-                <div key={alt} className="h-10 flex items-center">
-                  <img src={src} alt={alt} className="max-h-full w-auto object-contain" />
-                </div>
-              ))}
-            </div>
-            <Link
-              to="/contact"
-              className="inline-block bg-[#dead1f] hover:bg-[#bd931a] text-white font-semibold px-6 py-2.5 rounded transition-colors text-sm"
-            >
-              Contact Us
-            </Link>
-          </div>
-          <div className="rounded-xl overflow-hidden shadow-lg">
-            <img
-              src="/gallery/IMG_0320.jpg"
-              alt="Kitchen installation by Total Carpentry Services"
-              className="w-full h-80 object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* About / Residential Carpentry */}
-      <section className="py-16 px-4 bg-[#111827]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-lg">
-            <img
-              src="/gallery/IMG_0663.jpg"
-              alt="Bespoke wall panelling by Total Carpentry Services"
-              className="w-full h-80 object-cover object-[center_40%]"
-            />
-          </div>
-          <div className="order-1 md:order-2">
-            <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2">About Us</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Residential Carpentry
-            </h2>
-            <p className="text-[#d1d5db] leading-relaxed mb-4">
-              As a family-run local carpenter, we focus on shaping interiors and integrating new features seamlessly. With over 25 years of combined experience and trade know-how behind us, we've become one of the area's most highly rated home-improvement specialists.
-            </p>
-            <ul className="grid grid-cols-2 gap-1.5 text-sm text-[#d1d5db]">
-              {capabilities.map((c) => (
-                <li key={c} className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#dead1f] shrink-0" />
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Service cards */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2 text-center">Our Work</p>
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">What We Can Do for You</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { label: 'Fitted Wardrobes', to: '/services/fitted-wardrobes', img: '/gallery/IMG_0852.jpg', pos: 'center' },
-              { label: 'House Renovations', to: '/services/house-renovations', img: '/gallery/IMG_0862.jpg', pos: 'center' },
-              { label: 'Wood Flooring', to: '/services/wood-flooring-installations', img: '/gallery/IMG_0322.jpg', pos: '35% 100%' },
-            ].map((card) => (
-              <Link
-                key={card.to}
-                to={card.to}
-                className="group rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-              >
-                <div className="overflow-hidden h-52">
-                  <img
-                    src={card.img}
-                    alt={card.label}
-                    style={{ objectPosition: card.pos }}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="bg-[#111827] text-white px-4 py-3 text-center font-semibold group-hover:bg-[#dead1f] transition-colors">
-                  {card.label}
-                </div>
+            <div id="hero-ctas" className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-7">
+              <Link to="/contact" className="btn btn-primary">
+                Contact Us
               </Link>
+              <Link to="/services" className="inline-flex items-center gap-1.5 font-semibold text-ochre hover:gap-2.5 transition-all">
+                Our Services <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink/75">
+              <span className="inline-flex items-center gap-1.5">
+                <span className="flex" role="img" aria-label="Rated 5 out of 5 on Google">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={16} className="text-ochre" fill="#dead1f" strokeWidth={1.5} aria-hidden="true" />
+                  ))}
+                </span>
+                5.0 across 9 Google reviews
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck size={16} className="text-ochre" aria-hidden="true" /> One-year workmanship guarantee
+              </span>
+            </div>
+          </div>
+
+          {/* 2x2 service icon-card grid */}
+          <ul className="order-2 grid grid-cols-2 gap-3 sm:gap-4">
+            {SERVICES.map((s) => (
+              <li key={s.to}>
+                <Link
+                  to={s.to}
+                  className="group card h-full p-4 sm:p-5 flex flex-col gap-3 hover:border-ochre transition-colors"
+                >
+                  <span className="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-ochre/10 text-ochre shrink-0">
+                    <s.Icon size={26} aria-hidden="true" />
+                  </span>
+                  <span className="font-display text-base sm:text-lg font-semibold text-ink leading-tight group-hover:text-ochre transition-colors">
+                    {s.label}
+                  </span>
+                  <span className="hidden sm:block text-sm text-ink-soft leading-snug">
+                    {s.tagline}
+                  </span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* Kitchen feature */}
-      <section className="py-16 px-4 bg-[#03071a] text-white">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2">The Complete Experience</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">New Kitchen Installations</h2>
-            <p className="text-[#d1d5db] leading-relaxed mb-4">
-              A new kitchen does more than look good it transforms how a space works. Our cabinetry and clever storage maximise every inch and cut the clutter, while considered lighting and bespoke touches make the room feel genuinely welcoming. Energy-efficient appliances and thoughtful material choices help too.
-            </p>
-            <p className="text-[#d1d5db] leading-relaxed mb-6">
-              A stylish, modern kitchen can also add real value to your Portishead home. We turn tired kitchens into the heart of the house practical, beautiful, and finished with that all-important wow factor.
-            </p>
-            <Link
-              to="/services/kitchen-installations"
-              className="inline-block border-2 border-[#dead1f] text-[#dead1f] hover:bg-[#dead1f] hover:text-white font-semibold px-6 py-2.5 rounded transition-colors text-sm"
-            >
-              Kitchen Installations
+      {/* ACCREDITATION STRIP — deeper navy so the white brand marks read + tonal shift */}
+      <section className="bg-forest">
+        <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-center gap-x-10 gap-y-4">
+          <span className="text-ink/60 text-sm uppercase tracking-wide">Trained &amp; trade-backed</span>
+          <ul className="flex flex-wrap items-center justify-center gap-8">
+            {accreditations.map((a) => (
+              <li key={a.alt} className="flex items-center">
+                <img src={a.src} alt={a.alt} className="h-8 w-auto object-contain" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* SERVICES — a stacked index (not a card row, not a tile panel) */}
+      <section className="bg-paper">
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div>
+              <p className="kicker mb-3">What we take on</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">Four things we do well</h2>
+            </div>
+            <Link to="/services" className="inline-flex items-center gap-1.5 font-semibold text-rust hover:underline self-start md:self-auto">
+              Our Services <ArrowRight size={17} aria-hidden="true" />
             </Link>
           </div>
-          <div className="rounded-xl overflow-hidden shadow-lg">
-            <img
-              src="/gallery/IMG_0321.jpg"
-              alt="Kitchen installation by Total Carpentry Services"
-              className="w-full h-80 object-cover"
-            />
-          </div>
+          <ul className="divide-y divide-line border-y border-line">
+            {SERVICES.map((s, i) => (
+              <li key={s.to}>
+                <Link to={s.to} className="group flex items-center gap-4 sm:gap-6 py-5 sm:py-6">
+                  <span className="font-display text-2xl font-semibold text-rust/40 w-8 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-sand text-rust shrink-0">
+                    <s.Icon size={24} aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-display text-xl sm:text-2xl font-semibold text-ink group-hover:text-rust transition-colors">{s.label}</span>
+                    <span className="block text-ink-soft text-sm sm:text-base truncate">{s.tagline}</span>
+                  </span>
+                  <ArrowRight size={20} className="text-ink-soft group-hover:text-rust group-hover:translate-x-1 transition-all shrink-0" aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* Gallery promo */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="rounded-xl overflow-hidden shadow-lg">
-            <img
-              src="/gallery/IMG_0601.jpg"
-              alt="Bespoke storage bench by Total Carpentry Services"
-              className="w-full h-80 object-cover"
-            />
-          </div>
+      {/* FEATURE BAND — a single story block */}
+      <section className="bg-sand">
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <figure className="order-1 md:order-none">
+            <img src="/img/wall-panelling-01.jpg" alt="Bespoke wall panelling built and fitted by Total Carpentry"
+              loading="lazy" width="1024" height="768"
+              className="w-full aspect-[4/3] object-cover rounded-2xl border border-line shadow-lg" />
+          </figure>
           <div>
-            <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2">Portfolio</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Visit Our Gallery</h2>
-            <p className="text-[#d1d5db] leading-relaxed mb-6">
-              Take a look through our gallery to see recent projects near you and the way our designs bring a home together. We're also happy to point you to finished work locally many clients are proud to show off their new wardrobes, kitchens, flooring and renovations.
+            <p className="kicker mb-3">Why people call us back</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">One workshop, start to finish</h2>
+            <p className="text-ink-soft leading-relaxed mb-4">
+              Being family-run means the person who quotes your job is the person who does it — and the one you ring if
+              anything needs a second look. There’s no handover, no call centre, and no crew you’ve never met turning up
+              at the door.
             </p>
-            <Link
-              to="/gallery"
-              className="inline-block bg-[#dead1f] hover:bg-[#bd931a] text-white font-semibold px-6 py-2.5 rounded transition-colors text-sm"
-            >
-              Our Gallery
+            <p className="text-ink-soft leading-relaxed mb-6">
+              With more than twenty-five years of combined experience on the tools, we’ve become one of the most
+              recommended carpentry outfits around Portishead — most of our work now comes by word of mouth.
+            </p>
+            <Link to="/reviews" className="btn btn-ghost-onlight">
+              Read the reviews <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Reviews */}
+      {/* GALLERY MOSAIC */}
+      <section className="bg-paper">
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div>
+              <p className="kicker mb-3">Our own work</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">Recent jobs, no stock photos</h2>
+            </div>
+            <Link to="/gallery" className="inline-flex items-center gap-1.5 font-semibold text-rust hover:underline self-start md:self-auto">
+              Our Gallery <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+          </div>
+          <ul className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {mosaic.map((m) => (
+              <li key={m.src} className={m.span ? 'col-span-2 row-span-2' : ''}>
+                <Link to="/gallery" className="block w-full h-full overflow-hidden rounded-xl border border-line group">
+                  <img src={m.src} alt={m.alt} loading="lazy"
+                    className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 ${m.span ? 'aspect-square md:aspect-auto md:h-full' : 'aspect-square'}`} />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <GoogleReviews />
 
-      {/* Final CTA + contact form */}
-      <section className="py-16 px-4 bg-[#03071a]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-          <div>
-            <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2">Get Started</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Experienced & Recommended Carpentry Contractors
-            </h2>
-            <p className="text-[#d1d5db] leading-relaxed mb-4">
-              From kitchen installations and fitted wardrobes to house renovations and wood flooring, we're Portishead's trusted local carpentry team. Get in touch for your free estimate.
-            </p>
-            <ul className="space-y-2 text-sm text-[#d1d5db]">
-              {['Kitchen Installations', 'Fitted Wardrobes', 'House Renovations', 'Wood Flooring'].map((s) => (
-                <li key={s} className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#dead1f]" />{s}
-                </li>
-              ))}
-            </ul>
+      {/* HOW IT WORKS */}
+      <section className="bg-paper">
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+          <div className="max-w-2xl mb-10">
+            <p className="kicker mb-3">Straightforward from the start</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">How a job runs</h2>
           </div>
-          <div>
-            <ContactForm />
-          </div>
+          <ol className="grid md:grid-cols-3 gap-5">
+            {steps.map((step, i) => (
+              <li key={step.title} className="card p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-sand text-rust shrink-0">
+                    <step.Icon size={22} aria-hidden="true" />
+                  </span>
+                  <span className="font-display text-xl font-semibold text-rust/40">Step {i + 1}</span>
+                </div>
+                <h3 className="font-display text-xl font-semibold text-ink mb-2">{step.title}</h3>
+                <p className="text-ink-soft leading-relaxed">{step.body}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
+
+      <ContactCTA />
     </>
   )
 }
