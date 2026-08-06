@@ -1,11 +1,7 @@
-// TODO: replace hardcoded data with Google Places API call once API key and Place ID are confirmed with Dave.
-
+// Review text and customer names are reproduced verbatim and must not change.
 import { useRef, useState } from 'react'
-
-// Clean, stable search that surfaces Dave's Google reviews panel.
-// For a direct "all reviews" deep link, swap in the Google Business Profile
-// share link / Place ID once Dave provides it.
-const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Total+Carpentry+Portishead+reviews'
+import { ChevronLeft, ChevronRight, Star, ArrowUpRight } from 'lucide-react'
+import { SITE } from '../lib/site'
 
 interface Review {
   name: string
@@ -74,22 +70,11 @@ const reviews: Review[] = [
   },
 ]
 
-function StarRating({ count, size = 16 }: { count: number; size?: number }) {
+function Stars({ count, size = 16 }: { count: number; size?: number }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${count} out of 5 stars`}>
+    <div className="flex gap-0.5" role="img" aria-label={`Rated ${count} out of 5`}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg
-          key={i}
-          width={size}
-          height={size}
-          viewBox="0 0 20 20"
-          fill={i < count ? '#dead1f' : 'none'}
-          stroke="#dead1f"
-          strokeWidth="1.5"
-          aria-hidden="true"
-        >
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
+        <Star key={i} size={size} className="text-gold-mid" fill={i < count ? '#dead1f' : 'none'} strokeWidth={1.5} aria-hidden="true" />
       ))}
     </div>
   )
@@ -97,29 +82,26 @@ function StarRating({ count, size = 16 }: { count: number; size?: number }) {
 
 function ReviewCard({ review }: { review: Review }) {
   const [expanded, setExpanded] = useState(false)
-  const isLong = review.text.length > 200
-  const displayText = isLong && !expanded ? review.text.slice(0, 200) + '…' : review.text
+  const isLong = review.text.length > 210
+  const displayText = isLong && !expanded ? review.text.slice(0, 210).trimEnd() + '…' : review.text
 
   return (
-    <article className="bg-[#111827] border border-[#2d3748] rounded-xl p-6 flex flex-col gap-3 min-w-[280px] max-w-[360px] shrink-0 snap-start">
-      <StarRating count={review.stars} size={18} />
-      <p className="text-[#d1d5db] text-sm leading-relaxed flex-1">
-        "{displayText}"
+    <article className="card p-6 flex flex-col gap-3 min-w-[280px] max-w-[360px] shrink-0 snap-start">
+      <Stars count={review.stars} size={18} />
+      <blockquote className="text-ink leading-relaxed flex-1">
+        “{displayText}”
         {isLong && (
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="ml-1 text-[#dead1f] hover:underline text-xs font-medium"
-          >
+          <button onClick={() => setExpanded((v) => !v)} className="ml-1 text-rust hover:underline text-sm font-semibold">
             {expanded ? 'Show less' : 'Read more'}
           </button>
         )}
-      </p>
-      <div className="flex items-center justify-between mt-auto pt-3 border-t border-[#2d3748]">
+      </blockquote>
+      <div className="flex items-center justify-between mt-auto pt-3 border-t border-line">
         <div>
-          <div className="font-semibold text-white text-sm">{review.name}</div>
-          <div className="text-[#6b7280] text-xs">{review.date}</div>
+          <div className="font-semibold text-ink">{review.name}</div>
+          <div className="text-ink-soft text-sm">{review.date}</div>
         </div>
-        <svg width="20" height="20" viewBox="0 0 24 24" aria-label="Google" role="img">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-label="Posted on Google" role="img">
           <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
           <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
           <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
@@ -132,73 +114,47 @@ function ReviewCard({ review }: { review: Review }) {
 
 export default function GoogleReviews() {
   const scrollRef = useRef<HTMLDivElement>(null)
-
   const scroll = (dir: 'left' | 'right') => {
-    if (!scrollRef.current) return
-    scrollRef.current.scrollBy({ left: dir === 'right' ? 340 : -340, behavior: 'smooth' })
+    scrollRef.current?.scrollBy({ left: dir === 'right' ? 344 : -344, behavior: 'smooth' })
   }
 
   return (
-    <section className="py-16 px-4 bg-[#111827]">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <p className="text-xs uppercase tracking-widest text-[#dead1f] font-semibold mb-2">Reviews</p>
-          <h2 className="text-3xl font-bold text-white mb-3">Our Latest Reviews</h2>
-          <div className="flex items-center justify-center gap-3 mb-1">
-            <span className="text-5xl font-bold text-white">{overallRating.toFixed(1)}</span>
-            <div className="flex flex-col items-start gap-1">
-              <StarRating count={5} size={24} />
-              <span className="text-[#d1d5db] text-sm">{totalReviews} Google reviews</span>
+    <section className="bg-sand">
+      <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <div>
+            <p className="kicker mb-3">Straight from customers</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">Reviewed five out of five</h2>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="font-display text-5xl font-semibold text-ink">{overallRating.toFixed(1)}</span>
+            <div className="flex flex-col gap-1">
+              <Stars count={5} size={22} />
+              <span className="text-ink-soft text-sm">Across {totalReviews} Google reviews</span>
             </div>
           </div>
         </div>
 
-        {/* Carousel */}
         <div className="relative">
-          <button
-            onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-[#1e2538] border border-[#2d3748] rounded-full p-2 text-white hover:text-[#dead1f] hover:border-[#dead1f] transition-colors hidden md:flex"
-            aria-label="Scroll left"
-          >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
+          <button onClick={() => scroll('left')} aria-label="Show previous reviews"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 hidden md:inline-flex items-center justify-center w-11 h-11 rounded-full bg-shell border border-line text-ink hover:text-rust hover:border-rust transition-colors">
+            <ChevronLeft size={22} aria-hidden="true" />
           </button>
 
-          <div
-            ref={scrollRef}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {reviews.map((review) => (
-              <ReviewCard key={review.name} review={review} />
-            ))}
+          <div ref={scrollRef} className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth" style={{ scrollbarWidth: 'none' }}>
+            {reviews.map((review) => <ReviewCard key={review.name} review={review} />)}
           </div>
 
-          <button
-            onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-[#1e2538] border border-[#2d3748] rounded-full p-2 text-white hover:text-[#dead1f] hover:border-[#dead1f] transition-colors hidden md:flex"
-            aria-label="Scroll right"
-          >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-            </svg>
+          <button onClick={() => scroll('right')} aria-label="Show more reviews"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 hidden md:inline-flex items-center justify-center w-11 h-11 rounded-full bg-shell border border-line text-ink hover:text-rust hover:border-rust transition-colors">
+            <ChevronRight size={22} aria-hidden="true" />
           </button>
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-8">
-          <a
-            href={GOOGLE_REVIEWS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#dead1f] hover:bg-[#bd931a] text-white font-semibold px-6 py-2.5 rounded transition-colors text-sm"
-          >
+        <div className="mt-8">
+          <a href={SITE.googleReviews} target="_blank" rel="noopener noreferrer" className="btn btn-ghost-onlight">
             Read all our reviews on Google
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
+            <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </div>
       </div>
