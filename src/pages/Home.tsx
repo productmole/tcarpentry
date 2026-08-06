@@ -56,7 +56,7 @@ export default function Home() {
               Carpenter in Portishead and the Surrounding Areas
             </h1>
             <p className="text-lg text-ink-soft leading-relaxed max-w-xl mb-7">
-              Total Carpentry — Portishead’s 5-star rated carpenters for kitchens, fitted wardrobes, wood flooring and full renovations.
+              Total Carpentry: Portishead’s 5-star rated carpenters and joiners.
             </p>
             <div id="hero-ctas" className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-7">
               <Link to="/contact" className="btn btn-primary">
