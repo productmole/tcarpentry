@@ -1,24 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --color-primary: #03071a;
-  --color-accent: #dead1f;
-  --color-accent-dark: #bd931a;
+/* ------------------------------------------------------------------ *
+ * Total Carpentry — dark-first navy + mustard-gold treatment.
+ * A near-black navy base (#03071a) with a single lifted panel tone
+ * (#111827), one accent gold (#dead1f) reserved for CTAs, eyebrow
+ * labels and icon fills, and a white → grey text ramp. Poppins for
+ * headings, Inter for body/UI.
+ * Semantic token NAMES are kept so every existing utility (bg-paper,
+ * text-ink, text-rust …) re-themes at once; only the VALUES change.
+ * ------------------------------------------------------------------ */
+@theme {
+  --color-paper: #03071a;    /* base ground — near-black navy                              */
+  --color-sand: #111827;     /* alternate section band (lifted navy)                       */
+  --color-shell: #141d33;    /* card / input surface — a touch lighter so panels read      */
+  --color-ink: #ffffff;      /* primary text (white)                                       */
+  --color-ink-soft: #d1d5db; /* secondary text                                             */
+  --color-muted: #6b7280;    /* muted text (meta, captions)                                */
+  --color-rust: #dead1f;     /* accent gold — links, kickers, accents on dark              */
+  --color-rust-dark: #c1930f;/* accent gold, hover                                         */
+  --color-forest: #111827;   /* chrome / CTA band / footer (lifted navy)                   */
+  --color-ochre: #dead1f;    /* accent gold — button fill + icon fills                     */
+  --color-line: #26314a;     /* hairline border on dark                                    */
+  --color-gold-mid: #dead1f; /* stars / focus                                              */
+
+  --font-display: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --spacing-section: 4.5rem;
+  --spacing-section-lg: 6.5rem;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: #ffffff;
-  background: #03071a;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-ink);
+  background: var(--color-paper);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
+/* Poppins, bold, tight — the agency look. Inline weight utilities
+   (font-semibold etc.) still override where a lighter step is wanted. */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-gold-mid);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Reusable primitives ---- */
+/* In @layer components so Tailwind utilities (hidden, md:*, etc.) always win. */
+@layer components {
+
+/* Eyebrow / kicker — a small gold accent label above headings */
+.kicker,
+.kicker-ondark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ochre);
+}
+.kicker::before,
+.kicker-ondark::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  background: var(--color-ochre);
+  border-radius: 2px;
+}
+
+/* Buttons — two variants, 4px radius, 44px min target.
+   Primary  = filled gold, white label.
+   Outline  = gold border, transparent fill, gold label. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.1;
+  text-align: center;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+}
+.btn-primary {
+  background: var(--color-ochre);
+  color: #ffffff;
+  border: 2px solid var(--color-ochre);
+}
+.btn-primary:hover { background: var(--color-rust-dark); border-color: var(--color-rust-dark); color: #ffffff; }
+.btn-primary:disabled { background: var(--color-muted); border-color: var(--color-muted); color: #ffffff; opacity: .85; cursor: not-allowed; }
+
+/* Outline gold — the single secondary variant. All the historical
+   outline/ghost aliases now resolve to this so the system stays to
+   the brief's two buttons. */
+.btn-outline,
+.btn-outline-light,
+.btn-ghost-onlight,
+.btn-ondark {
+  background: transparent;
+  color: var(--color-ochre);
+  border: 2px solid var(--color-ochre);
+}
+.btn-outline:hover,
+.btn-outline-light:hover,
+.btn-ghost-onlight:hover,
+.btn-ondark:hover { background: var(--color-ochre); color: var(--color-paper); border-color: var(--color-ochre); }
+
+/* Card surface (dark) */
+.card {
+  background: var(--color-shell);
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 40px -28px rgba(0,0,0,.8);
+}
+
+/* Utility: contain long words to prevent horizontal overflow */
+.wrap-anywhere { overflow-wrap: anywhere; }
+
 }

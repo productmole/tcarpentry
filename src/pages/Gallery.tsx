@@ -1,127 +1,138 @@
-import { useState } from 'react'
-import Hero from '../components/Hero'
-import ContactCTA from '../components/ContactCTA'
+import { useEffect, useRef, useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import ContactCTA from '../components/ContactCTA'
+import Breadcrumbs from '../components/Breadcrumbs'
+import { useDocumentMeta } from '../lib/useDocumentMeta'
 
-interface Photo {
-  src: string
-  alt: string
-}
+interface Photo { src: string; alt: string }
 
-const allPhotos: Photo[] = [
-  { src: '/gallery/IMG_0320.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0321.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0322.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0508.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0510.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0518.jpg', alt: 'Fitted kitchen' },
-  { src: '/gallery/IMG_0520.jpg', alt: 'Fitted kitchen' },
-  { src: '/gallery/IMG_0521.jpg', alt: 'Fitted kitchen' },
-  { src: '/gallery/IMG_0526.jpg', alt: 'Fitted kitchen' },
-  { src: '/gallery/IMG_0527.jpg', alt: 'Fitted kitchen' },
-  { src: '/gallery/IMG_0528.jpg', alt: 'Fitted kitchen' },
-  { src: '/gallery/IMG_0597.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0600.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0601.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0663.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0697.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0698.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0699.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0736.jpg', alt: 'Bespoke understairs storage' },
-  { src: '/gallery/IMG_0797.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0798.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0799.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0851.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0852.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0862.jpg', alt: 'House renovation' },
-  { src: '/gallery/IMG_0863.jpg', alt: 'House renovation' },
-  { src: '/gallery/IMG_0864.jpg', alt: 'House renovation' },
-  { src: '/gallery/IMG_0865.jpg', alt: 'House renovation' },
-  { src: '/gallery/IMG_0878.jpg', alt: 'Carpentry project' },
-  { src: '/gallery/IMG_0879.jpg', alt: 'Carpentry project' },
+const photos: Photo[] = [
+  { src: '/img/kitchen-fit-portishead-01.jpg', alt: 'Fitted kitchen with pale units in a Portishead home' },
+  { src: '/img/fitted-wardrobe-01.jpg', alt: 'Built-in bedroom wardrobe with panelled doors' },
+  { src: '/img/home-renovation-01.jpg', alt: 'Room mid-renovation with new joinery going in' },
+  { src: '/img/wood-floor-install-01.jpg', alt: 'Newly laid wood floor in a renovated room' },
+  { src: '/img/kitchen-fit-portishead-02.jpg', alt: 'Run of fitted kitchen cabinets and worktop' },
+  { src: '/img/wardrobe-interior-01.jpg', alt: 'Fitted wardrobe interior with hanging rails and shelving' },
+  { src: '/img/wall-panelling-01.jpg', alt: 'Bespoke wall panelling in a hallway' },
+  { src: '/img/timber-floor-detail-01.jpg', alt: 'Solid timber floor showing its natural grain' },
+  { src: '/img/bespoke-kitchen-01.jpg', alt: 'Bespoke kitchen with fitted end panels' },
+  { src: '/img/kitchen-units-01.jpg', alt: 'Fitted kitchen wall and base units' },
+  { src: '/img/understairs-storage-01.jpg', alt: 'Bespoke pull-out storage built under a staircase' },
+  { src: '/img/fitted-storage-01.jpg', alt: 'Built-in storage cupboards in an alcove' },
+  { src: '/img/kitchen-doors-01.jpg', alt: 'Close detail of kitchen cabinet doors and handles' },
+  { src: '/img/home-renovation-02.jpg', alt: 'Renovated room with new skirting and trim' },
+  { src: '/img/storage-bench-01.jpg', alt: 'Bespoke fitted storage bench' },
+  { src: '/img/fitted-wardrobe-02.jpg', alt: 'Fitted wardrobe with sliding doors' },
+  { src: '/img/laminate-floor-01.jpg', alt: 'Laminate wood-effect floor freshly fitted' },
+  { src: '/img/kitchen-units-02.jpg', alt: 'Fitted kitchen cabinetry and worktop run' },
+  { src: '/img/carpentry-detail-01.jpg', alt: 'Close carpentry and joinery detail' },
+  { src: '/img/home-renovation-03.jpg', alt: 'Finishing carpentry during a house renovation' },
+  { src: '/img/fitted-storage-02.jpg', alt: 'Fitted cupboards with panelled doors' },
+  { src: '/img/wood-floor-install-02.jpg', alt: 'Wood flooring being set out and laid' },
+  { src: '/img/kitchen-doors-02.jpg', alt: 'Kitchen door and drawer fronts' },
+  { src: '/img/home-renovation-04.jpg', alt: 'Completed room after a full renovation' },
+  { src: '/img/joinery-project-01.jpg', alt: 'Finished bespoke joinery project' },
+  { src: '/img/fitted-storage-03.jpg', alt: 'Fitted alcove shelving and storage' },
+  { src: '/img/kitchen-units-03.jpg', alt: 'Kitchen units with integrated storage' },
+  { src: '/img/carpentry-detail-02.jpg', alt: 'Detail of hand-finished carpentry' },
+  { src: '/img/joinery-project-02.jpg', alt: 'Completed carpentry and joinery work' },
+  { src: '/img/workshop-timber-01.jpg', alt: 'Timber prepared for a project in the workshop' },
 ]
 
 export default function Gallery() {
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  useDocumentMeta({
+    title: 'Gallery | Total Carpentry, Portishead',
+    description:
+      'A look at recent Total Carpentry work across Portishead and North Somerset — kitchens, fitted wardrobes, wood floors, storage and full renovations, all our own.',
+  })
 
-  function prev() {
-    setLightboxIndex((i) => (i === null ? 0 : (i - 1 + allPhotos.length) % allPhotos.length))
-  }
-  function next() {
-    setLightboxIndex((i) => (i === null ? 0 : (i + 1) % allPhotos.length))
-  }
+  const [index, setIndex] = useState<number | null>(null)
+  const closeRef = useRef<HTMLButtonElement>(null)
+  const open = index !== null
+
+  const move = (delta: number) =>
+    setIndex((i) => (i === null ? 0 : (i + delta + photos.length) % photos.length))
+
+  useEffect(() => {
+    if (!open) return
+    closeRef.current?.focus()
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setIndex(null)
+      else if (e.key === 'ArrowRight') move(1)
+      else if (e.key === 'ArrowLeft') move(-1)
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [open])
 
   return (
     <>
-      <Hero
-        h1="Gallery"
-        intro="Wondering what we can do? The gallery is the best place to see projects we've completed across Portishead and beyond."
-        imageSrc="/gallery/IMG_0320.jpg"
-        imageAlt="Kitchen installation by Total Carpentry Services"
-      />
-
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Past Projects</h2>
-            <p className="text-[#d1d5db] max-w-2xl mx-auto leading-relaxed">
-              From bespoke wardrobes to full renovations, kitchens and flooring, each project reflects our carpenters' craft and our commitment to a great result.
+      {/* Photo-forward: a slim heading strip, then straight into the grid */}
+      <section className="bg-paper border-b border-line">
+        <div className="max-w-6xl mx-auto px-4 pt-10 pb-8">
+          <Breadcrumbs trail={[{ label: 'Home', to: '/' }, { label: 'Gallery' }]} />
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+            <div>
+              <p className="kicker mb-3">Our own work</p>
+              <h1 className="font-display text-4xl md:text-5xl font-semibold text-ink leading-[1.08]">
+                Recent jobs, photographed on site
+              </h1>
+            </div>
+            <p className="text-ink-soft max-w-md">
+              Every photo here is a project we built and fitted ourselves — no stock, no borrowed shots. Tap any image
+              to see it larger.
             </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {allPhotos.map((p, i) => (
-              <button
-                key={i}
-                onClick={() => setLightboxIndex(i)}
-                className="overflow-hidden rounded-lg aspect-square group cursor-zoom-in"
-              >
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </button>
-            ))}
           </div>
         </div>
       </section>
 
-      {lightboxIndex !== null && (
+      <section className="bg-paper">
+        <div className="max-w-6xl mx-auto px-4 py-10 md:py-12">
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {photos.map((p, i) => (
+              <li key={p.src}>
+                <button
+                  onClick={() => setIndex(i)}
+                  className="block w-full overflow-hidden rounded-xl border border-line aspect-square group cursor-zoom-in"
+                  aria-label={`Enlarge photo: ${p.alt}`}
+                >
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    loading={i < 4 ? 'eager' : 'lazy'}
+                    width="512" height="512"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {open && index !== null && (
         <div
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
-          onClick={() => setLightboxIndex(null)}
+          role="dialog" aria-modal="true" aria-label={`Photo ${index + 1} of ${photos.length}: ${photos[index].alt}`}
+          className="fixed inset-0 bg-paper/95 z-[60] flex items-center justify-center p-4"
+          onClick={() => setIndex(null)}
         >
-          <button
-            onClick={() => setLightboxIndex(null)}
-            className="absolute top-4 right-4 text-white hover:text-[#dead1f] z-10"
-            aria-label="Close"
-          >
-            <X size={32} />
+          <button ref={closeRef} onClick={() => setIndex(null)} aria-label="Close"
+            className="absolute top-4 right-4 inline-flex items-center justify-center w-11 h-11 rounded-full text-ink hover:text-ochre">
+            <X size={28} aria-hidden="true" />
           </button>
-          <button
-            onClick={(e) => { e.stopPropagation(); prev() }}
-            className="absolute left-4 text-white hover:text-[#dead1f] z-10 p-2"
-            aria-label="Previous"
-          >
-            <ChevronLeft size={40} />
+          <button onClick={(e) => { e.stopPropagation(); move(-1) }} aria-label="Previous photo"
+            className="absolute left-2 sm:left-4 inline-flex items-center justify-center w-11 h-11 rounded-full text-ink hover:text-ochre">
+            <ChevronLeft size={36} aria-hidden="true" />
           </button>
-          <img
-            src={allPhotos[lightboxIndex].src}
-            alt={allPhotos[lightboxIndex].alt}
-            className="max-w-full max-h-[90vh] rounded-lg shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          />
-          <button
-            onClick={(e) => { e.stopPropagation(); next() }}
-            className="absolute right-4 text-white hover:text-[#dead1f] z-10 p-2"
-            aria-label="Next"
-          >
-            <ChevronRight size={40} />
+          <figure onClick={(e) => e.stopPropagation()} className="max-w-full">
+            <img src={photos[index].src} alt={photos[index].alt} className="max-w-full max-h-[80vh] rounded-xl shadow-2xl" />
+            <figcaption className="text-center text-ink/80 text-sm mt-3">{photos[index].alt}</figcaption>
+          </figure>
+          <button onClick={(e) => { e.stopPropagation(); move(1) }} aria-label="Next photo"
+            className="absolute right-2 sm:right-4 inline-flex items-center justify-center w-11 h-11 rounded-full text-ink hover:text-ochre">
+            <ChevronRight size={36} aria-hidden="true" />
           </button>
-          <span className="absolute bottom-4 text-white/60 text-sm">
-            {lightboxIndex + 1} / {allPhotos.length}
-          </span>
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-ink/60 text-sm">{index + 1} / {photos.length}</span>
         </div>
       )}
 

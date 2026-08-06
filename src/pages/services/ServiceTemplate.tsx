@@ -1,68 +1,115 @@
-import Hero from '../../components/Hero'
+import { Link } from 'react-router-dom'
+import { Phone, Check, ShieldCheck, ArrowRight } from 'lucide-react'
 import FAQAccordion from '../../components/FAQAccordion'
 import ContactCTA from '../../components/ContactCTA'
+import Breadcrumbs from '../../components/Breadcrumbs'
+import { SITE } from '../../lib/site'
+import { useDocumentMeta } from '../../lib/useDocumentMeta'
 
-interface BodySection {
+export interface BodySection {
   heading: string
   paragraphs: string[]
   bullets?: string[]
   imgSrc?: string
   imgAlt?: string
-  imgRight?: boolean
+  caption?: string
 }
 
-interface FAQ {
-  q: string
-  a: string
-}
+interface FAQ { q: string; a: string }
 
 interface ServicePageProps {
+  meta: { title: string; description: string }
+  label: string
   heroH1: string
-  heroIntro: string
+  heroLead: string
   heroImg: string
   heroImgAlt: string
+  atAGlance: string[]
   sections: BodySection[]
   faqs: FAQ[]
   faqHeading: string
 }
 
-export default function ServiceTemplate({
-  heroH1,
-  heroIntro,
-  heroImg,
-  heroImgAlt,
-  sections,
-  faqs,
-  faqHeading,
-}: ServicePageProps) {
+export default function ServiceTemplate(props: ServicePageProps) {
+  useDocumentMeta(props.meta)
+  const { label, heroH1, heroLead, heroImg, heroImgAlt, atAGlance, sections, faqs, faqHeading } = props
+
   return (
     <>
-      <Hero h1={heroH1} intro={heroIntro} imageSrc={heroImg} imageAlt={heroImgAlt} />
-
-      {sections.map((section, i) => (
-        <section key={i} className={`py-16 px-4 ${i % 2 === 1 ? 'bg-[#111827]' : 'bg-[#03071a]'}`}>
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div className={section.imgRight ? 'order-1' : 'order-1 md:order-2'}>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{section.heading}</h2>
-              {section.paragraphs.map((p, j) => (
-                <p key={j} className="text-[#d1d5db] leading-relaxed mb-4">{p}</p>
-              ))}
-              {section.bullets && (
-                <ul className="space-y-2 text-sm text-[#d1d5db] mt-4">
-                  {section.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#dead1f] mt-2 shrink-0" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              )}
+      {/* Header — asymmetric split, no dimmed full-bleed photo */}
+      <section className="bg-sand">
+        <div className="max-w-6xl mx-auto px-4 pt-10 pb-14 md:py-16 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <Breadcrumbs trail={[{ label: 'Home', to: '/' }, { label: 'Services', to: '/services' }, { label }]} />
+            <p className="kicker mb-3">Service</p>
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-ink leading-[1.08] mb-4">{heroH1}</h1>
+            <p className="text-lg text-ink-soft leading-relaxed mb-6">{heroLead}</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link to="/contact" className="btn btn-primary">
+                Contact Us <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+              <a href={`tel:${SITE.phonePrimary.tel}`} className="btn btn-outline">
+                <Phone size={18} aria-hidden="true" /> {SITE.phonePrimary.display}
+              </a>
             </div>
-            {section.imgSrc && (
-              <div className={`rounded-xl overflow-hidden shadow-lg ${section.imgRight ? 'order-2' : 'order-2 md:order-1'}`}>
-                <img src={section.imgSrc} alt={section.imgAlt ?? section.heading} className="w-full h-80 object-cover" />
+            <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-soft">
+              {atAGlance.map((item) => (
+                <li key={item} className="inline-flex items-center gap-1.5">
+                  <Check size={16} className="text-ochre" aria-hidden="true" />{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <figure className="relative">
+            <img
+              src={heroImg}
+              alt={heroImgAlt}
+              width="1024" height="768"
+              className="w-full aspect-[4/3] object-cover rounded-2xl border border-line shadow-lg"
+            />
+            <figcaption className="absolute -bottom-4 left-4 right-4 sm:left-6 sm:right-auto card px-4 py-3 flex items-center gap-3">
+              <ShieldCheck size={22} className="text-ochre shrink-0" aria-hidden="true" />
+              <span className="text-sm font-medium text-ink">One-year workmanship guarantee</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* Body — numbered spec-sheet sections */}
+      {sections.map((section, i) => (
+        <section key={i} className={i % 2 === 0 ? 'bg-paper' : 'bg-sand'}>
+          <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
+            <div className="grid md:grid-cols-12 gap-8 md:gap-10">
+              <div className="md:col-span-4">
+                <span className="font-display text-5xl font-semibold text-rust/35 leading-none">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h2 className="font-display text-2xl md:text-3xl font-semibold text-ink mt-2">{section.heading}</h2>
               </div>
-            )}
+              <div className="md:col-span-8">
+                {section.paragraphs.map((p, j) => (
+                  <p key={j} className="text-ink-soft leading-relaxed mb-4 last:mb-0">{p}</p>
+                ))}
+                {section.bullets && (
+                  <ul className="mt-5 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                    {section.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-ink">
+                        <Check size={18} className="text-rust shrink-0 mt-1" aria-hidden="true" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {section.imgSrc && (
+                  <figure className="mt-8">
+                    <img src={section.imgSrc} alt={section.imgAlt ?? ''} loading="lazy"
+                      width="1024" height="768"
+                      className="w-full aspect-[16/9] object-cover rounded-xl border border-line" />
+                    {section.caption && <figcaption className="mt-2 text-sm text-ink-soft">{section.caption}</figcaption>}
+                  </figure>
+                )}
+              </div>
+            </div>
           </div>
         </section>
       ))}
