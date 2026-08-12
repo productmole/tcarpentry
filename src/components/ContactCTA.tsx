@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Phone } from 'lucide-react'
+import { Phone, ArrowRight } from 'lucide-react'
+import { SITE } from '../lib/site'
 
 interface Props {
   heading?: string
@@ -7,35 +8,30 @@ interface Props {
 }
 
 export default function ContactCTA({
-  heading = 'Get in Touch With Our Friendly Team',
-  subtext = 'Ready to transform your home? Call us for a free estimate or send us a message we\'d love to hear from you.',
+  heading = 'Let’s talk through your project',
+  subtext = 'Tell us what you have in mind and we’ll arrange a visit, measure up, and give you a straight, no-obligation price.',
 }: Props) {
   return (
-    <section className="bg-[#03071a] text-white py-16 px-4">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">{heading}</h2>
-        <p className="text-white/70 mb-8 text-lg">{subtext}</p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-          <a
-            href="tel:01275844094"
-            className="flex items-center gap-2 text-lg font-semibold hover:text-[#dead1f] transition-colors"
-          >
-            <Phone size={18} />01275 844094
-          </a>
-          <span className="hidden sm:block text-white/30">|</span>
-          <a
-            href="tel:07834772046"
-            className="flex items-center gap-2 text-lg font-semibold hover:text-[#dead1f] transition-colors"
-          >
-            <Phone size={18} />07834 772046
+    <section className="bg-forest text-ink">
+      <div className="max-w-4xl mx-auto px-4 py-16 md:py-20 text-center">
+        <h2 className="font-display text-3xl md:text-4xl font-medium mb-4">{heading}</h2>
+        <p className="text-ink/80 text-lg max-w-2xl mx-auto mb-8">{subtext}</p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link to="/contact" className="btn btn-primary w-full sm:w-auto">
+            Contact Us
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+          <a href={`tel:${SITE.phonePrimary.tel}`} className="btn btn-outline-light w-full sm:w-auto">
+            <Phone size={18} aria-hidden="true" />
+            {SITE.phonePrimary.display}
           </a>
         </div>
-        <Link
-          to="/contact"
-          className="inline-block bg-[#dead1f] hover:bg-[#bd931a] text-white font-semibold px-8 py-3 rounded transition-colors"
-        >
-          Contact Us
-        </Link>
+        <p className="mt-6 text-ink/70 text-sm">
+          Prefer to ring the landline? Call{' '}
+          <a href={`tel:${SITE.phoneSecondary.tel}`} className="underline underline-offset-2 hover:text-ink">
+            {SITE.phoneSecondary.display}
+          </a>.
+        </p>
       </div>
     </section>
   )

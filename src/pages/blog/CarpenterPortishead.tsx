@@ -3,35 +3,47 @@ import BlogTemplate from './BlogTemplate'
 export default function CarpenterPortishead() {
   return (
     <BlogTemplate
-      h1="Why It Pays to Find the Right Carpenter for Work in Portishead & Its Surrounds"
-      heroImg="/gallery/IMG_0851.jpg"
-      heroImgAlt="Carpentry work by Total Carpentry Services in Portishead"
-      intro="Choosing the right carpenter can be the difference between a home improvement that truly transforms your space and one that disappoints. In and around Portishead, homeowners have come to rely on Total Carpentry Services for quality, reliability and workmanship that stands the test of time."
-      secondaryImg="/gallery/IMG_0852.jpg"
-      secondaryImgAlt="Carpentry detail by Total Carpentry Services"
+      meta={{
+        title: 'Hiring a Carpenter in Portishead: What Matters | Total Carpentry',
+        description:
+          'Choosing a carpenter for work in your Portishead home? Here’s what separates a good one from a cheap one — and the questions worth asking before you book.',
+      }}
+      kicker="Hiring a carpenter"
+      readTime="4 min"
+      h1="Hiring a carpenter in Portishead: what actually matters"
+      featureImg="/img/carpentry-detail-01.jpg"
+      featureImgAlt="Close detail of finished carpentry on a Total Carpentry project"
+      intro="Anyone can own a nail gun. The gap between a tidy, lasting job and one you quietly regret comes down to judgement — and judgement is hard to spot from a quote. Here’s how to read it."
       sections={[
         {
-          heading: 'The Benefits of Hiring Experienced Carpenters',
+          heading: 'Photos show the good days',
           paragraphs: [
-            'Skilled carpentry is as much about experience and judgement as it is about tools and materials. Here\'s why hiring a time-served, local carpenter like Total Carpentry Services makes a real difference:',
+            'A gallery is a highlight reel. What it can’t show is how someone deals with a wall that turns out to be 15mm off across three metres, or a floor that dips in the middle of the run. That is where experience actually lives — in the scribing, packing and problem-solving nobody photographs.',
+            'So when you look at a carpenter’s work, look past the finished shot and ask how they got there. A confident answer tells you more than the picture does.',
           ],
         },
         {
-          heading: 'How We Can Help',
-          paragraphs: ['Our team brings the following advantages to every project:'],
+          heading: 'Five things worth checking',
+          paragraphs: ['None of these are hard to ask. The way they’re answered is the useful part.'],
           bullets: [
-            'Expert Craftsmanship precision-built results that look superb and last for years',
-            'Customised Solutions every job is tailored to your home, your taste and your budget',
-            'Increased Property Value well-finished carpentry work consistently adds value at resale',
-            'Efficiency and Timeliness we plan carefully and stick to agreed timescales',
-            'Safety Considerations all structural work is carried out safely and to building regulations',
-            'A Wide Range of Services from skirting boards to full kitchen and wardrobe installations',
+            'Will the same person who quotes actually do the work?',
+            'Who handles the plumbing, gas or wiring, and are they properly ticketed?',
+            'What happens if something isn’t right once you’re living with it?',
+            'Can they point you to a finished job nearby you could look at?',
+            'Is the price a fixed quote or a hopeful estimate?',
           ],
         },
         {
+          heading: 'Local isn’t just a nice idea',
           paragraphs: [
-            'As a family-run business established in 2014, we\'ve built a reputation for honest, high-quality work across Portishead, Clevedon, Nailsea and the wider North Somerset area. Every project comes with a 1-year workmanship guarantee and the confidence of over 25 years of combined experience.',
-            'If you\'re looking for a reliable, skilled carpenter in Portishead, we\'d love to hear from you. Get in touch for a free estimate.',
+            'A carpenter who works within a few miles of you has skin in the game. Word gets around a town like Portishead, so the incentive to leave every customer happy is baked in. It also means that if a door drops or a drawer sticks a month later, sorting it is a short drive, not a negotiation.',
+            'We’ve built here since 2014, across everything from harbourside flats to older village houses, and most of our work now comes from people who were recommended by someone we worked for previously.',
+          ],
+        },
+        {
+          heading: 'The guarantee behind it',
+          paragraphs: [
+            'Every job we complete carries a guarantee. It’s not a marketing line — it’s the natural consequence of standing behind what you make. If you’re weighing up a carpenter in Portishead or the villages nearby, ask us for a free look at the job; we’ll give you a straight price and an honest view of what it needs.',
           ],
         },
       ]}

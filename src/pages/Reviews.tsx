@@ -19,7 +19,6 @@ export default function Reviews() {
           <Breadcrumbs trail={[{ label: 'Home', to: '/' }, { label: 'Reviews' }]} tone="dark" />
           <div className="grid md:grid-cols-2 gap-8 md:items-end">
             <div>
-              <p className="kicker-ondark mb-3">In their words</p>
               <h1 className="font-display text-4xl md:text-5xl font-medium leading-[1.08] mb-4">
                 Judged on the finish, not the pitch
               </h1>

@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
-import Hero from '../../components/Hero'
+import { Phone, Check, ArrowLeft } from 'lucide-react'
 import ContactCTA from '../../components/ContactCTA'
-import { Phone } from 'lucide-react'
+import Breadcrumbs from '../../components/Breadcrumbs'
+import { SITE } from '../../lib/site'
+import { useDocumentMeta } from '../../lib/useDocumentMeta'
 
 interface Section {
   heading?: string
@@ -10,67 +12,80 @@ interface Section {
 }
 
 interface BlogPostProps {
+  meta: { title: string; description: string }
   h1: string
-  heroImg: string
-  heroImgAlt: string
+  kicker: string
+  readTime: string
+  featureImg: string
+  featureImgAlt: string
   intro: string
-  secondaryImg?: string
-  secondaryImgAlt?: string
   sections: Section[]
 }
 
-export default function BlogTemplate({ h1, heroImg, heroImgAlt, intro, secondaryImg, secondaryImgAlt, sections }: BlogPostProps) {
+export default function BlogTemplate(props: BlogPostProps) {
+  useDocumentMeta(props.meta)
+  const { h1, kicker, readTime, featureImg, featureImgAlt, intro, sections } = props
+
   return (
     <>
-      <Hero h1={h1} imageSrc={heroImg} imageAlt={heroImgAlt} />
+      <article>
+        {/* Editorial header — no dimmed photo hero */}
+        <header className="bg-paper border-b border-line">
+          <div className="max-w-3xl mx-auto px-4 pt-10 pb-8">
+            <Breadcrumbs trail={[{ label: 'Home', to: '/' }, { label: 'Blog', to: '/blog' }, { label: kicker }]} />
+            <p className="kicker mb-3">{readTime} read</p>
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-ink leading-[1.1]">{h1}</h1>
+          </div>
+        </header>
 
-      <article className="py-16 px-4">
-        <div className="max-w-3xl mx-auto prose prose-gray">
-          <p className="text-[#d1d5db] text-lg leading-relaxed mb-8">{intro}</p>
+        <div className="max-w-3xl mx-auto px-4 py-10 md:py-12">
+          <figure className="mb-10">
+            <img src={featureImg} alt={featureImgAlt} width="1024" height="576"
+              className="w-full aspect-[16/9] object-cover rounded-2xl border border-line shadow-sm" />
+          </figure>
 
-          {secondaryImg && (
-            <div className="rounded-xl overflow-hidden shadow-lg mb-10">
-              <img src={secondaryImg} alt={secondaryImgAlt ?? ''} className="w-full h-72 object-cover" />
-            </div>
-          )}
+          <p className="text-xl text-ink leading-relaxed mb-8 font-medium">{intro}</p>
 
           {sections.map((s, i) => (
-            <div key={i} className="mb-8">
-              {s.heading && (
-                <h2 className="text-2xl font-bold text-white mb-3 font-['Poppins']">{s.heading}</h2>
-              )}
+            <section key={i} className="mb-8">
+              {s.heading && <h2 className="font-display text-2xl font-semibold text-ink mb-3">{s.heading}</h2>}
               {s.paragraphs.map((p, j) => (
-                <p key={j} className="text-[#d1d5db] leading-relaxed mb-3">{p}</p>
+                <p key={j} className="text-ink-soft leading-relaxed mb-4">{p}</p>
               ))}
               {s.bullets && (
-                <ul className="space-y-2 mt-2 mb-3">
+                <ul className="mt-3 space-y-2.5">
                   {s.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-[#d1d5db] text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#dead1f] mt-2 shrink-0" />
-                      {b}
+                    <li key={b} className="flex items-start gap-2.5 text-ink">
+                      <Check size={18} className="text-rust shrink-0 mt-1" aria-hidden="true" />
+                      <span>{b}</span>
                     </li>
                   ))}
                 </ul>
               )}
-            </div>
+            </section>
           ))}
 
-          <div className="bg-[#111827] rounded-xl p-6 mt-10 text-center border border-[#2d3748]">
-            <h3 className="text-xl font-bold text-white mb-2 font-['Poppins']">
-              Contact Our Carpenters in Portishead Today
-            </h3>
-            <p className="text-[#d1d5db] text-sm mb-4">
-              Ready to get started? Call us for a free estimate or{' '}
-              <Link to="/contact" className="text-[#dead1f] hover:underline">send us a message</Link>.
+          {/* Inline call-to-action */}
+          <div className="card p-6 mt-10">
+            <h2 className="font-display text-xl font-semibold text-ink mb-2">Thinking about a project like this?</h2>
+            <p className="text-ink-soft mb-4">
+              We’re a Portishead workshop — happy to visit, measure up and price it honestly.{' '}
+              <Link to="/contact" className="text-rust font-semibold hover:underline">send us a message</Link> or call:
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="tel:01275844094" className="flex items-center justify-center gap-2 font-semibold text-white hover:text-[#dead1f]">
-                <Phone size={16} />01275 844094
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href={`tel:${SITE.phonePrimary.tel}`} className="btn btn-primary">
+                <Phone size={18} aria-hidden="true" /> {SITE.phonePrimary.display}
               </a>
-              <a href="tel:07834772046" className="flex items-center justify-center gap-2 font-semibold text-white hover:text-[#dead1f]">
-                <Phone size={16} />07834 772046
+              <a href={`tel:${SITE.phoneSecondary.tel}`} className="btn btn-outline">
+                <Phone size={18} aria-hidden="true" /> {SITE.phoneSecondary.display}
               </a>
             </div>
+          </div>
+
+          <div className="mt-8">
+            <Link to="/blog" className="inline-flex items-center gap-2 text-rust font-semibold hover:underline">
+              <ArrowLeft size={18} aria-hidden="true" /> All articles
+            </Link>
           </div>
         </div>
       </article>

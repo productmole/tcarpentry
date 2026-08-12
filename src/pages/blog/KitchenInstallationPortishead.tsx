@@ -3,37 +3,41 @@ import BlogTemplate from './BlogTemplate'
 export default function KitchenInstallationPortishead() {
   return (
     <BlogTemplate
-      h1="Kitchen Installation in Portishead Creating the Heart of Your Home"
-      heroImg="/gallery/IMG_0320.jpg"
-      heroImgAlt="Kitchen installation in Portishead by Total Carpentry Services"
-      intro="The kitchen is the most-used room in most homes, and a well-designed installation can transform daily life. Total Carpentry Services provides expert kitchen installations for homeowners across Portishead, Clevedon, Nailsea and the wider North Somerset area."
-      secondaryImg="/gallery/IMG_0322.jpg"
-      secondaryImgAlt="Fitted kitchen detail by Total Carpentry Services"
+      meta={{
+        title: 'What a Local Joiner Brings to a Kitchen Fit | Total Carpentry',
+        description:
+          'A showroom sells the units; a joiner makes them fit. Here’s what a local Portishead carpenter brings to a kitchen installation that a national supplier can’t.',
+      }}
+      kicker="Kitchen installation"
+      readTime="4 min"
+      h1="What a local joiner brings to a kitchen fit"
+      featureImg="/img/kitchen-fit-portishead-01.jpg"
+      featureImgAlt="Fitted kitchen completed by Total Carpentry in a Portishead home"
+      intro="The kitchen you saw in the showroom was assembled on a flat floor between square walls. Yours won’t be. Closing that gap — between the render and the reality — is the whole job."
       sections={[
         {
-          heading: 'Why Hire a Local Portishead Carpenter for Your Kitchen?',
+          heading: 'The units are the easy part',
           paragraphs: [
-            'A national kitchen company might promise a slick showroom experience, but a skilled local carpenter delivers something far more personal attention to detail, a genuine interest in your project, and the flexibility to solve problems as they arise.',
+            'Screwing carcasses together is straightforward. Making a run of them sit dead level against a bowed wall, scribing an end panel to a wonky corner, and lining every door and drawer gap so it reads as one clean face — that’s the craft, and it’s what you notice every day for the next fifteen years.',
           ],
           bullets: [
-            'Free estimates and consultations',
-            'Wide choice of door styles and layouts',
-            'Coordinated installation including all trades',
-            'Careful site protection and tidy working',
-            '1-year workmanship guarantee on every kitchen',
+            'Free quote and a proper measure before anything is ordered',
+            'A choice of layouts and door styles to suit your room',
+            'Other trades brought in and coordinated around the fit',
+            'Site sheeted up and left clean at the end of each day',
           ],
         },
         {
-          heading: 'Fitted Kitchens and Bespoke Kitchens',
+          heading: 'Fitted or bespoke — and where your money goes',
           paragraphs: [
-            'We install both fitted kitchens (using quality, standard-sized units arranged to suit your space) and fully bespoke kitchens built to your exact measurements and specifications. Most clients find that a well-specified fitted kitchen, expertly installed, is hard to distinguish from bespoke at a much lower cost.',
-            'We\'re happy to work with kitchen units you\'ve already purchased, or we can advise on quality suppliers who work well with our installation methods.',
+            'We install standard fitted ranges and fully bespoke kitchens alike. A good fitted range, arranged well and installed with care, gets most people exactly where they want to be for a lot less than bespoke. Where a room is genuinely awkward, or you want a size or finish off-catalogue, that’s when made-to-measure earns its cost — and we’ll tell you which camp your kitchen is in.',
+            'Already bought your units, or planning to? We’re happy to fit those too, or point you at suppliers whose cabinets play nicely with a careful install.',
           ],
         },
         {
-          heading: 'Start With a Free Estimate',
+          heading: 'Begin with a free quote',
           paragraphs: [
-            'If you\'re planning a kitchen in Portishead or the surrounding area, we\'d love to help. Get in touch to arrange a free, no-obligation visit and estimate.',
+            'If a new kitchen is on the cards anywhere around Portishead, let’s start with a visit. We’ll measure up, talk it through, and give you a clear, no-obligation price.',
           ],
         },
       ]}

@@ -3,37 +3,42 @@ import BlogTemplate from './BlogTemplate'
 export default function FittedWardrobesPortishead() {
   return (
     <BlogTemplate
-      h1="Fitted Wardrobes in Portishead Transform Your Bedroom Storage"
-      heroImg="/gallery/IMG_0851.jpg"
-      heroImgAlt="Fitted wardrobes by Total Carpentry Services in Portishead"
-      intro="A well-designed fitted wardrobe doesn't just store your clothes it transforms how your bedroom feels and functions. Total Carpentry Services designs and installs bespoke fitted wardrobes for homeowners across Portishead and North Somerset."
-      secondaryImg="/gallery/IMG_0878.jpg"
-      secondaryImgAlt="Fitted wardrobe interior by Total Carpentry Services"
+      meta={{
+        title: 'Fitted Wardrobes: Reclaiming Dead Space | Total Carpentry',
+        description:
+          'Freestanding wardrobes waste the space around them. Here’s how a built-in run in a Portishead bedroom reclaims eaves, corners and the gap up to the ceiling.',
+      }}
+      kicker="Fitted wardrobes"
+      readTime="4 min"
+      h1="Fitted wardrobes: turning dead corners into storage"
+      featureImg="/img/fitted-wardrobe-01.jpg"
+      featureImgAlt="Built-in bedroom wardrobe with panelled doors by Total Carpentry"
+      intro="Stand a shop-bought wardrobe against a wall and count the wasted space: the gap on top, the shadow down the side, the corner it can’t reach. A built-in wardrobe exists to swallow all of it."
       sections={[
         {
-          heading: 'Why Choose Fitted Wardrobes?',
+          heading: 'Why built-in beats freestanding',
           paragraphs: [
-            'Unlike freestanding furniture, fitted wardrobes are built to the exact dimensions of your room making the most of every centimetre, including awkward alcoves, sloping ceilings and tight corners.',
+            'The difference is simple: a freestanding unit is a box that happens to be in your room, while a fitted wardrobe is made to the room itself. It runs wall to wall and floor to ceiling, follows the line of a sloping loft ceiling, and turns the awkward corner that catalogue furniture just ignores.',
           ],
           bullets: [
-            'Made-to-measure for a seamless, built-in look',
-            'Customisable internal layouts hanging rails, shelves, drawers, shoe racks, lighting',
-            'Wide choice of door styles sliding, hinged, mirrored, glass-front',
-            'Walk-in designs available for larger rooms',
-            'Removes and disposes of existing units',
+            'Cut to your walls for a flush, built-in look',
+            'Internals arranged around your clothes — rails, drawers, shelves, shoe storage',
+            'Doors to suit the room: sliding, hinged, mirrored or glazed',
+            'Walk-in layouts where a box room or deep recess allows',
+            'Your old units removed and taken away',
           ],
         },
         {
-          heading: 'Our Fitted Wardrobe Service in Portishead',
+          heading: 'How the process runs',
           paragraphs: [
-            'We offer a complete design-and-install service from initial consultation through to the finished wardrobe. We\'ll visit your home, take measurements, discuss your style preferences and internal storage requirements, then build and fit everything to the highest standard.',
-            'Our fitted wardrobes are built to last, using quality materials and solid construction methods far removed from flat-pack alternatives. And because we\'re a local Portishead business, we can often turn projects around faster than national firms.',
+            'It starts with a visit. We measure the space properly, talk through how you use the room and what you need to store, then draw it up. From there we build and fit to a standard that has nothing to do with flat-pack — solid materials, fixed back to the wall, made to stay true.',
+            'Being based in Portishead, we can usually move quicker than a national bedroom company, and you’re dealing with the person making it rather than a call centre.',
           ],
         },
         {
-          heading: 'Get a Free Design Consultation',
+          heading: 'Start with a free design visit',
           paragraphs: [
-            'If you\'re considering fitted wardrobes in your Portishead home, the first step is a free consultation. We\'ll come to you, take a look at the space and discuss what\'s possible with no obligation.',
+            'If a fitted wardrobe is on your mind, the first step costs nothing. We’ll come and look at the space, tell you honestly what’s possible, and leave you to think it over — no obligation, no hard sell.',
           ],
         },
       ]}

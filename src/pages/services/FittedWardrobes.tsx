@@ -3,64 +3,66 @@ import ServiceTemplate from './ServiceTemplate'
 export default function FittedWardrobes() {
   return (
     <ServiceTemplate
-      heroH1="Fitted Wardrobes in Portishead"
-      heroIntro="Fitted wardrobes turn awkward, wasted corners into stylish, hard-working storage. Total Carpentry Services designs and builds bespoke wardrobes across Portishead, tailoring every detail to your room and your décor from sleek sliding doors to generous walk-ins for durable, elegant storage that makes the most of your space."
-      heroImg="/gallery/IMG_0851.jpg"
-      heroImgAlt="Bespoke fitted storage by Total Carpentry Services"
+      meta={{
+        title: 'Fitted Wardrobes in Portishead | Total Carpentry',
+        description:
+          'Built-in wardrobes designed and made to measure in Portishead. Sliding, hinged, walk-in and corner options that use awkward alcoves and eaves.',
+      }}
+      label="Fitted Wardrobes"
+      heroH1="Bedroom storage built into the space you’ve got"
+      heroLead="Freestanding furniture leaves gaps; a built-in wardrobe fills them. We design and make wardrobes to the exact run of your wall, tucking into sloping eaves and dead corners so nothing is wasted."
+      heroImg="/img/fitted-wardrobe-01.jpg"
+      heroImgAlt="Built-in bedroom wardrobe with panelled doors made by Total Carpentry"
+      atAGlance={['Free design visit', 'Made to measure', 'Old units cleared away']}
       sections={[
         {
-          heading: 'Practical & Elegant Storage Solutions',
+          heading: 'Storage that looks like it was always there',
           paragraphs: [
-            'Our fitted wardrobes are built to slot seamlessly into a specific space, rather than stand alone. Because they\'re made to your room\'s dimensions and style, they look cohesive and tidy and they handle tricky spots like sloping ceilings and loft alcoves beautifully.',
-            'We offer a complete design-and-install service for handmade wardrobes at a fraction of the price of the big national firms, and we\'ll remove and dispose of your old units too.',
+            'Because each wardrobe is cut to your room rather than a catalogue, it lines up with the skirting, the coving and the ceiling line instead of fighting them. That is what makes a run of doors read as part of the house rather than a box pushed against a wall.',
           ],
-          imgSrc: '/gallery/IMG_0878.jpg',
-          imgAlt: 'Fitted storage unit by Total Carpentry Services',
-          imgRight: false,
+          imgSrc: '/img/wardrobe-interior-01.jpg',
+          imgAlt: 'Interior of a fitted wardrobe with hanging rails and shelving',
+          caption: 'Interiors are planned around what you own, not a standard grid.',
         },
         {
-          heading: 'Wardrobe Designs to Suit Your Property',
-          paragraphs: ['We offer five wardrobe styles to suit any bedroom and any budget:'],
+          heading: 'Door styles for the room and the budget',
+          paragraphs: ['Five door types cover most bedrooms; we will steer you to the one that suits the space and the way the room is used.'],
           bullets: [
-            'Sliding Door space-saving and sleek, ideal for smaller bedrooms',
-            'Hinged Door classic and versatile, with a wide choice of panel styles',
-            'Walk-In a dressing-room feel, maximising a larger room or alcove',
-            'Corner makes clever use of corner spaces that standard furniture ignores',
-            'Mirrored adds light and the illusion of space; particularly popular in smaller rooms',
+            'Sliding — nothing swings into the room, so ideal where floor space is tight',
+            'Hinged — the classic look, with the widest choice of panel and paint finishes',
+            'Walk-in — turn a box room or deep alcove into a proper dressing area',
+            'Corner — claims the corner that off-the-shelf furniture always leaves empty',
+            'Mirrored — bounces light around and makes a smaller room feel bigger',
           ],
-          imgSrc: '/gallery/IMG_0852.jpg',
-          imgAlt: 'Bespoke fitted storage by Total Carpentry Services',
-          imgRight: true,
+          imgSrc: '/img/fitted-wardrobe-02.jpg',
+          imgAlt: 'Fitted wardrobe with sliding doors in a Portishead bedroom',
         },
         {
-          heading: 'The Advantages of Our Handmade Wardrobes',
-          paragraphs: ['Every wardrobe we build is made to measure, using quality materials and craftsmanship that outlasts flat-pack alternatives.'],
+          heading: 'Why handmade outlasts flat-pack',
+          paragraphs: ['Everything is built to your measurements from solid materials and fixed back to the wall, so it stays true rather than sagging or drifting out of square after a couple of years.'],
           bullets: [
-            'Improved Organisation custom internal layouts tailored to your wardrobe',
-            'Aesthetic Appeal finishes and styles that complement your room perfectly',
-            'Space-Saving Design built to fill every inch, including difficult alcoves',
-            'Durability and Quality robust construction that stands the test of time',
-            'Custom Features lighting, mirrors, pull-out drawers, shoe racks and more',
-            'Reduced Clutter everything in its place for a calm, tidy bedroom',
+            'Interiors laid out to your clothes — rails, shelves and drawer runs where you need them',
+            'Finishes chosen to sit with the rest of the room',
+            'Every inch used, right into the tricky angles under a roof slope',
+            'Solid carcass and fixings that hold their line for the long haul',
+            'Extras that earn their place — soft lighting, mirrors, pull-outs, shoe racks',
+            'A calmer room, because there is finally a home for everything',
           ],
-          imgSrc: '/gallery/IMG_0879.jpg',
-          imgAlt: 'Fitted storage interior details by Total Carpentry Services',
-          imgRight: false,
         },
       ]}
-      faqHeading="Fitted Wardrobes – FAQ"
+      faqHeading="Fitted wardrobes — your questions"
       faqs={[
         {
-          q: 'Which door type is best for a small bedroom?',
-          a: 'Sliding doors are generally the best choice for smaller rooms, as they require no clearance in front of the wardrobe to open. They\'re also one of our most popular styles for a clean, contemporary look.',
+          q: 'What works best in a small bedroom?',
+          a: 'Sliding doors, usually. They need no clearance to open, so you keep the floor free, and they give that clean, unbroken front that makes a compact room feel calmer. They are one of the styles we fit most.',
         },
         {
-          q: 'Can the internal layout be customised?',
-          a: 'Absolutely. We design the internal layout around your wardrobe hanging rails, shelving, drawers, shoe storage, lighting and more so every centimetre works as hard as possible.',
+          q: 'Can I decide how the inside is laid out?',
+          a: 'Completely. We plan the internals around your wardrobe — long hanging, double hanging, drawers, shelving, shoe storage, lighting — so the space earns its keep rather than leaving you a single rail and a shelf.',
         },
         {
-          q: 'How durable are fitted wardrobes compared to flat-pack?',
-          a: 'Significantly more so. Our wardrobes are built to the dimensions of your room using quality materials and solid fixing points. They don\'t shift, sag or deteriorate the way flat-pack units often do after a few years.',
+          q: 'Are they really sturdier than flat-pack?',
+          a: 'By a good margin. Ours are cut to the room and screwed back to solid fixings, so they do not shift, sag or pull apart at the joints the way self-assembly units tend to once they have been lived with for a while.',
         },
       ]}
     />

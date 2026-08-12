@@ -2,15 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "tcarpentry",
-      "runtimeExecutable": "/opt/homebrew/bin/npm",
-      "runtimeArgs": ["--prefix", "/Users/farisaziz/tcarpentry-dev", "run", "dev"],
-      "port": 5173
-    },
-    {
       "name": "tcarpentry-site",
       "runtimeExecutable": "/bin/bash",
-      "runtimeArgs": ["-c", "PATH=/opt/homebrew/opt/node/bin:$PATH /opt/homebrew/opt/node/bin/npm --prefix '/Users/farisaziz/Library/Mobile Documents/com~apple~CloudDocs/Portishead Websites/tcarpentry' run dev -- --port 5174"],
+      "runtimeArgs": [
+        "-c",
+        "cd '/Users/farisaziz/Library/Mobile Documents/com~apple~CloudDocs/Portishead Websites/tcarpentry' && exec /opt/homebrew/opt/node/bin/node node_modules/vite/bin/vite.js --port 5174 --strictPort"
+      ],
       "port": 5174
     }
   ]

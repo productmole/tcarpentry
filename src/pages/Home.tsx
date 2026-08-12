@@ -23,14 +23,14 @@ const mosaic = [
 const steps = [
   { Icon: PhoneCall, title: 'Get in touch', body: 'Call, WhatsApp or send the form with a rough idea of the job. No detail is too small to start with.' },
   { Icon: PencilRuler, title: 'We visit and quote', body: 'We come and measure up, talk through options, and give you a clear, fixed price — free, with no pressure.' },
-  { Icon: Hammer, title: 'We build and guarantee', body: 'We do the work tidily, keep you posted, and back it with a one-year workmanship guarantee.' },
+  { Icon: Hammer, title: 'We build and guarantee', body: 'We do the work tidily, keep you posted, and guarantee all of it.' },
 ]
 
 export default function Home() {
   useDocumentMeta({
     title: 'Total Carpentry — Joinery & Home Improvements in Portishead',
     description:
-      'Family-run Portishead carpenters since 2014. Kitchens, fitted wardrobes, wood flooring and home renovations across North Somerset, under a one-year guarantee. Free quotes.',
+      'Family-run Portishead carpenters since 2014. Kitchens, fitted wardrobes, wood flooring and home renovations across North Somerset. Free quotes.',
   })
 
   return (
@@ -76,7 +76,7 @@ export default function Home() {
                 5.0 across 9 Google reviews
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <ShieldCheck size={16} className="text-ochre" aria-hidden="true" /> One-year workmanship guarantee
+                <ShieldCheck size={16} className="text-ochre" aria-hidden="true" /> All work guaranteed
               </span>
             </div>
           </div>
@@ -124,11 +124,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
-              <p className="kicker mb-3">What we take on</p>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">Four things we do well</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">Our services</h2>
             </div>
             <Link to="/services" className="inline-flex items-center gap-1.5 font-semibold text-rust hover:underline self-start md:self-auto">
-              Our Services <ArrowRight size={17} aria-hidden="true" />
+              All services <ArrowRight size={17} aria-hidden="true" />
             </Link>
           </div>
           <ul className="divide-y divide-line border-y border-line">
@@ -160,7 +159,6 @@ export default function Home() {
               className="w-full aspect-[4/3] object-cover rounded-2xl border border-line shadow-lg" />
           </figure>
           <div>
-            <p className="kicker mb-3">Why people call us back</p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">One workshop, start to finish</h2>
             <p className="text-ink-soft leading-relaxed mb-4">
               Being family-run means the person who quotes your job is the person who does it — and the one you ring if
@@ -183,7 +181,6 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
-              <p className="kicker mb-3">Our own work</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">Recent jobs, no stock photos</h2>
             </div>
             <Link to="/gallery" className="inline-flex items-center gap-1.5 font-semibold text-rust hover:underline self-start md:self-auto">
@@ -209,8 +206,7 @@ export default function Home() {
       <section className="bg-paper">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
           <div className="max-w-2xl mb-10">
-            <p className="kicker mb-3">Straightforward from the start</p>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">How a job runs</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">How we work</h2>
           </div>
           <ol className="grid md:grid-cols-3 gap-5">
             {steps.map((step, i) => (

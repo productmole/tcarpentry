@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Phone, Check, ShieldCheck, ArrowRight } from 'lucide-react'
+import { Phone, Check, ArrowRight } from 'lucide-react'
 import FAQAccordion from '../../components/FAQAccordion'
 import ContactCTA from '../../components/ContactCTA'
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -41,7 +41,6 @@ export default function ServiceTemplate(props: ServicePageProps) {
         <div className="max-w-6xl mx-auto px-4 pt-10 pb-14 md:py-16 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <Breadcrumbs trail={[{ label: 'Home', to: '/' }, { label: 'Services', to: '/services' }, { label }]} />
-            <p className="kicker mb-3">Service</p>
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-ink leading-[1.08] mb-4">{heroH1}</h1>
             <p className="text-lg text-ink-soft leading-relaxed mb-6">{heroLead}</p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -67,10 +66,6 @@ export default function ServiceTemplate(props: ServicePageProps) {
               width="1024" height="768"
               className="w-full aspect-[4/3] object-cover rounded-2xl border border-line shadow-lg"
             />
-            <figcaption className="absolute -bottom-4 left-4 right-4 sm:left-6 sm:right-auto card px-4 py-3 flex items-center gap-3">
-              <ShieldCheck size={22} className="text-ochre shrink-0" aria-hidden="true" />
-              <span className="text-sm font-medium text-ink">One-year workmanship guarantee</span>
-            </figcaption>
           </figure>
         </div>
       </section>

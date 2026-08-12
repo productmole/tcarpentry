@@ -3,38 +3,46 @@ import BlogTemplate from './BlogTemplate'
 export default function HouseRenovationsPortishead() {
   return (
     <BlogTemplate
-      h1="House Renovations in Portishead Making Your Home Work Harder for You"
-      heroImg="/gallery/IMG_0862.jpg"
-      heroImgAlt="House renovation in Portishead by Total Carpentry Services"
-      intro="Whether you're opening up a ground floor, refreshing tired finishes or adding bespoke storage throughout, a well-executed renovation can completely transform how you live. Total Carpentry Services delivers thoughtful house renovations across Portishead and North Somerset."
-      secondaryImg="/gallery/IMG_0864.jpg"
-      secondaryImgAlt="Renovation carpentry work by Total Carpentry Services"
+      meta={{
+        title: 'Renovating a Portishead Home Without the Chaos | Total Carpentry',
+        description:
+          'A renovation is as much about sequencing and dust control as joinery. Here’s how Total Carpentry runs internal renovation work in Portishead homes, room by room.',
+      }}
+      kicker="House renovations"
+      readTime="5 min"
+      h1="Renovating a Portishead home without the chaos"
+      featureImg="/img/home-renovation-01.jpg"
+      featureImgAlt="Room part-way through a renovation with new joinery by Total Carpentry"
+      intro="The dread of renovating usually isn’t the result — it’s the mess, the noise and the not-knowing-what-happens-next. Most of that is a planning problem, and planning is the part we take seriously."
       sections={[
         {
-          heading: 'What Does a House Renovation Involve?',
+          heading: 'It’s the order of things that keeps it calm',
           paragraphs: [
-            'A house renovation can mean many things from a single room refresh to a whole-home transformation. At Total Carpentry Services, we handle all internal carpentry aspects of renovation projects.',
+            'A renovation goes sideways when trades trip over each other and nobody owns the sequence. Because one carpenter runs our jobs from first fix to final trim, the steps line up: structure and framing first, floors and units next, trim and finishing last, with the messy work grouped so you’re not living in a building site for a fortnight longer than you need to.',
           ],
+        },
+        {
+          heading: 'The carpentry that pulls a room together',
+          paragraphs: ['A refurbished room only feels finished when the joinery is right. This is the work that does it:'],
           bullets: [
-            'Custom built-in shelving and alcove units',
-            'New skirting boards and architraves',
-            'Door hanging and door frame replacement',
-            'Staircase refurbishment (treads, risers, balustrades)',
-            'Partition and stud wall construction',
-            'New wood or laminate flooring throughout',
+            'Built-in shelving and cupboards in the alcoves',
+            'Fresh skirting and architrave throughout',
+            'Doors hung true, with new linings where needed',
+            'Staircase work — treads, risers and spindles',
+            'Stud walls to divide or reshape a space',
+            'New timber or laminate flooring across the floor',
           ],
         },
         {
-          heading: 'Adding Value Through Renovation',
+          heading: 'Taking a wall out — carefully',
           paragraphs: [
-            'A well-planned renovation doesn\'t just make your home more enjoyable to live in it can significantly increase its market value. Kitchens, flooring and bespoke storage are among the improvements that consistently deliver a strong return on investment.',
-            'We\'ve completed renovation projects ranging from single-room refreshes to whole-home overhauls across Portishead, Clevedon, Nailsea and the wider North Somerset area.',
+            'Opening two rooms into one can change a house completely, but it’s not a job to guess at. We establish whether a wall is load-bearing before anything moves, and where it is, an engineer specifies the support and a builder puts the beam in. Only then does the fun part — the joinery — begin.',
           ],
         },
         {
-          heading: 'Free Estimates for Portishead Renovations',
+          heading: 'Value that stays in the house',
           paragraphs: [
-            'Every renovation starts with a free estimate. We\'ll visit your property, discuss your ideas, and provide clear, honest pricing with no hidden surprises. All renovation work comes with our 1-year workmanship guarantee.',
+            'Kitchens, flooring and well-made storage are the improvements that tend to hold their value at sale time, and a tidy, considered home simply shows better. We’ve done everything from a single tired room to a whole-house overhaul across Portishead and the surrounding villages, always with a free quote to begin with.',
           ],
         },
       ]}

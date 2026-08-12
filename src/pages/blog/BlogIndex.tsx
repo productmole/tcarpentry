@@ -1,81 +1,99 @@
 import { Link } from 'react-router-dom'
-import Hero from '../../components/Hero'
+import { ArrowRight } from 'lucide-react'
+import Breadcrumbs from '../../components/Breadcrumbs'
+import { useDocumentMeta } from '../../lib/useDocumentMeta'
 
-const posts = [
+export const posts = [
   {
-    title: 'Why It Pays to Find the Right Carpenter for Work in Portishead',
+    title: 'Hiring a carpenter in Portishead: what actually matters',
     slug: '/blog/carpenter-in-portishead',
-    img: '/gallery/IMG_0851.jpg',
-    excerpt: 'Choosing the right carpenter can be the difference between a home improvement that truly transforms your space and one that disappoints.',
+    img: '/img/carpentry-detail-01.jpg',
+    imgAlt: 'Close carpentry detail on a completed Total Carpentry project',
+    readTime: '4 min',
+    excerpt: 'Trade cards and nice photos only tell you so much. Here’s what to look for when you’re trusting someone with work in your home.',
   },
   {
-    title: 'Fitted Wardrobes in Portishead Transform Your Bedroom Storage',
+    title: 'Fitted wardrobes: turning dead corners into storage',
     slug: '/blog/fitted-wardrobes-in-portishead',
-    img: '/gallery/IMG_0852.jpg',
-    excerpt: 'A well-designed fitted wardrobe transforms how your bedroom feels and functions. Discover our bespoke design and install service.',
+    img: '/img/fitted-wardrobe-01.jpg',
+    imgAlt: 'Built-in bedroom wardrobe made by Total Carpentry',
+    readTime: '4 min',
+    excerpt: 'The gaps around freestanding furniture add up. A built-in run reclaims them — eaves, corners and all.',
   },
   {
-    title: 'House Renovations in Portishead Making Your Home Work Harder for You',
+    title: 'Renovating a Portishead home without the chaos',
     slug: '/blog/house-renovations-in-portishead',
-    img: '/gallery/IMG_0862.jpg',
-    excerpt: 'A well-executed renovation can completely transform how you live. See what\'s involved and how we can help.',
+    img: '/img/home-renovation-01.jpg',
+    imgAlt: 'Room part-way through a renovation by Total Carpentry',
+    readTime: '5 min',
+    excerpt: 'A good renovation is as much about sequencing and dust control as it is about the joinery. Here’s how we run one.',
   },
   {
-    title: 'Kitchen Installation in Portishead Creating the Heart of Your Home',
+    title: 'What a local joiner brings to a kitchen fit',
     slug: '/blog/kitchen-installation-in-portishead',
-    img: '/gallery/IMG_0320.jpg',
-    excerpt: 'A well-designed kitchen installation transforms daily life. Find out why a local Portishead carpenter is the best choice.',
+    img: '/img/kitchen-fit-portishead-01.jpg',
+    imgAlt: 'Fitted kitchen completed by Total Carpentry in Portishead',
+    readTime: '4 min',
+    excerpt: 'Showrooms sell the units. Someone still has to make them meet your out-of-square walls. That’s the part that shows.',
   },
   {
-    title: 'Wood Flooring Installation in Portishead Warmth, Character & Lasting Value',
+    title: 'Solid timber or laminate? Choosing a floor that lasts',
     slug: '/blog/wood-flooring-installation-in-portishead',
-    img: '/gallery/IMG_0697.jpg',
-    excerpt: 'Wood flooring adds warmth, character and real value to any property. Learn about solid timber and laminate options.',
+    img: '/img/wood-floor-install-01.jpg',
+    imgAlt: 'Newly laid wood floor by Total Carpentry',
+    readTime: '4 min',
+    excerpt: 'Both have their place. The right answer depends on the room, the budget and how hard the floor has to work.',
   },
 ]
 
 export default function BlogIndex() {
+  useDocumentMeta({
+    title: 'Blog | Total Carpentry, Portishead',
+    description:
+      'Practical notes on kitchens, fitted wardrobes, flooring and renovations from Total Carpentry — a working joiner’s take, written for Portishead homeowners.',
+  })
+
   return (
     <>
-      <Hero
-        h1="Blog"
-        intro="Ideas, insights and inspiration for your home improvement projects in Portishead and beyond."
-        imageSrc="/gallery/IMG_0528.jpg"
-        imageAlt="Carpentry projects blog by Total Carpentry Services"
-      />
-
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-[#d1d5db] leading-relaxed mb-4 max-w-3xl">
-            At Total Carpentry Services we take pride in high-quality home improvements that bring any vision to life whether you're upgrading a kitchen, laying new flooring, refreshing a tired interior or solving a bedroom storage headache.
-          </p>
-          <p className="text-[#d1d5db] leading-relaxed mb-12 max-w-3xl">
-            In this series of posts we explore the benefits of our services and share ideas to help you create the home you want. If you're in or around Portishead, <Link to="/contact" className="text-[#dead1f] hover:underline">get in touch</Link> and let's get started.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.map((post) => (
-              <Link
-                key={post.slug}
-                to={post.slug}
-                className="group bg-[#111827] border border-[#2d3748] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-              >
-                <div className="overflow-hidden h-48">
-                  <img
-                    src={post.img}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-5">
-                  <h2 className="font-bold text-white text-base mb-2 group-hover:text-[#dead1f] transition-colors leading-snug">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-500 text-sm leading-relaxed">{post.excerpt}</p>
-                </div>
-              </Link>
-            ))}
+      <section className="bg-paper border-b border-line">
+        <div className="max-w-6xl mx-auto px-4 pt-10 pb-10">
+          <Breadcrumbs trail={[{ label: 'Home', to: '/' }, { label: 'Blog' }]} />
+          <div className="max-w-2xl">
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-ink leading-[1.08] mb-4">
+              Notes from the workshop
+            </h1>
+            <p className="text-lg text-ink-soft leading-relaxed">
+              No filler — just the things we find ourselves explaining to customers, written down. Planning a job in or
+              around Portishead? These should help you ask the right questions.
+            </p>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-paper">
+        <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {posts.map((post) => (
+              <li key={post.slug}>
+                <Link to={post.slug} className="card group h-full flex flex-col overflow-hidden hover:border-rust transition-colors">
+                  <div className="overflow-hidden aspect-[16/10]">
+                    <img src={post.img} alt={post.imgAlt} loading="lazy" width="512" height="320"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-rust mb-2">{post.readTime} read</span>
+                    <h2 className="font-display text-xl font-semibold text-ink mb-2 leading-snug group-hover:text-rust transition-colors">
+                      {post.title}
+                    </h2>
+                    <p className="text-ink-soft text-[15px] leading-relaxed flex-1">{post.excerpt}</p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 font-semibold text-rust">
+                      Read <ArrowRight size={16} aria-hidden="true" className="group-hover:translate-x-0.5 transition-transform" />
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>

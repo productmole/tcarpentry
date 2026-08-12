@@ -73,7 +73,6 @@ export default function Gallery() {
           <Breadcrumbs trail={[{ label: 'Home', to: '/' }, { label: 'Gallery' }]} />
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
             <div>
-              <p className="kicker mb-3">Our own work</p>
               <h1 className="font-display text-4xl md:text-5xl font-semibold text-ink leading-[1.08]">
                 Recent jobs, photographed on site
               </h1>

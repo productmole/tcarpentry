@@ -3,75 +3,82 @@ import ServiceTemplate from './ServiceTemplate'
 export default function KitchenInstallations() {
   return (
     <ServiceTemplate
-      heroH1="Kitchen Installations in Portishead"
-      heroIntro="A thoughtfully designed kitchen changes daily life for the better. As your local Portishead carpenter, Total Carpentry Services builds tailored installations that pair smart layouts with fine craftsmanship clever storage, seamless finishes, and a precise result that suits your home and how you live."
-      heroImg="/gallery/IMG_0320.jpg"
-      heroImgAlt="Kitchen installation by Total Carpentry Services"
+      meta={{
+        title: 'Kitchen Installations in Portishead | Total Carpentry',
+        description:
+          'Portishead joiners fitting kitchens the careful way — layout planning, cabinet building and finishing, trades coordinated.',
+      }}
+      label="Kitchen Installations"
+      heroH1="Kitchens installed professionally, from first cabinet to final trim"
+      heroLead="A kitchen is the room a household runs on. We set out the layout, build and hang the units, then chase down every scribe and mitre so the finished room reads tight and works hard for years."
+      heroImg="/img/kitchen-fit-portishead-01.jpg"
+      heroImgAlt="Fitted kitchen with pale cabinetry completed by Total Carpentry in a Portishead home"
+      atAGlance={['Free measure & quote', 'Fitted or fully bespoke', 'Other trades coordinated']}
       sections={[
         {
-          heading: 'Stunning Spaces for All Property Styles',
+          heading: 'Made to suit the house you actually have',
           paragraphs: [
-            'When it comes to the heart of the home, a skilled carpenter makes all the difference. Whether you picture a modern fitted kitchen or a traditional bespoke layout built around your needs, we can make it happen and we\'re happy to share examples of local projects, plus the flooring and wider renovations we\'ve completed alongside them.',
+            'Whether your home leans modern or period, the units still have to meet real walls, real floors and real ceilings — rarely any of them square. That is where a joiner earns their keep. We handle both slick handleless schemes and softer in-frame looks, packing and scribing each run so it sits flush against what is really there.',
+            'Ask and we will point you to finished kitchens nearby, along with the flooring and wider renovation work we often wrap into the same job.',
           ],
-          imgSrc: '/gallery/IMG_0321.jpg',
-          imgAlt: 'Fitted kitchen by Total Carpentry Services',
-          imgRight: false,
+          imgSrc: '/img/kitchen-fit-portishead-02.jpg',
+          imgAlt: 'Run of fitted kitchen units and worktop installed by Total Carpentry',
+          caption: 'A recent Portishead kitchen, set out and installed in-house.',
         },
         {
-          heading: 'Kitchen Designs & Layouts',
-          paragraphs: ['We work with a range of kitchen layouts to suit every home and cooking style. During your free consultation we\'ll help you find the best configuration for your space.'],
-          bullets: [
-            'Galley efficient and streamlined, ideal for narrower kitchens',
-            'L-Shaped versatile and sociable, works well in open-plan spaces',
-            'U-Shaped maximum worktop and storage, perfect for keen cooks',
-            'Peninsula a practical compromise between island and standard layouts',
-            'Island the statement centrepiece; ideal for larger open-plan kitchens',
-          ],
-          imgSrc: '/gallery/IMG_0322.jpg',
-          imgAlt: 'Kitchen layout options',
-          imgRight: true,
-        },
-        {
-          heading: 'Kitchen Doors',
-          paragraphs: ['The door style sets the whole tone of a kitchen. We offer a wide range of door designs to suit traditional, contemporary or transitional schemes.'],
-          bullets: [
-            'Shaker a timeless choice; clean lines that suit both modern and classic kitchens',
-            'Vinyl-Wrapped budget-friendly, available in hundreds of colours and effects',
-            'In-Frame a premium, furniture-grade look for a truly bespoke feel',
-            'Glass-Front adds light and visual interest; ideal for display units',
-          ],
-          imgSrc: '/gallery/IMG_0526.jpg',
-          imgAlt: 'Kitchen door styles',
-          imgRight: false,
-        },
-        {
-          heading: 'Fitted Kitchen Installation vs Bespoke Kitchens',
+          heading: 'Settling on a layout',
           paragraphs: [
-            'A fitted kitchen uses a combination of standard-sized units arranged to suit your space a cost-effective approach with a wide range of styles and finishes. A bespoke kitchen is built entirely to measure, offering unlimited design freedom at a higher price point.',
-            'We offer both options and will help you find the right balance of budget, style and practicality. Many of our clients find that a well-specified fitted kitchen, installed by an expert, is indistinguishable from bespoke at a fraction of the cost.',
+            'The shape of the room decides most of it. At your free visit we will walk through the options and sketch the one that keeps the cooking, washing and storage within easy reach.',
           ],
-          imgSrc: '/gallery/IMG_0528.jpg',
-          imgAlt: 'Bespoke kitchen installation',
-          imgRight: true,
+          bullets: [
+            'Galley — two facing runs; tidy and quick to work in when width is tight',
+            'L-shaped — wraps two walls and opens the room up to a table or seating',
+            'U-shaped — three sides of worktop and cupboards for cooks who need the space',
+            'Peninsula — an island’s sociability without needing the floor an island demands',
+            'Island — a central block for prep, seating or a second sink in a larger room',
+          ],
+        },
+        {
+          heading: 'Doors set the whole tone',
+          paragraphs: [
+            'Carcasses are largely hidden; doors are what you see and touch every day. We fit across the full range so the finish matches the room rather than a showroom.',
+          ],
+          bullets: [
+            'Shaker — a simple framed panel at home in a cottage or a new build',
+            'Vinyl-wrapped — the widest choice of colours and textures for the money',
+            'In-frame — furniture-grade joinery where you want a proper handmade feel',
+            'Glazed — light through the upper cabinets, handy for display runs',
+          ],
+          imgSrc: '/img/kitchen-doors-01.jpg',
+          imgAlt: 'Close detail of fitted kitchen cabinet doors and handles',
+        },
+        {
+          heading: 'Fitted or bespoke — the honest answer',
+          paragraphs: [
+            'A fitted kitchen uses standard cabinet sizes arranged around your room, which keeps the cost sensible and the choice broad. A bespoke kitchen is drawn and made entirely to measure, with the freedom — and the price — that brings.',
+            'We do both, and we will tell you plainly where the extra spend earns its place and where it does not. On most jobs a well-specified fitted kitchen, installed with care, is hard to tell from bespoke once the filler panels and end scribes are on.',
+          ],
+          imgSrc: '/img/bespoke-kitchen-01.jpg',
+          imgAlt: 'Bespoke kitchen cabinetry with fitted end panels by Total Carpentry',
         },
       ]}
-      faqHeading="Kitchen Installations – FAQ"
+      faqHeading="Kitchen installations — your questions"
       faqs={[
         {
-          q: 'How long does a kitchen installation take?',
-          a: 'Most kitchen installations take between 3 and 10 working days depending on the complexity of the project, the size of the kitchen, and whether any structural changes are required. We\'ll give you a clear timeline during your free estimate.',
+          q: 'How long will my kitchen take?',
+          a: 'Most fits run between three and ten working days. It depends on the size of the room, how much is being replaced and whether walls, plumbing or wiring need to move first. You will get a realistic timeline with your quote, not a hopeful one.',
         },
         {
-          q: 'Can you advise on kitchen layout and the work triangle?',
-          a: 'Yes. The kitchen work triangle (cooker, sink, fridge) is a key principle we apply to every layout to ensure the kitchen is efficient and comfortable to use. We\'ll discuss the best configuration for your space during consultation.',
+          q: 'Will you help me plan where everything goes?',
+          a: 'Yes — that is part of the job. We keep the sink, hob and fridge within an easy few steps of each other so the room is comfortable to cook in, and we plan around your appliances and how you actually use the space.',
         },
         {
-          q: 'Is a bespoke kitchen worth the extra cost?',
-          a: 'For kitchens with unusual dimensions, very specific requirements, or where a premium finish is paramount, bespoke is often worth the investment. For most projects, however, a quality fitted kitchen installed by an experienced carpenter delivers outstanding results.',
+          q: 'Is bespoke worth paying for?',
+          a: 'Sometimes. If the room is an awkward shape, you want an unusual size, or a flawless furniture finish is the whole point, bespoke pays off. For most kitchens, a good fitted range installed well gets you there for a lot less.',
         },
         {
-          q: 'Do you handle plumbing and electrics?',
-          a: 'We coordinate all aspects of a kitchen installation. Where specialist trades are required (plumbing, gas, electrics), we work with trusted local tradespeople. One point of contact for the whole job.',
+          q: 'Do you sort the plumbing and electrics too?',
+          a: 'We run the job end to end and bring in trusted local plumbers, gas engineers and electricians where their tickets are needed. You deal with one point of contact rather than juggling five.',
         },
       ]}
     />

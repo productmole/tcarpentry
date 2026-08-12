@@ -3,68 +3,71 @@ import ServiceTemplate from './ServiceTemplate'
 export default function HouseRenovations() {
   return (
     <ServiceTemplate
-      heroH1="House Renovations in Portishead"
-      heroIntro="A well-planned renovation can completely reshape how you live. Total Carpentry Services delivers considered upgrades that improve comfort, function and style from structural changes to the finest finishing details always working to your vision while adding lasting value to your Portishead home."
-      heroImg="/gallery/IMG_0862.jpg"
-      heroImgAlt="House renovation by Total Carpentry Services"
+      meta={{
+        title: 'House Renovations in Portishead | Total Carpentry',
+        description:
+          'Internal renovation carpentry in Portishead — from first fix to finishing joinery, plus non-structural alterations planned with the right advice.',
+      }}
+      label="House Renovations"
+      heroH1="Reworking rooms so the whole house earns its keep"
+      heroLead="Some homes just need the layout rethought and the joinery brought up to scratch. We take renovations from first fix through to the last bit of trim."
+      heroImg="/img/home-renovation-01.jpg"
+      heroImgAlt="Interior mid-renovation with new joinery by Total Carpentry in Portishead"
+      atAGlance={['First fix to finish', 'Structural advice first', 'One trusted point of contact']}
       sections={[
         {
-          heading: 'Reimagining Homes Through Thoughtful Home Renovation',
+          heading: 'A joiner’s approach to the whole room',
           paragraphs: [
-            'Home renovations are one of our specialities. From new kitchens to bespoke wardrobes, we focus on creating the right interior for your home. As a trusted local carpenter we\'re set on getting the result you want making spaces more usable and more comfortable.',
-            'We\'re also experienced flooring fitters, and beautiful wood floors top many local renovation wish lists, bringing warmth and character to any room.',
+            'Renovation work is where we spend most of our time. New kitchens, built-in storage, fresh trim and better-planned rooms all pull together when one carpenter is thinking about how each part meets the next. The goal is simple: a home that is easier and nicer to live in.',
+            'We fit floors as part of that too — a good timber or laminate floor tends to sit near the top of most renovation wish lists, and it changes the feel of a room more than almost anything else.',
           ],
-          imgSrc: '/gallery/IMG_0863.jpg',
-          imgAlt: 'Renovation work by Total Carpentry Services',
-          imgRight: false,
+          imgSrc: '/img/home-renovation-02.jpg',
+          imgAlt: 'Renovated room with new skirting and joinery by Total Carpentry',
+          caption: 'One trade thinking about how every part meets the next.',
         },
         {
-          heading: 'Renovations',
-          paragraphs: ['We handle all aspects of internal renovation carpentry, from the first fix through to the finest finishing details. Every project is planned carefully to minimise disruption and deliver a lasting result.'],
+          heading: 'The finishing carpentry',
+          paragraphs: ['This is the joinery that makes a refurbished room feel finished rather than merely painted. We plan each job to keep the mess down and the timeline honest.'],
           bullets: [
-            'Custom built-in shelving',
-            'Window & door replacement',
-            'Skirting boards & architraves',
-            'Flooring installation',
-            'Staircase refurbishment (treads, risers, balustrades, handrails)',
-            'Partition / stud walls',
+            'Alcove shelving and built-in cupboards',
+            'Replacement windows and doors',
+            'Skirting, architrave and other trim',
+            'Timber and laminate flooring',
+            'Staircase work — treads, risers, spindles and handrails',
+            'Stud and partition walls',
             'Kitchen cabinetry',
           ],
-          imgSrc: '/gallery/IMG_0864.jpg',
-          imgAlt: 'Renovation carpentry details by Total Carpentry Services',
-          imgRight: true,
+          imgSrc: '/img/home-renovation-03.jpg',
+          imgAlt: 'Detail of finishing carpentry during a house renovation',
         },
         {
-          heading: 'Alterations',
-          paragraphs: ['Opening up a space or reconfiguring a layout can make a huge difference to how a home feels and functions. We handle structural alterations with care, always advising on structural requirements before work begins.'],
+          heading: 'Changing the layout',
+          paragraphs: ['Taking a wall out or reworking how rooms connect can transform how a home feels day to day. We handle non-structural changes ourselves and bring in an engineer and builder the moment anything load-bearing is involved — never the other way round.'],
           bullets: [
-            'Open-plan conversions (removing non-load-bearing walls)',
-            'Wardrobe installations',
-            'Door replacements & new door frames',
-            'Loft hatch installation',
+            'Opening up rooms where the wall is non-structural',
+            'Fitting wardrobes and built-in storage into the new layout',
+            'New door openings, linings and frames',
+            'Loft hatches, including drop-down ladders',
           ],
-          imgSrc: '/gallery/IMG_0865.jpg',
-          imgAlt: 'Structural alteration work by Total Carpentry Services',
-          imgRight: false,
         },
       ]}
-      faqHeading="House Renovations – FAQ"
+      faqHeading="House renovations — your questions"
       faqs={[
         {
-          q: 'What\'s the difference between a renovation and an alteration?',
-          a: 'A renovation typically refreshes or improves an existing space new flooring, updated joinery, fresh skirting boards and so on. An alteration changes the structure or layout, such as removing a partition wall to create an open-plan space. We handle both.',
+          q: 'Renovation or alteration — what’s the difference?',
+          a: 'A renovation freshens and upgrades what is already there: new flooring, replaced joinery, tidier trim. An alteration changes the layout or structure, like removing a wall to open two rooms into one. We take on both, and we are clear about which one your job is.',
         },
         {
-          q: 'Do you manage structural work safely?',
-          a: 'Yes. Before any wall is removed we advise on whether it is load-bearing and what structural support (e.g. a steel RSJ) is required. We work alongside structural engineers and builders when needed.',
+          q: 'How do you handle structural work safely?',
+          a: 'Before a single wall comes down we establish whether it is load-bearing and what support — a steel beam, say — needs to go in. Where that is the case we work alongside a structural engineer and builder so it is signed off properly.',
         },
         {
-          q: 'Will a renovation add value to my home?',
-          a: 'Generally, yes. Kitchen, bathroom and flooring upgrades consistently rank among the best-value home improvements. A well-finished renovation can meaningfully increase a property\'s market value and saleability.',
+          q: 'Will the work add value?',
+          a: 'Usually. Kitchens, flooring and well-made built-in storage are among the improvements that reliably pay back at sale time, and a tidy, well-finished home simply shows better to buyers.',
         },
         {
-          q: 'How disruptive will the work be?',
-          a: 'We plan every project to minimise disruption. For most renovation work you can remain in your home. We\'ll talk through the schedule with you in advance and keep dust and mess as contained as possible.',
+          q: 'How much upheaval should I expect?',
+          a: 'We plan around keeping you in the house wherever we can, sequence the work to limit the disruption, and sheet up and contain dust as we go. You will know the schedule before we start, not as we go along.',
         },
       ]}
     />

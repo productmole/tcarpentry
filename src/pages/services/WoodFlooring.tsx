@@ -3,69 +3,74 @@ import ServiceTemplate from './ServiceTemplate'
 export default function WoodFlooring() {
   return (
     <ServiceTemplate
-      heroH1="Wood Flooring Installation in Portishead"
-      heroIntro="Wood flooring is more than a surface it sets the character of a room. At Total Carpentry Services we fit solid timber and laminate floors with care and precision for a result that's both hard-wearing and elegant. Serving Portishead and the surrounding area, we create spaces where practicality meets timeless design."
-      heroImg="/gallery/IMG_0697.jpg"
-      heroImgAlt="Wood flooring installation by Total Carpentry Services"
+      meta={{
+        title: 'Wood Flooring Installation in Portishead | Total Carpentry',
+        description:
+          'Solid timber and laminate floors supplied and fitted across Portishead. Careful subfloor prep, precise laying and aftercare advice.',
+      }}
+      label="Wood Flooring Installations"
+      heroH1="Timber and laminate floors"
+      heroLead="A floor sets the character of a room and takes a daily beating, so it pays to prep the base right and lay it precisely. We fit solid timber and laminate across Portishead and the villages around it."
+      heroImg="/img/wood-floor-install-01.jpg"
+      heroImgAlt="Newly laid wood flooring in a Portishead room fitted by Total Carpentry"
+      atAGlance={['Supply & fit', 'Subfloor prepared properly', 'Pattern work available']}
       sections={[
         {
-          heading: 'Expertly Installing Attractive, Long-lasting Wood Floors',
+          heading: 'A floor is only as good as its groundwork',
           paragraphs: [
-            'Before we begin, your Total carpenter arranges a thorough consultation so we know exactly what you want and that you\'ll be completely happy with the finished floor. Our full service covers all the key steps from measurement through to aftercare advice.',
+            'Before a single board goes down we sit down with you, measure up and make sure the plan matches what you are picturing. From there the job runs through a set of steps that decide whether a floor stays flat and quiet or lifts and creaks a year on.',
           ],
           bullets: [
-            'Full Measurement Service precise surveying to minimise waste and cost',
-            'Consultation and Selection help choosing the right species, grade and finish',
-            'Subfloor Preparation levelling and moisture-proofing for a lasting result',
-            'Installation expert fitting with close attention to pattern and finish',
-            'Aftercare and Maintenance Advice guidance on keeping your floor in perfect condition',
+            'Measured survey — accurate quantities so you are not paying for waste',
+            'Choosing together — species, grade, board width and finish to suit the room',
+            'Subfloor prep — levelling and a damp-proof layer where the base needs it',
+            'Laying — set out with care so the pattern runs true and the joints stay tight',
+            'Aftercare — plain guidance on keeping the floor looking right',
           ],
-          imgSrc: '/gallery/IMG_0699.jpg',
-          imgAlt: 'Wood floor installation process',
-          imgRight: false,
+          imgSrc: '/img/wood-floor-install-02.jpg',
+          imgAlt: 'Wood flooring being laid and set out by Total Carpentry',
+          caption: 'The prep nobody sees is what keeps a floor flat and quiet.',
         },
         {
-          heading: 'Solid Timber Floors',
-          paragraphs: ['Solid timber flooring is a premium, long-lasting choice that adds natural beauty and character to any room. It can be sanded and refinished multiple times over its lifetime.'],
+          heading: 'Solid timber',
+          paragraphs: ['A real wood floor is the premium choice — warm underfoot, full of grain and character, and able to be sanded back and refinished several times across its life.'],
           bullets: [
-            'Aesthetic Appeal natural grain, warmth, and timeless good looks',
-            'Hypoallergenic Properties easier to keep dust and allergen-free than carpet',
-            'Durability and Longevity properly maintained, solid timber floors can last for generations',
+            'Genuine grain and warmth that manufactured floors only imitate',
+            'Kinder for allergies than carpet, with nowhere for dust to settle in',
+            'Looked after, it can outlast the people who laid it',
           ],
-          imgSrc: '/gallery/IMG_0322.jpg',
-          imgAlt: 'Solid timber herringbone floor by Total Carpentry Services',
-          imgRight: true,
+          imgSrc: '/img/timber-floor-detail-01.jpg',
+          imgAlt: 'Solid timber floor detail showing natural grain',
         },
         {
-          heading: 'Laminate Floors',
-          paragraphs: ['Laminate offers the look of real wood at a more accessible price point. Modern laminate is highly realistic and far more resilient than older generations of the product.'],
+          heading: 'Laminate',
+          paragraphs: ['Laminate gives you the look of timber for a good deal less, and today’s boards are convincing and tough — a sensible pick for busy family rooms and hallways.'],
           bullets: [
-            'Cost-Effectiveness beautiful results at a fraction of the price of solid timber',
-            'Durability scratch and stain resistant; ideal for busy households',
-            'Versatility in Design wide range of styles, colours and plank widths',
+            'Far kinder on the budget than solid timber',
+            'Shrugs off scratches, spills and daily traffic',
+            'A huge spread of tones, plank widths and textures to choose from',
           ],
-          imgSrc: '/gallery/IMG_0698.jpg',
-          imgAlt: 'Laminate floor installation by Total Carpentry Services',
-          imgRight: false,
+          imgSrc: '/img/laminate-floor-01.jpg',
+          imgAlt: 'Laminate wood-effect flooring fitted by Total Carpentry',
         },
       ]}
-      faqHeading="Wood Flooring – FAQ"
+      faqHeading="Wood flooring — your questions"
       faqs={[
         {
-          q: 'Is my subfloor suitable for wood flooring?',
-          a: 'Most subfloors can be prepared for wood flooring, but we always inspect first. Concrete subfloors need a damp-proof membrane; timber subfloors need to be level and secure. We\'ll identify any issues and advise before work starts.',
+          q: 'Is my subfloor ready for a wood floor?',
+          a: 'Most are, once prepped — but we always look first. A concrete base usually wants a damp-proof membrane; a timber base needs to be sound and level. We flag anything that needs sorting and tell you before we start, not after.',
         },
         {
-          q: 'Should I choose solid timber or laminate?',
-          a: 'Solid timber is a premium investment that can be sanded and refinished repeatedly. Laminate is more budget-friendly, harder-wearing day-to-day, and comes in a huge range of styles. We\'re happy to walk you through the options during a free consultation.',
+          q: 'Solid timber or laminate?',
+          a: 'Solid timber is the long-term investment you can sand and refresh for decades. Laminate costs less, takes day-to-day knocks well, and comes in a big range of looks. We will talk you through both against your budget and the room during a free visit.',
         },
         {
-          q: 'Can wood flooring be fitted in kitchens and bathrooms?',
-          a: 'Laminate and engineered wood can be suitable in kitchens with proper sealing and care. Fully solid timber is generally better avoided in high-moisture areas. We\'ll advise on the best choice for your specific room.',
+          q: 'Can it go in a kitchen or bathroom?',
+          a: 'Laminate and engineered boards can cope in a kitchen if they are sealed and looked after. Fully solid timber is best kept out of steamy, splash-prone rooms. We will recommend the right option for the specific space.',
         },
         {
-          q: 'How long do wood floors last?',
-          a: 'Solid timber floors can last decades and be refinished several times over their life. Quality laminate typically lasts 15–25 years with normal household use. Both are significantly more durable than carpet.',
+          q: 'How long will the floor last?',
+          a: 'A solid timber floor can run for decades and be refinished several times along the way. Good laminate typically gives fifteen to twenty-five years of normal household use. Either way, both comfortably outlast carpet.',
         },
       ]}
     />

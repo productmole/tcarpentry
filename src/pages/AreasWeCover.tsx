@@ -1,59 +1,74 @@
-import Hero from '../components/Hero'
-import ContactCTA from '../components/ContactCTA'
 import { MapPin } from 'lucide-react'
+import ContactCTA from '../components/ContactCTA'
+import Breadcrumbs from '../components/Breadcrumbs'
+import { SITE, AREAS } from '../lib/site'
+import { useDocumentMeta } from '../lib/useDocumentMeta'
 
-const areas = [
-  'Portishead', 'Abbots Leigh', 'Avonmouth', 'Backwell', 'Clapton-in-Gordano',
-  'Clevedon', 'Easton-in-Gordano', 'Failand', 'Ham Green', 'Leigh Woods',
-  'Long Ashton', 'Nailsea', 'Pill', 'Portbury', 'Redcliff Bay',
-  'Shirehampton', 'Tickenham', 'Walton-in-Gordano',
-]
+const mapSrc =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.1!2d-2.766!3d51.486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718f3b4c6d8c3b%3A0x1234567890!2s3+Bunting+Ln%2C+Portishead%2C+Bristol+BS20+7PZ!5e0!3m2!1sen!2suk!4v1234567890'
 
 export default function AreasWeCover() {
+  useDocumentMeta({
+    title: 'Areas We Cover | Total Carpentry, Portishead',
+    description:
+      'Total Carpentry works out of Portishead and covers the North Somerset villages nearby — Clevedon, Nailsea, Pill, Portbury, Long Ashton and more. Find your town.',
+  })
+
   return (
     <>
-      <Hero
-        h1="Areas We Cover"
-        intro="Wherever you are in and around Portishead, Total Carpentry Services brings skilled craftsmanship to your door."
-        imageSrc="/portishead-beach.jpg"
-        imageAlt="Portishead beach looking out to the River Severn"
-      />
-
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-4 text-center">
-            A Time Served Carpenter Serving Portishead &amp; All Surrounding North Somerset Locations
-          </h2>
-          <p className="text-[#d1d5db] text-center leading-relaxed mb-10">
-            From kitchens and flooring to bespoke storage and full renovations, we're proud to serve homes right across North Somerset local, reliable, and tailored to your property.
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-12">
-            {areas.map((area) => (
-              <div
-                key={area}
-                className="flex items-center gap-2 bg-[#111827] border border-[#2d3748] rounded-lg px-3 py-2.5 text-sm text-white"
-              >
-                <MapPin size={12} className="text-[#dead1f] shrink-0" />
-                {area}
-              </div>
-            ))}
+      <section className="bg-sand">
+        <div className="max-w-6xl mx-auto px-4 pt-10 pb-14 md:py-16">
+          <Breadcrumbs trail={[{ label: 'Home', to: '/' }, { label: 'Areas We Cover' }]} />
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h1 className="font-display text-4xl md:text-5xl font-semibold text-ink leading-[1.08] mb-4">
+                Based in Portishead, out across North Somerset
+              </h1>
+              <p className="text-lg text-ink-soft leading-relaxed">
+                We are a local outfit by choice — close enough to pop back if you ever need us, and familiar with the
+                housing stock around here, from harbourside new-builds to older village cottages.
+              </p>
+            </div>
+            <figure>
+              <img src="/img/home-renovation-04.jpg" alt="Completed renovation in a North Somerset home by Total Carpentry"
+                width="1024" height="768"
+                className="w-full aspect-[4/3] object-cover rounded-2xl border border-line shadow-lg" />
+            </figure>
           </div>
+        </div>
+      </section>
 
-          {/* Google Map embed placeholder */}
-          <div className="rounded-xl overflow-hidden shadow-lg border border-[#2d3748]">
+      <section className="bg-paper">
+        <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
+          <h2 className="font-display text-2xl md:text-3xl font-semibold text-ink mb-6">Towns and villages we cover</h2>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {AREAS.map((area) => (
+              <li key={area} className="flex items-center gap-2 rounded-xl border border-line bg-shell px-3.5 py-3 text-ink">
+                <MapPin size={16} className="text-rust shrink-0" aria-hidden="true" />
+                {area}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-ink-soft">
+            Just outside the list? It is worth a call on{' '}
+            <a href={`tel:${SITE.phonePrimary.tel}`} className="font-semibold text-rust hover:underline">{SITE.phonePrimary.display}</a>{' '}— we often travel a little further for the right job.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-sand">
+        <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
+          <div className="rounded-2xl overflow-hidden border border-line shadow-sm">
             <iframe
-              title="Total Carpentry Services location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.1!2d-2.766!3d51.486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718f3b4c6d8c3b%3A0x1234567890!2s3+Bunting+Ln%2C+Portishead%2C+Bristol+BS20+7PZ!5e0!3m2!1sen!2suk!4v1234567890"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              title="Map showing Total Carpentry at 3 Bunting Lane, Portishead"
+              src={mapSrc}
+              width="100%" height="420" style={{ border: 0 }}
+              allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <p className="text-xs text-gray-400 text-center mt-2">3 Bunting Ln, Portishead, Bristol, BS20 7PZ</p>
+          <p className="mt-3 text-sm text-ink-soft">
+            {SITE.address.street}, {SITE.address.town}, {SITE.address.city}, {SITE.address.postcode}
+          </p>
         </div>
       </section>
 

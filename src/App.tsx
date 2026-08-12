@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import ServicesOverview from './pages/services/ServicesOverview'
@@ -16,10 +16,15 @@ import HouseRenovationsPortishead from './pages/blog/HouseRenovationsPortishead'
 import KitchenInstallationPortishead from './pages/blog/KitchenInstallationPortishead'
 import WoodFlooringPortishead from './pages/blog/WoodFlooringPortishead'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
+
+// Default to real history routing; the offline single-file test build sets
+// VITE_ROUTER=hash so every route works when opened straight from a file://.
+const Router = import.meta.env.VITE_ROUTER === 'hash' ? HashRouter : BrowserRouter
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
@@ -38,8 +43,9 @@ export default function App() {
           <Route path="blog/kitchen-installation-in-portishead" element={<KitchenInstallationPortishead />} />
           <Route path="blog/wood-flooring-installation-in-portishead" element={<WoodFlooringPortishead />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   )
 }

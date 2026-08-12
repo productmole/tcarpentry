@@ -3,37 +3,45 @@ import BlogTemplate from './BlogTemplate'
 export default function WoodFlooringPortishead() {
   return (
     <BlogTemplate
-      h1="Wood Flooring Installation in Portishead Warmth, Character & Lasting Value"
-      heroImg="/gallery/IMG_0697.jpg"
-      heroImgAlt="Wood flooring installation in Portishead by Total Carpentry Services"
-      intro="Wood flooring is one of the most popular and enduring home improvements and for good reason. It adds warmth, character and real value to any property. Total Carpentry Services fits solid timber and laminate floors across Portishead and North Somerset."
-      secondaryImg="/gallery/IMG_0698.jpg"
-      secondaryImgAlt="Wood flooring detail by Total Carpentry Services"
+      meta={{
+        title: 'Solid Timber or Laminate? Choosing a Floor | Total Carpentry',
+        description:
+          'Solid timber or laminate for your Portishead floor? A working joiner compares cost, wear, moisture and lifespan so you can pick the right one for the room.',
+      }}
+      kicker="Wood flooring"
+      readTime="4 min"
+      h1="Solid timber or laminate? Choosing a floor that lasts"
+      featureImg="/img/wood-floor-install-01.jpg"
+      featureImgAlt="Newly laid wood floor in a Portishead room by Total Carpentry"
+      intro="There’s no single right answer here, and anyone who gives you one is selling something. The better question is which floor suits this room, this budget and this household — so let’s compare them honestly."
       sections={[
         {
-          heading: 'The Benefits of Wood Flooring',
+          heading: 'What they share',
           paragraphs: [
-            'Whether you choose solid timber or laminate, wood flooring offers benefits that carpet simply can\'t match:',
+            'Whichever way you go, a wood or wood-effect floor beats carpet on the things that tend to matter: it wipes clean, it doesn’t trap dust and allergens, it shrugs off the daily traffic of a family home, and it lifts the look of a room the moment it’s down.',
           ],
+        },
+        {
+          heading: 'Where they differ',
+          paragraphs: ['This is the part worth thinking about before you choose:'],
           bullets: [
-            'Timeless aesthetic appeal suits any décor, from traditional to ultra-modern',
-            'Easy to clean and maintain',
-            'Hypoallergenic fewer places for dust and allergens to hide',
-            'Durable and long-lasting quality wood floors can last decades',
-            'Adds resale value to your property',
+            'Cost — laminate is markedly cheaper to buy and to fit',
+            'Longevity — solid timber can be sanded and refinished for decades',
+            'Wear — good laminate resists scratches and scuffs day to day',
+            'Moisture — laminate and engineered boards cope better near splashes',
+            'Feel — nothing quite matches real timber underfoot and in the grain',
           ],
         },
         {
-          heading: 'Our Wood Flooring Service',
+          heading: 'The bit under the boards',
           paragraphs: [
-            'We offer a full supply-and-fit service for both solid timber and laminate floors. Our process starts with a consultation and full measurement, then moves through subfloor preparation, expert installation and aftercare advice.',
-            'Not sure which type of flooring is right for you? We\'ll talk you through the options during a free consultation, taking into account your budget, lifestyle and the room in question.',
+            'Whatever you lay, the floor is only as good as what’s beneath it. A concrete base usually needs a damp-proof layer; a timber base needs to be sound and level. Skip that and even the best boards will telegraph every dip and lift at the joints within a year. It’s the least glamorous stage and the one that decides everything.',
           ],
         },
         {
-          heading: 'Herringbone, Plank and More',
+          heading: 'Pattern changes the room',
           paragraphs: [
-            'We install a wide range of wood flooring styles and patterns, including classic plank, herringbone and parquet. The choice of pattern can dramatically change the feel of a room and we\'re happy to show you examples from completed local projects.',
+            'Straight planks read calm and modern. Herringbone or parquet brings a period richness and draws the eye. The layout you choose shifts the whole feel of a space as much as the timber does — and we’re glad to show you finished local examples of each before you decide. Ask for a free consultation and we’ll weigh it all up against your room.',
           ],
         },
       ]}

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, ShieldCheck } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import ContactCTA from '../../components/ContactCTA'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import { SITE, SERVICES } from '../../lib/site'
@@ -15,7 +15,7 @@ export default function ServicesOverview() {
   useDocumentMeta({
     title: 'Our Services | Total Carpentry, Portishead',
     description:
-      'Kitchens, fitted wardrobes, house renovations and wood flooring from a Portishead workshop — plus the everyday joinery in between. One-year workmanship guarantee on every job.',
+      'Kitchens, fitted wardrobes, house renovations and wood flooring from a Portishead workshop — plus the everyday joinery in between.',
   })
 
   return (
@@ -24,13 +24,12 @@ export default function ServicesOverview() {
         <div className="max-w-6xl mx-auto px-4 pt-10 pb-14 md:py-16">
           <Breadcrumbs trail={[{ label: 'Home', to: '/' }, { label: 'Services' }]} />
           <div className="max-w-2xl">
-            <p className="kicker mb-3">What we do</p>
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-ink leading-[1.08] mb-4">
               Four trades under one roof — and the joinery in between
             </h1>
             <p className="text-lg text-ink-soft leading-relaxed">
               Most of our work falls into four areas. Because the same joiner sees each job from measure to finish,
-              the parts line up — and every one carries a one-year workmanship guarantee.
+              the parts line up.
             </p>
           </div>
         </div>
@@ -59,19 +58,9 @@ export default function ServicesOverview() {
         </div>
       </section>
 
-      {/* Guarantee + broader capabilities */}
+      {/* Broader capabilities */}
       <section className="bg-sand">
-        <div className="max-w-6xl mx-auto px-4 py-14 md:py-16 grid md:grid-cols-2 gap-10 items-start">
-          <div className="card p-6 flex gap-4">
-            <ShieldCheck size={40} className="text-ochre shrink-0" aria-hidden="true" />
-            <div>
-              <h2 className="font-display text-2xl font-semibold text-ink mb-2">Guaranteed for a year</h2>
-              <p className="text-ink-soft leading-relaxed">
-                Every job we finish is covered by a one-year workmanship guarantee. It is the same promise whether you
-                book a full kitchen or a single hung door — if our work is not right, we come back and put it right.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
           <div>
             <h2 className="font-display text-2xl font-semibold text-ink mb-4">Also on the tools</h2>
             <ul className="flex flex-wrap gap-2">
