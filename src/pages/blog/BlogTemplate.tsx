@@ -4,6 +4,7 @@ import ContactCTA from '../../components/ContactCTA'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import { SITE } from '../../lib/site'
 import { useDocumentMeta } from '../../lib/useDocumentMeta'
+import { imgSize } from '../../lib/images'
 
 interface Section {
   heading?: string
@@ -40,7 +41,7 @@ export default function BlogTemplate(props: BlogPostProps) {
 
         <div className="max-w-3xl mx-auto px-4 py-10 md:py-12">
           <figure className="mb-10">
-            <img src={featureImg} alt={featureImgAlt} width="1024" height="576"
+            <img src={featureImg} alt={featureImgAlt} {...imgSize(featureImg)}
               className="w-full aspect-[16/9] object-cover rounded-2xl border border-line shadow-sm" />
           </figure>
 

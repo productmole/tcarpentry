@@ -7,6 +7,7 @@ export default function NotFound() {
   useDocumentMeta({
     title: 'Page not found | Total Carpentry',
     description: 'That page couldn’t be found. Head back to the Total Carpentry home page or get in touch with the Portishead workshop.',
+    canonical: false,
   })
 
   return (

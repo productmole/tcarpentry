@@ -1,11 +1,8 @@
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react'
+import { Phone, Mail, MapPin, MessageCircle, ExternalLink } from 'lucide-react'
 import ContactForm from '../components/ContactForm'
 import Breadcrumbs from '../components/Breadcrumbs'
 import { SITE } from '../lib/site'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
-
-const mapSrc =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.1!2d-2.766!3d51.486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718f3b4c6d8c3b%3A0x1234567890!2s3+Bunting+Ln%2C+Portishead%2C+Bristol+BS20+7PZ!5e0!3m2!1sen!2suk!4v1234567890'
 
 export default function Contact() {
   useDocumentMeta({
@@ -63,11 +60,17 @@ export default function Contact() {
               </li>
               <li className="card p-4 flex items-center gap-3">
                 <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-sand text-rust shrink-0"><MapPin size={20} aria-hidden="true" /></span>
-                <span><span className="block text-sm text-ink-soft">Workshop address</span>
+                <span><span className="block text-sm text-ink-soft">Based in</span>
                   <address className="not-italic font-semibold text-ink">
-                    {SITE.address.street}, {SITE.address.town}, {SITE.address.city}, {SITE.address.postcode}
+                    {SITE.address.town}, {SITE.address.region}
                   </address>
                 </span>
+              </li>
+              <li>
+                <a href={SITE.googleMaps} target="_blank" rel="noopener" className="card p-4 flex items-center gap-3 hover:border-rust transition-colors">
+                  <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-sand text-rust shrink-0"><ExternalLink size={20} aria-hidden="true" /></span>
+                  <span><span className="block text-sm text-ink-soft">See our profile</span><span className="font-semibold text-ink">Find us on Google</span></span>
+                </a>
               </li>
             </ul>
           </div>
@@ -87,8 +90,8 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
           <div className="rounded-2xl overflow-hidden border border-line shadow-sm">
             <iframe
-              title="Map showing Total Carpentry at 3 Bunting Lane, Portishead"
-              src={mapSrc}
+              title="Map of Portishead, North Somerset"
+              src={SITE.mapEmbed}
               width="100%" height="420" style={{ border: 0 }}
               allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
             />

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
+import { Phone, Mail, MapPin, ArrowUp, ExternalLink } from 'lucide-react'
 import { SITE } from '../lib/site'
 
 function FacebookIcon() {
@@ -88,8 +88,13 @@ export default function Footer() {
             <li>
               <address className="flex items-start gap-2 not-italic text-ink/80">
                 <MapPin size={15} aria-hidden="true" className="shrink-0 mt-0.5" />
-                <span>{SITE.address.street}, {SITE.address.town}, {SITE.address.city}, {SITE.address.postcode}</span>
+                <span>{SITE.address.town}, {SITE.address.region}</span>
               </address>
+            </li>
+            <li>
+              <a href={SITE.googleMaps} target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:text-ochre transition-colors">
+                <ExternalLink size={15} aria-hidden="true" className="shrink-0" />Find us on Google
+              </a>
             </li>
           </ul>
         </div>

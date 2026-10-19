@@ -8,15 +8,17 @@ export const SITE = {
   phonePrimary: { display: '07834 772046', tel: '07834772046' },
   phoneSecondary: { display: '01275 844094', tel: '01275844094' },
   email: 'info@tcarpentry.co.uk',
+  // Town and region only: the owner keeps his street address off Google Maps.
   address: {
-    street: '3 Bunting Ln',
     town: 'Portishead',
-    city: 'Bristol',
-    postcode: 'BS20 7PZ',
+    region: 'North Somerset',
   },
   whatsapp: 'https://wa.me/447834772046',
   facebook: 'https://www.facebook.com/totalcarpentry',
   instagram: 'https://www.instagram.com/totalcarpentryportishead/',
+  googleMaps: 'https://www.google.com/maps?cid=11834095425836009702',
+  // Town-level map only, so no street address is pinned.
+  mapEmbed: 'https://www.google.com/maps?q=Portishead,+North+Somerset,+UK&z=12&output=embed',
   googleReviews: 'https://www.google.com/search?q=Total+Carpentry+Portishead+reviews',
 } as const
 

@@ -3,6 +3,7 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import ContactCTA from '../components/ContactCTA'
 import Breadcrumbs from '../components/Breadcrumbs'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
+import { imgSize } from '../lib/images'
 
 interface Photo { src: string; alt: string }
 
@@ -100,7 +101,7 @@ export default function Gallery() {
                       src={p.src}
                       alt={p.alt}
                       loading={i < 3 ? 'eager' : 'lazy'}
-                      width="512" height="384"
+                      {...imgSize(p.src)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </span>
@@ -130,7 +131,7 @@ export default function Gallery() {
             <ChevronLeft size={36} aria-hidden="true" />
           </button>
           <figure onClick={(e) => e.stopPropagation()} className="max-w-full">
-            <img src={photos[index].src} alt={photos[index].alt} className="max-w-full max-h-[80vh] rounded-xl shadow-2xl" />
+            <img src={photos[index].src} alt={photos[index].alt} {...imgSize(photos[index].src)} className="w-auto max-w-full max-h-[80vh] rounded-xl shadow-2xl" />
             <figcaption className="text-center text-ink/80 text-sm mt-3">{photos[index].alt}</figcaption>
           </figure>
           <button onClick={(e) => { e.stopPropagation(); move(1) }} aria-label="Next photo"

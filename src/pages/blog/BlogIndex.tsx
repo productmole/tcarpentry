@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import { useDocumentMeta } from '../../lib/useDocumentMeta'
+import { imgSize } from '../../lib/images'
 
 export const posts = [
   {
@@ -77,7 +78,7 @@ export default function BlogIndex() {
               <li key={post.slug}>
                 <Link to={post.slug} className="card group h-full flex flex-col overflow-hidden hover:border-rust transition-colors">
                   <div className="overflow-hidden aspect-[16/10]">
-                    <img src={post.img} alt={post.imgAlt} loading="lazy" width="512" height="320"
+                    <img src={post.img} alt={post.imgAlt} loading="lazy" {...imgSize(post.img)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </div>
                   <div className="p-5 flex flex-col flex-1">

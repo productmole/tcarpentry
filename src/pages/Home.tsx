@@ -4,6 +4,7 @@ import GoogleReviews from '../components/GoogleReviews'
 import ContactCTA from '../components/ContactCTA'
 import { SERVICES } from '../lib/site'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
+import { imgSize } from '../lib/images'
 
 const accreditations = [
   { src: '/img/accreditation-city-and-guilds.svg', alt: 'City & Guilds qualified' },
@@ -41,7 +42,7 @@ export default function Home() {
         {/* Background photo, held back by a heavy navy overlay so text stays legible */}
         <img
           src="/img/kitchen-fit-portishead-01.jpg"
-          alt="" aria-hidden="true" fetchPriority="high"
+          alt="" aria-hidden="true" fetchPriority="high" width="1024" height="768"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div
@@ -112,7 +113,7 @@ export default function Home() {
           <ul className="flex flex-wrap items-center justify-center gap-8">
             {accreditations.map((a) => (
               <li key={a.alt} className="flex items-center">
-                <img src={a.src} alt={a.alt} className="h-8 w-auto object-contain" />
+                <img src={a.src} alt={a.alt} {...imgSize(a.src)} className="h-8 w-auto object-contain" />
               </li>
             ))}
           </ul>
@@ -155,7 +156,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
           <figure className="order-1 md:order-none">
             <img src="/img/wall-panelling-01.jpg" alt="Bespoke wall panelling built and fitted by Total Carpentry"
-              loading="lazy" width="1024" height="768"
+              loading="lazy" width="768" height="1024"
               className="w-full aspect-[4/3] object-cover rounded-2xl border border-line shadow-lg" />
           </figure>
           <div>
@@ -191,7 +192,7 @@ export default function Home() {
             {mosaic.map((m) => (
               <li key={m.src} className={m.span ? 'col-span-2 row-span-2' : ''}>
                 <Link to="/gallery" className="block w-full h-full overflow-hidden rounded-xl border border-line group">
-                  <img src={m.src} alt={m.alt} loading="lazy"
+                  <img src={m.src} alt={m.alt} loading="lazy" {...imgSize(m.src)}
                     className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 ${m.span ? 'aspect-square md:aspect-auto md:h-full' : 'aspect-square'}`} />
                 </Link>
               </li>

@@ -100,7 +100,7 @@ const EXCLUDE = [
   'kitchen installations', 'fitted wardrobes', 'house renovations',
   'wood flooring installations', 'wood flooring installation', 'wood flooring',
   'portishead', 'north somerset', 'clevedon', 'nailsea',
-  '3 bunting ln portishead bristol bs20 7pz',
+  'portishead north somerset',
 ]
 
 const oldFiles = execSync('git ls-tree -r --name-only HEAD -- src index.html', { encoding: 'utf8' })

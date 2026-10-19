@@ -5,6 +5,7 @@ import ContactCTA from '../../components/ContactCTA'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import { SITE } from '../../lib/site'
 import { useDocumentMeta } from '../../lib/useDocumentMeta'
+import { imgSize } from '../../lib/images'
 
 export interface BodySection {
   heading: string
@@ -63,7 +64,7 @@ export default function ServiceTemplate(props: ServicePageProps) {
             <img
               src={heroImg}
               alt={heroImgAlt}
-              width="1024" height="768"
+              {...imgSize(heroImg)}
               className="w-full aspect-[4/3] object-cover rounded-2xl border border-line shadow-lg"
             />
           </figure>
@@ -98,7 +99,7 @@ export default function ServiceTemplate(props: ServicePageProps) {
                 {section.imgSrc && (
                   <figure className="mt-8">
                     <img src={section.imgSrc} alt={section.imgAlt ?? ''} loading="lazy"
-                      width="1024" height="768"
+                      {...imgSize(section.imgSrc)}
                       className="w-full aspect-[16/9] object-cover rounded-xl border border-line" />
                     {section.caption && <figcaption className="mt-2 text-sm text-ink-soft">{section.caption}</figcaption>}
                   </figure>

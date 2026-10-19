@@ -4,9 +4,6 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import { SITE, AREAS } from '../lib/site'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
 
-const mapSrc =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.1!2d-2.766!3d51.486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718f3b4c6d8c3b%3A0x1234567890!2s3+Bunting+Ln%2C+Portishead%2C+Bristol+BS20+7PZ!5e0!3m2!1sen!2suk!4v1234567890'
-
 export default function AreasWeCover() {
   useDocumentMeta({
     title: 'Areas We Cover | Total Carpentry, Portishead',
@@ -31,7 +28,7 @@ export default function AreasWeCover() {
             </div>
             <figure>
               <img src="/img/home-renovation-04.jpg" alt="Completed renovation in a North Somerset home by Total Carpentry"
-                width="1024" height="768"
+                width="768" height="1024"
                 className="w-full aspect-[4/3] object-cover rounded-2xl border border-line shadow-lg" />
             </figure>
           </div>
@@ -60,14 +57,14 @@ export default function AreasWeCover() {
         <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
           <div className="rounded-2xl overflow-hidden border border-line shadow-sm">
             <iframe
-              title="Map showing Total Carpentry at 3 Bunting Lane, Portishead"
-              src={mapSrc}
+              title="Map of Portishead, North Somerset"
+              src={SITE.mapEmbed}
               width="100%" height="420" style={{ border: 0 }}
               allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
           <p className="mt-3 text-sm text-ink-soft">
-            {SITE.address.street}, {SITE.address.town}, {SITE.address.city}, {SITE.address.postcode}
+            Based in {SITE.address.town}, {SITE.address.region}
           </p>
         </div>
       </section>
